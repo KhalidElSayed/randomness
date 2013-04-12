@@ -12,6 +12,8 @@
  * See Also     : https://github.com/taesiri/randomness
  *
  * Functions    : MiddleSquareGenerator(int64) int64,  GetLen(int64) int
+ *                MultiplicativeCongruentialGenerator  (generatedNumber int64, ratio float64 )
+ *                MixedCongruentialGenerator  (generatedNumber int64, ratio float64 )
  *
  *
  * Engineering
@@ -24,8 +26,6 @@
 package randomness
 
 import "math"
-
- 
 func MiddleSquareGenerator(seed int64) int64{
     value := seed*seed;
     valLen :=  GetLen(value);
@@ -40,6 +40,22 @@ func MiddleSquareGenerator(seed int64) int64{
     value = value % int64((math.Pow(10, float64(seedLen))))
 
     return value
+}
+
+func MultiplicativeCongruentialGenerator(modulus int64, multiplier int64, seed int64)  (generatedNumber int64, ratio float64 ) {
+
+    generatedNumber = (multiplier * seed) % modulus
+    ratio = float64(generatedNumber) / float64(modulus)
+
+    return
+}
+
+func MixedCongruentialGenerator(modulus int64, multiplier int64, increment int64, seed int64)  (generatedNumber int64, ratio float64 ) {
+
+    generatedNumber =  ((multiplier * seed) + increment) % modulus
+    ratio = float64(generatedNumber) / float64(modulus)
+
+    return
 }
 
 func GetLen(number int64) int {
