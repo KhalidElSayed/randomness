@@ -1,5 +1,4 @@
 <script language="javascript" type="text/javascript">
-    <!-- Author: Mohammadreza Taesiri -->
     Array.prototype.contains = function ( needle ) {
         for (i in this) {
             if (this[i] == needle) return true;
