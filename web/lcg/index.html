@@ -35,10 +35,10 @@
         displayAlign: "center",
         });
         if (MathJax.Hub.Browser.isFirefox) {
-           // handle firefox HERE!
+        // handle firefox HERE!
         }
         if (MathJax.Hub.Browser.isChrome) {
-            // handle chrome HERE!
+        // handle chrome HERE!
         }
     </script>
     <script type="text/javascript"
@@ -93,207 +93,207 @@
 
 <body>
 <div id="wrap">
-    <!-- Begin page content -->
-    <div class="container">
+<!-- Begin page content -->
+<div class="container">
 
-        <blockquote class="pull-right">
-            <p class="lead text-right" style="font-family: BBaran; font-size: 26px; direction: rtl;"> تولید اعداد تصادفی به روش همنهشتی</p>
-            <small> <a href="http://autstat01.persianblog.ir/">Pseudorandom number generator algorithms</a></small>
-        </blockquote>
-
-
-        <hr>
-
-        <h2 class="text-right" style="font-family: BBaran;  direction: rtl;">
-            روش همنهشتی ضربی و آمیخته برای تولید اعداد شبه تصادفی
-        </h2>
-        </br>
-        </br>
-        <p class="text-right" style="font-family: BBaran; font-size: 20px; direction: rtl;  padding-top: 12px;">
-            یکی از روش­های بسیار قدیمی و مرسوم برای تولید اعداد تصادفی؛ روش همنهشتی خطی است.
-        </p>
-
-        <p class="text-right" style="font-family: BBaran; font-size: 20px; direction: rtl;  padding-top: 12px;">
-            تولیدگر این روش به صورت یک رابطه بازگشتی به صورت زیر تعریف می شود
-        </p>
-
-        <p></p> </br>
-        <p>
-            \begin{align}
-            \ X_{n+1} = aX_{n} + c \ (mod \ m) \\
-            \end{align}
-        </p>
+<blockquote class="pull-right">
+    <p class="lead text-right" style="font-family: BBaran; font-size: 26px; direction: rtl;"> تولید اعداد تصادفی به روش همنهشتی</p>
+    <small> <a href="http://autstat01.persianblog.ir/">Pseudorandom number generator algorithms</a></small>
+</blockquote>
 
 
-        <p class="text-right" style="font-family: BBaran; font-size: 20px; direction: rtl;  padding-top: 12px;">$X$  دنباله اعداد تولید شده است - $0 \leq  X_{0} &#60 m$</p>
-        <p class="text-right" style="font-family: BBaran; font-size: 20px; direction: rtl;  padding-top: 12px;">$m$ پیمانه همنهشتی است - $0 &#60 m$</p>
-        <p class="text-right" style="font-family: BBaran; font-size: 20px; direction: rtl;  padding-top: 12px;">$a$ مضرب است - $0 &#60 a &#60 m$</p>
-        <p class="text-right" style="font-family: BBaran; font-size: 20px; direction: rtl;  padding-top: 12px;">$c$ افزاینده است - $0 \leq c &#60 m$</p>
+<hr>
 
-        <p class="text-right" style="font-family: BBaran; font-size: 20px; direction: rtl;  padding-top: 12px;">
-            در حالاتی که مقدار  $c$ برابر صفر باشد، معمولا؛ آن را همنهشتی ضربی؛ و اگر  مقدار $c$ مخالف صفر باشد؛ آن را همنهشتی آمیخته می نامیم.
-        </p>
+<h2 class="text-right" style="font-family: BBaran;  direction: rtl;">
+    روش همنهشتی ضربی و آمیخته برای تولید اعداد شبه تصادفی
+</h2>
+</br>
+</br>
+<p class="text-right" style="font-family: BBaran; font-size: 20px; direction: rtl;  padding-top: 12px;">
+    یکی از روش­های بسیار قدیمی و مرسوم برای تولید اعداد تصادفی؛ روش همنهشتی خطی است.
+</p>
 
+<p class="text-right" style="font-family: BBaran; font-size: 20px; direction: rtl;  padding-top: 12px;">
+    تولیدگر این روش به صورت یک رابطه بازگشتی به صورت زیر تعریف می شود
+</p>
 
-        </br>
-        </br>
-        </br>
-        <h2 class="text-right" style="font-family: BBaran;  direction: rtl;">
-بررسی یک نمونه
-       </h2>
-        </br>
-        </br>
-        <p class="text-right" style="font-family: BBaran; font-size: 20px; direction: rtl;  padding-top: 12px;">
-            با اختیار کردن اعداد 1024 به عنوان پیمانه همنهشتی، 7 به عنوان مضرب، 11 به عنوان افزاینده و 131 به عنوان هسته اولیه؛ اعداد تولیدی به شرح زیر هستند:
-        </p>
-
-
-        </br></br>
-        <p class="text-left" style="font-family: BBaran; font-size: 18px;">
-            928, 363, 504, 467, 208, 443, 40, 291, 0, 11, 88, 627, 304, 91, 648, 451, 96, 683, 696, 787, 400, 763, 232, 611, 192, 331, 280, 947, 496, 411, 840, 771, 288, 1003, 888, 83, 592, 59, 424, 931, 384, 651, 472, 243, 688, 731, 8, 67, 480, 299, 56, 403, 784, 379, 616, 227, 576, 971, 664, 563, 880, 27, 200, 387, 672, 619, 248, 723, 976, 699, 808, 547, 768, 267, 856, 883, 48, 347, 392, 707, 864, 939, 440, 19, 144, 1019, 1000, 867, 960, 587, 24, 179, 240, 667, 584, 3, 32, 235, 632, 339, 336, 315, 168, 163, 128, 907, 216, 499, 432, 987, 776, 323, 224, 555, 824, 659, 528, 635, 360, 483, 320, 203, 408, 819, 624, 283, 968, 643, 416, 875, 1016, 979, 720, 955, 552, 803, 512, 523, 600, 115, 816, 603, 136, 963, 608, 171, 184, 275, 912, 251, 744, 99, 704, 843, 792, 435, 1008, 923, 328, 259, 800, 491, 376, 595, 80, 571, 936, 419, 896, 139, 984, 755, 176, 219, 520, 579, 992, 811, 568, 915, 272, 891, 104, 739, 64, 459, 152, 51, 368, 539, 712, 899, 160, 107, 760, 211, 464, 187, 296, 35, 256, 779, 344, 371, 560, 859, 904, 195, 352, 427, 952, 531, 656, 507, 488, 355, 448, 75, 536, 691, 752, 155, 72, 515, 544, 747, 120, 851, 848, 827, 680, 675, 640, 395, 728, 1011, 944, 475, 264, 835, 736, 43, 312, 147, 16, 123, 872, 995, 832, 715, 920, 307, 112, 795, 456, 131
-        </p>
-        </br></br>
-        <p class="text-right" style="font-family: BBaran; font-size: 20px; direction: rtl;  padding-top: 12px;">
-            تعداد اعداد تولید شده : 256
-        </p>
-        <p class="text-right" style="font-family: BBaran; font-size: 20px; direction: rtl;  padding-top: 12px;">
-            دقت کنید اولین عدد تولید شده 928 است و آخرین عدد برابر 131 است؛ در صورتی که الگوریتم را برای یکبار دیگر اجرا کنیم، عدد 928 بدست خواهد آمد که اولین عدد تولید شده بود
-        </p>
-
-         </br>
-        <p>
-            \begin{align}
-            \ (7*131) + 11 \ \ (mod \ 1024) = 928 \\
-            \end{align}
-        </p>
-        <p class="text-right" style="font-family: BBaran; font-size: 20px; direction: rtl;  padding-top: 12px;">
-            در این جاست که روند ادامه الگوریتم به پایان می رسد.
-        </p>
-        </br>
-        </br>
-        <div id="chart" style="height: 300px; width: 980px;">
-
-        </div>
-        <p class="text-center" style="padding-top: 18px;"> Histogram (Ratio) </p>
-        </br>
-        </br>
-        <div id="offsetDiv">
-            <div id="chart_1" >
-                <svg></svg>
-            </div>
-        </div>
-
-        </br>
-        </br>
+<p></p> </br>
+<p>
+    \begin{align}
+    \ X_{n+1} = aX_{n} + c \ (mod \ m) \\
+    \end{align}
+</p>
 
 
-        <h2 class="text-right" style="font-family: BBaran;  direction: rtl;">
-طول دنباله
-        </h2>
-        </br>
-        </br>
-        <p class="text-right" style="font-family: BBaran; font-size: 20px; direction: rtl;  padding-top: 12px;">
-            بدیهی است حداکثر طول دنباله برابر با  $m$ است. با انتخاب 1 به عنوان مضرب و افزاینده؛ تمامی اعداد بین $0, \ m-1$  در دنباله ظاهر خواهند شد.
-        </p>
-        <p class="text-right" style="font-family: BBaran; font-size: 20px; direction: rtl;  padding-top: 12px;">
-            حالت های خاصی برای اتخاذ مقادیر $ m, a, c, X_{0}$ وجود دارند که طول دنباله را به حداکثر برسانند.
-        </p>
-        </br>
-        </br>
-        <h2 class="text-right" style="font-family: BBaran;  direction: rtl;">
-            پارامترها در استفاده مشترک
-        </h2>
-        </br>
-        </br>
+<p class="text-right" style="font-family: BBaran; font-size: 20px; direction: rtl;  padding-top: 12px;">$X$  دنباله اعداد تولید شده است - $0 \leq  X_{0} &#60 m$</p>
+<p class="text-right" style="font-family: BBaran; font-size: 20px; direction: rtl;  padding-top: 12px;">$m$ پیمانه همنهشتی است - $0 &#60 m$</p>
+<p class="text-right" style="font-family: BBaran; font-size: 20px; direction: rtl;  padding-top: 12px;">$a$ مضرب است - $0 &#60 a &#60 m$</p>
+<p class="text-right" style="font-family: BBaran; font-size: 20px; direction: rtl;  padding-top: 12px;">$c$ افزاینده است - $0 \leq c &#60 m$</p>
 
-        <p class="text-right" style="font-family: BBaran; font-size: 20px; direction: rtl;  padding-top: 12px;">
-            کارآمدترین حالت الگوریتم همنهشتی خطی زمانی است که پیمانه را توانی از 2 انتخاب کنیم؛ معمول ترین حالت $2^{32}$ یا  $2^{64}$ است.
-        </p>
-        </br>
-
-        <table class="table table-striped table-bordered">
-            <thead>
-            <tr class="">
-                <th>Source</th>
-                <th>$m$</th>
-                <th>$a$</th>
-                <th>$c$</th>
-                <th>output bits of seed in rand()</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td class="text-center">Numerical Recipes</td>
-                <td class="text-center">$2^{32}$</td>
-                <td class="text-center">1664525</td>
-                <td class="text-center">1013904223</td>
-                <td class="text-center"></td>
-            </tr>
-            <tr>
-                <td class="text-center">Borland C/C++</td>
-                <td class="text-center">$2^{32}$</td>
-                <td class="text-center">22695477</td>
-                <td class="text-center">1</td>
-                <td class="text-center">bits 30..16 in rand(), 30..0 in lrand()</td>
-            </tr>
-            <tr>
-                <td class="text-center">glibc (used by GCC)</td>
-                <td class="text-center">$2^{31}$</td>
-                <td class="text-center">1103515245</td>
-                <td class="text-center">12345</td>
-                <td class="text-center">bits 30..0</td>
-            </tr>
-            <tr>
-                <td class="text-center">ANSI C: Watcom, Digital Mars, CodeWarrior, IBM VisualAge C/C++</td>
-                <td class="text-center">$2^{31}$</td>
-                <td class="text-center">1103515245</td>
-                <td class="text-center">12345</td>
-                <td class="text-center">bits 30..16</td>
-            </tr>
-            <tr>
-                <td class="text-center">Borland Delphi, Virtual Pascal</td>
-                <td class="text-center">$2^{32}$</td>
-                <td class="text-center">134775813</td>
-                <td class="text-center">1</td>
-                <td class="text-center">bits 63..32 of (seed * L)</td>
-            </tr>
-            <tr>
-                <td class="text-center">Java's java.util.Random</td>
-                <td class="text-center">$2^{48}$</td>
-                <td class="text-center">25214903917</td>
-                <td class="text-center">11</td>
-                <td class="text-center">bits 47...16</td>
-            </tr>
-            </tbody>
-        </table>
+<p class="text-right" style="font-family: BBaran; font-size: 20px; direction: rtl;  padding-top: 12px;">
+    در حالاتی که مقدار  $c$ برابر صفر باشد، معمولا؛ آن را همنهشتی ضربی؛ و اگر  مقدار $c$ مخالف صفر باشد؛ آن را همنهشتی آمیخته می نامیم.
+</p>
 
 
-        </br>
-        </br>
-        <h2 class="text-right" style="font-family: BBaran;  direction: rtl;">
-            سایر الگوریتم های همنهشتی برای تولید عدد تصادفی
-        </h2>
-        </br>
-        </br>
+</br>
+</br>
+</br>
+<h2 class="text-right" style="font-family: BBaran;  direction: rtl;">
+    بررسی یک نمونه
+</h2>
+</br>
+</br>
+<p class="text-right" style="font-family: BBaran; font-size: 20px; direction: rtl;  padding-top: 12px;">
+    با اختیار کردن اعداد 1024 به عنوان پیمانه همنهشتی، 7 به عنوان مضرب، 11 به عنوان افزاینده و 131 به عنوان هسته اولیه؛ اعداد تولیدی به شرح زیر هستند:
+</p>
 
-        <p class="text-right" style="font-family: BBaran; font-size: 20px; direction: rtl;  padding-top: 12px;">
-            <a href="http://en.wikipedia.org/wiki/Inversive_congruential_generator">1.	همنشهتی خطی معکوس</a>
-        </p>
-        <p class="text-right" style="font-family: BBaran; font-size: 20px; direction: rtl;  padding-top: 12px;">
-            <a href="http://en.wikipedia.org/wiki/Combined_Linear_Congruential_Generator">2.	همنشهتی خطی ترکیبی</a>
-        </p>
-        <p class="text-right" style="font-family: BBaran; font-size: 20px; direction: rtl;  padding-top: 12px;">
-            <a href="http://en.wikipedia.org/wiki/Lehmer_RNG">3.	الگوریتم  Lehmer RNG </a>
-        </p>
 
-        </br>
-        </br>
-        <h2 class="text-right" style="font-family: BBaran;  direction: rtl;">
-نمونه برنامه تولید کننده اعداد تصادفی
-        </h2>
-        </br>
-        </br>
-        <p class="text-left"> <span class="label label-success"> Linear Congruential Generator Class (C#) </span></p>
+</br></br>
+<p class="text-left" style="font-family: BBaran; font-size: 18px;">
+    928, 363, 504, 467, 208, 443, 40, 291, 0, 11, 88, 627, 304, 91, 648, 451, 96, 683, 696, 787, 400, 763, 232, 611, 192, 331, 280, 947, 496, 411, 840, 771, 288, 1003, 888, 83, 592, 59, 424, 931, 384, 651, 472, 243, 688, 731, 8, 67, 480, 299, 56, 403, 784, 379, 616, 227, 576, 971, 664, 563, 880, 27, 200, 387, 672, 619, 248, 723, 976, 699, 808, 547, 768, 267, 856, 883, 48, 347, 392, 707, 864, 939, 440, 19, 144, 1019, 1000, 867, 960, 587, 24, 179, 240, 667, 584, 3, 32, 235, 632, 339, 336, 315, 168, 163, 128, 907, 216, 499, 432, 987, 776, 323, 224, 555, 824, 659, 528, 635, 360, 483, 320, 203, 408, 819, 624, 283, 968, 643, 416, 875, 1016, 979, 720, 955, 552, 803, 512, 523, 600, 115, 816, 603, 136, 963, 608, 171, 184, 275, 912, 251, 744, 99, 704, 843, 792, 435, 1008, 923, 328, 259, 800, 491, 376, 595, 80, 571, 936, 419, 896, 139, 984, 755, 176, 219, 520, 579, 992, 811, 568, 915, 272, 891, 104, 739, 64, 459, 152, 51, 368, 539, 712, 899, 160, 107, 760, 211, 464, 187, 296, 35, 256, 779, 344, 371, 560, 859, 904, 195, 352, 427, 952, 531, 656, 507, 488, 355, 448, 75, 536, 691, 752, 155, 72, 515, 544, 747, 120, 851, 848, 827, 680, 675, 640, 395, 728, 1011, 944, 475, 264, 835, 736, 43, 312, 147, 16, 123, 872, 995, 832, 715, 920, 307, 112, 795, 456, 131
+</p>
+</br></br>
+<p class="text-right" style="font-family: BBaran; font-size: 20px; direction: rtl;  padding-top: 12px;">
+    تعداد اعداد تولید شده : 256
+</p>
+<p class="text-right" style="font-family: BBaran; font-size: 20px; direction: rtl;  padding-top: 12px;">
+    دقت کنید اولین عدد تولید شده 928 است و آخرین عدد برابر 131 است؛ در صورتی که الگوریتم را برای یکبار دیگر اجرا کنیم، عدد 928 بدست خواهد آمد که اولین عدد تولید شده بود
+</p>
+
+</br>
+<p>
+    \begin{align}
+    \ (7*131) + 11 \ \ (mod \ 1024) = 928 \\
+    \end{align}
+</p>
+<p class="text-right" style="font-family: BBaran; font-size: 20px; direction: rtl;  padding-top: 12px;">
+    در این جاست که روند ادامه الگوریتم به پایان می رسد.
+</p>
+</br>
+</br>
+<div id="chart" style="height: 300px; width: 980px;">
+
+</div>
+<p class="text-center" style="padding-top: 18px;"> Histogram (Ratio) </p>
+</br>
+</br>
+<div id="offsetDiv">
+    <div id="chart_1" >
+        <svg></svg>
+    </div>
+</div>
+
+</br>
+</br>
+
+
+<h2 class="text-right" style="font-family: BBaran;  direction: rtl;">
+    طول دنباله
+</h2>
+</br>
+</br>
+<p class="text-right" style="font-family: BBaran; font-size: 20px; direction: rtl;  padding-top: 12px;">
+    بدیهی است حداکثر طول دنباله برابر با  $m$ است. با انتخاب 1 به عنوان مضرب و افزاینده؛ تمامی اعداد بین $0, \ m-1$  در دنباله ظاهر خواهند شد.
+</p>
+<p class="text-right" style="font-family: BBaran; font-size: 20px; direction: rtl;  padding-top: 12px;">
+    حالت های خاصی برای اتخاذ مقادیر $ m, a, c, X_{0}$ وجود دارند که طول دنباله را به حداکثر برسانند.
+</p>
+</br>
+</br>
+<h2 class="text-right" style="font-family: BBaran;  direction: rtl;">
+    پارامترها در استفاده مشترک
+</h2>
+</br>
+</br>
+
+<p class="text-right" style="font-family: BBaran; font-size: 20px; direction: rtl;  padding-top: 12px;">
+    کارآمدترین حالت الگوریتم همنهشتی خطی زمانی است که پیمانه را توانی از 2 انتخاب کنیم؛ معمول ترین حالت $2^{32}$ یا  $2^{64}$ است.
+</p>
+</br>
+
+<table class="table table-striped table-bordered">
+    <thead>
+    <tr class="">
+        <th>Source</th>
+        <th>$m$</th>
+        <th>$a$</th>
+        <th>$c$</th>
+        <th>output bits of seed in rand()</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td class="text-center">Numerical Recipes</td>
+        <td class="text-center">$2^{32}$</td>
+        <td class="text-center">1664525</td>
+        <td class="text-center">1013904223</td>
+        <td class="text-center"></td>
+    </tr>
+    <tr>
+        <td class="text-center">Borland C/C++</td>
+        <td class="text-center">$2^{32}$</td>
+        <td class="text-center">22695477</td>
+        <td class="text-center">1</td>
+        <td class="text-center">bits 30..16 in rand(), 30..0 in lrand()</td>
+    </tr>
+    <tr>
+        <td class="text-center">glibc (used by GCC)</td>
+        <td class="text-center">$2^{31}$</td>
+        <td class="text-center">1103515245</td>
+        <td class="text-center">12345</td>
+        <td class="text-center">bits 30..0</td>
+    </tr>
+    <tr>
+        <td class="text-center">ANSI C: Watcom, Digital Mars, CodeWarrior, IBM VisualAge C/C++</td>
+        <td class="text-center">$2^{31}$</td>
+        <td class="text-center">1103515245</td>
+        <td class="text-center">12345</td>
+        <td class="text-center">bits 30..16</td>
+    </tr>
+    <tr>
+        <td class="text-center">Borland Delphi, Virtual Pascal</td>
+        <td class="text-center">$2^{32}$</td>
+        <td class="text-center">134775813</td>
+        <td class="text-center">1</td>
+        <td class="text-center">bits 63..32 of (seed * L)</td>
+    </tr>
+    <tr>
+        <td class="text-center">Java's java.util.Random</td>
+        <td class="text-center">$2^{48}$</td>
+        <td class="text-center">25214903917</td>
+        <td class="text-center">11</td>
+        <td class="text-center">bits 47...16</td>
+    </tr>
+    </tbody>
+</table>
+
+
+</br>
+</br>
+<h2 class="text-right" style="font-family: BBaran;  direction: rtl;">
+    سایر الگوریتم های همنهشتی برای تولید عدد تصادفی
+</h2>
+</br>
+</br>
+
+<p class="text-right" style="font-family: BBaran; font-size: 20px; direction: rtl;  padding-top: 12px;">
+    <a href="http://en.wikipedia.org/wiki/Inversive_congruential_generator">1.	همنشهتی خطی معکوس</a>
+</p>
+<p class="text-right" style="font-family: BBaran; font-size: 20px; direction: rtl;  padding-top: 12px;">
+    <a href="http://en.wikipedia.org/wiki/Combined_Linear_Congruential_Generator">2.	همنشهتی خطی ترکیبی</a>
+</p>
+<p class="text-right" style="font-family: BBaran; font-size: 20px; direction: rtl;  padding-top: 12px;">
+    <a href="http://en.wikipedia.org/wiki/Lehmer_RNG">3.	الگوریتم  Lehmer RNG </a>
+</p>
+
+</br>
+</br>
+<h2 class="text-right" style="font-family: BBaran;  direction: rtl;">
+    نمونه برنامه تولید کننده اعداد تصادفی
+</h2>
+</br>
+</br>
+<p class="text-left"> <span class="label label-success"> Linear Congruential Generator Class (C#) </span></p>
 
         <pre class="prettyprint linenums csharpcode"> // Author : MohammadReza Taesiri
 
@@ -354,12 +354,12 @@
 }
 </pre>
 
-        <a href="../../src/csharp/linear_congruential/CongruentialGenerator.cs" class="btn btn-primary">Download Source Code</a>
+<a href="../../src/csharp/linear_congruential/CongruentialGenerator.cs" class="btn btn-primary">Download Source Code</a>
 
-        </br> </br>
-        </br> </br>
+</br> </br>
+</br> </br>
 
-        <p class="text-left"> <span class="label label-success"> Linear Congruential Generator Script (JavaScript) </span></p>
+<p class="text-left"> <span class="label label-success"> Linear Congruential Generator Script (JavaScript) </span></p>
         <pre class="prettyprint linenums">Array.prototype.contains = function ( needle ) {
     for (i in this) {
         if (this[i] == needle) return true;
@@ -380,11 +380,11 @@ function lcg(m,seed,a,c){
     }
     return distribution;
 }</pre >
-        <a class="btn btn-primary" href="../../src/js/linear_congruential/lcg.js">Download Source Code</a>
-        </br> </br>
-        </br> </br>
+<a class="btn btn-primary" href="../../src/js/linear_congruential/lcg.js">Download Source Code</a>
+</br> </br>
+</br> </br>
 
-        <p class="text-left"> <span class="label label-success"> Linear Congruential Generator (GO) </span></p>
+<p class="text-left"> <span class="label label-success"> Linear Congruential Generator (GO) </span></p>
 
         <pre class="prettyprint linenums">package</span> randomness
 
@@ -405,35 +405,35 @@ function lcg(m,seed,a,c){
 
     <span style="color: #008000; font-weight: bold">return</span>
 }</pre>
-        <a class="btn btn-primary" href="../../src/go/randomness/randomness.go">Download Source Code</a>
+<a class="btn btn-primary" href="../../src/go/randomness/randomness.go">Download Source Code</a>
 
 
-        </br>
-        </br>
-        <h3 class="text-right" style="font-family: BBaran;  direction: rtl; padding-top: 25px;">
-منابع
-        </h3>
-        </br>
-        </br>
-        <ol>
-            <li> <a href="http://en.wikipedia.org/wiki/Linear_congruential_generator"> Wikipedia - Linear congruential generator </a> </li>
-            <li> <a href="http://www.amazon.com/Numerical-Recipes-3rd-Scientific-Computing/dp/0521880688"> Numerical Recipes 3rd Edition: The Art of Scientific Computing </a> </li>
-            <li> <a href="http://www.cs.indiana.edu/~kapadia/project2/node7.html"> Linear Congruential Generators, Indiana University </a> </li>
-            <li> <a href="http://en.wikipedia.org/wiki/Lehmer_RNG"> Lehmer random number generator </a> </li>
-            <li> <a href="http://en.wikipedia.org/wiki/Inversive_congruential_generator"> Wikipedia - Inversive congruential generator </a> </li>
-            <li> <a href="http://en.wikipedia.org/wiki/Combined_Linear_Congruential_Generator"> Wikipedia - Combined Linear Congruential Generator </a> </li>
-        </ol>
+</br>
+</br>
+<h3 class="text-right" style="font-family: BBaran;  direction: rtl; padding-top: 25px;">
+    منابع
+</h3>
+</br>
+</br>
+<ol>
+    <li> <a href="http://en.wikipedia.org/wiki/Linear_congruential_generator"> Wikipedia - Linear congruential generator </a> </li>
+    <li> <a href="http://www.amazon.com/Numerical-Recipes-3rd-Scientific-Computing/dp/0521880688"> Numerical Recipes 3rd Edition: The Art of Scientific Computing </a> </li>
+    <li> <a href="http://www.cs.indiana.edu/~kapadia/project2/node7.html"> Linear Congruential Generators, Indiana University </a> </li>
+    <li> <a href="http://en.wikipedia.org/wiki/Lehmer_RNG"> Lehmer random number generator </a> </li>
+    <li> <a href="http://en.wikipedia.org/wiki/Inversive_congruential_generator"> Wikipedia - Inversive congruential generator </a> </li>
+    <li> <a href="http://en.wikipedia.org/wiki/Combined_Linear_Congruential_Generator"> Wikipedia - Combined Linear Congruential Generator </a> </li>
+</ol>
 
-        </br>
-        </br>
-        </br>
-        </br>
-        <p class="muted text-center" style="font-family: BDavat; font-size: 24px; direction: rtl;  padding-top: 80px;" >
-            نوشته شده در اردی بهشت 1392 توسط محمدرضا تأثیری
-        </p>
-    </div>
+</br>
+</br>
+</br>
+</br>
+<p class="muted text-center" style="font-family: BDavat; font-size: 24px; direction: rtl;  padding-top: 80px;" >
+    نوشته شده در اردی بهشت 1392 توسط محمدرضا تأثیری
+</p>
+</div>
 
-    <div id="push"></div>
+<div id="push"></div>
 </div>
 
 <footer class="footer">
@@ -445,15 +445,17 @@ function lcg(m,seed,a,c){
             </a>
             <div class="media-body">
                 <ul class="footer-links">
-                    <li><a href="http://taesiri.com">[taesiri]</a></li>
+                    <li class="active"><a href="../index.html">Home</a></li>
                     <li class="muted">·</li>
-                    <li><a href="http://aut.ac.ir">Amirkabir University</a></li>
+                    <li><a href="http://taesiri.com" >taesiri</a></li>
                     <li class="muted">·</li>
-                    <li><a href="http://math-cs.aut.ac.ir">Mathematics Department</a></li>
+                    <li><a href="http://aut.ac.ir" target="_blank">Amirkabir University</a></li>
                     <li class="muted">·</li>
-                    <li><a href="https://github.com/taesiri/Probability">Github</a></li>
+                    <li><a href="http://math-cs.aut.ac.ir" target="_blank">Mathematics Department</a></li>
+                    <li class="muted">·</li>
+                    <li><a href="https://github.com/taesiri/randomness" target="_blank">Github</a></li>
                 </ul>
-                <p class="muted text-left" style="font-size: 90%;">Made with<a href="http://twitter.github.io/bootstrap/index.html"> Bootstrap </a> by <a href="http://taesiri.com"> MohammadReza Taesiri </a>. Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>, documentations under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+                <p class="muted text-left" style="font-size: 90%;">Made with<a href="http://twitter.github.io/bootstrap/index.html" target="_blank"> Bootstrap </a> by <a href="http://taesiri.com" target="_blank"> MohammadReza Taesiri </a>. Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>, documentations under <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">CC BY 3.0</a>.</p>
                 </br>
             </div>
         </div>
