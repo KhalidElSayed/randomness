@@ -12,20 +12,6 @@ text {
   font: 10px sans-serif;
 }
 
-@font-face {
-  font-family: 'BBaran';
-  src: url('../fonts/BBaran.eot?#') format('eot'),  /* IE6–8 */
-       url('../fonts/BBaran.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-       url('../fonts/BBaran.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
-}
-@font-face {
-  font-family: 'BDavat';
-  src: url('../fonts/BDavat.eot?#') format('eot'),  /* IE6–8 */
-       url('../fonts/BDavat.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-       url('../fonts/BDavat.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
-}
-
-
 body {
     padding-top: 20px;
     padding-bottom: 60px;
