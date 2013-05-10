@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>PAGE_TITLE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Probability Course">
+    <meta name="author" content="taesiri">
+    <!-- Le styles -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/prettify.css" rel="stylesheet">
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="../js/html5shiv.js"></script>
+    <![endif]-->
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="../ico/favicon.png">
+    <!--MathJax.js-->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        extensions: ["tex2jax.js"],
+        jax: ["input/TeX", "output/HTML-CSS"],
+        tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] },
+        displayAlign: "center",
+        });
+        if (MathJax.Hub.Browser.isFirefox) {
+        // handle firefox HERE!
+        }
+        if (MathJax.Hub.Browser.isChrome) {
+        // handle chrome HERE!
+        }
+    </script>
+    <script type="text/javascript"
+            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <link href="../js/nv3/src/nv.d3.css" rel="stylesheet" type="text/css">
+    <style>
+        body {
+            overflow-y:scroll;
+        }
+
+        svg {
+            overflow: hidden;
+        }
+
+        div {
+            border: 0;
+            margin: 0;
+        }
+
+            /*
+            #offsetDiv {
+            margin-left: 100px;
+            margin-top: 100px;
+            }
+            */
+
+
+        #chart_1 {
+            margin: 0;
+        }
+
+        #chart_1 svg {
+            height: 500px;
+        }
+        .bars rect {
+            fill: green;
+        }
+
+        .axis text {
+            font: 10px sans-serif;
+        }
+
+        .axis path, .axis line {
+            fill: none;
+            stroke: #000;
+            shape-rendering: crispEdges;
+        }
+
+    </style>
+</head>
+
+<body>
+<div id="wrap">
+    <!-- Begin page content -->
+    <div class="container">
+
+        <blockquote class="pull-right">
+            <p class="lead text-right" style="font-family: BBaran; font-size: 26px; direction: rtl;">ARTICLE_TITLE</p>
+            <small> <a href="http://autstat01.persianblog.ir/">Pseudorandom number generator algorithms</a></small>
+        </blockquote>
+
+
+        <hr>
+
+        <h2 class="text-right" style="font-family: BBaran;  direction: rtl;">
+ARTICLE_NAME
+        </h2>
+
+    </div>
+
+    <div id="push"></div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+
+        <div class="media">
+            <a class="pull-left" href="#">
+                <img class="media-object" src="../img/aut_s_2.png" data-src="holder.js/64x64">
+            </a>
+            <div class="media-body">
+                <ul class="footer-links">
+                    <li class="active"><a href="../index.html">Home</a></li>
+                    <li class="muted">·</li>
+                    <li><a href="http://taesiri.com" >taesiri</a></li>
+                    <li class="muted">·</li>
+                    <li><a href="http://aut.ac.ir" target="_blank">Amirkabir University</a></li>
+                    <li class="muted">·</li>
+                    <li><a href="http://math-cs.aut.ac.ir" target="_blank">Mathematics Department</a></li>
+                    <li class="muted">·</li>
+                    <li><a href="https://github.com/taesiri/randomness" target="_blank">Github</a></li>
+                </ul>
+                <p class="muted text-left" style="font-size: 90%;">Made with<a href="http://twitter.github.io/bootstrap/index.html" target="_blank"> Bootstrap </a> by <a href="http://taesiri.com" target="_blank"> MohammadReza Taesiri </a>. Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>, documentations under <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">CC BY 3.0</a>.</p>
+                </br>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../js/jquery.js"></script>
+<script src="../js/bootstrap-transition.js"></script>
+<script src="../js/bootstrap-alert.js"></script>
+<script src="../js/bootstrap-modal.js"></script>
+<script src="../js/bootstrap-dropdown.js"></script>
+<script src="../js/bootstrap-scrollspy.js"></script>
+<script src="../js/bootstrap-tab.js"></script>
+<script src="../js/bootstrap-tooltip.js"></script>
+<script src="../js/bootstrap-popover.js"></script>
+<script src="../js/bootstrap-button.js"></script>
+<script src="../js/bootstrap-collapse.js"></script>
+<script src="../js/bootstrap-carousel.js"></script>
+<script src="../js/bootstrap-typeahead.js"></script>
+<script src="../js/prettify.js"></script>
+<script src="../js/d3.v2.js"></script>
+<script src="../lib/d3.v2.js"></script>
+<script src="../lib/fisheye.js"></script>
+<script src="../js/nv3/nv.d3.js"></script>
+<script src="../js/nv3/src/tooltip.js"></script>
+<script src="../js/nv3/src/utils.js"></script>
+<script src="../js/nv3/src/models/legend.js"></script>
+<script src="../js/nv3/src/models/axis.js"></script>
+<script src="../js/nv3/src/models/distribution.js"></script>
+<script src="../js/nv3/src/models/scatter.js"></script>
+<script src="../js/nv3/src/models/scatterPlusLineChart.js"></script>
+
+<script>
+    !function ($) {
+        $(function(){
+            window.prettyPrint && prettyPrint()
+        })
+    }(window.jQuery)
+</script>
+
+
+</body>
+</html>
