@@ -204,6 +204,9 @@ body {
 #footer {
     height: 150px;
 }
+#contentpush{
+    height: 50px;
+}
 #footer {
     background-color:lightgray;
 }
