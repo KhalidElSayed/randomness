@@ -12,6 +12,7 @@
     <link href="../css/style.css" rel="stylesheet">
     <link href="../css/prettify.css" rel="stylesheet">
     <link href="../css/fonts.css" rel="stylesheet">
+    <link href="../css/font-styles.css" rel="stylesheet">
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
     <script src="../js/html5shiv.js"></script>
@@ -46,22 +47,6 @@
             src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
     <link href="../js/nv3/src/nv.d3.css" rel="stylesheet" type="text/css">
-    <style>
-        .content{
-            font-family: BCompset;
-            font-size: 20px;
-            direction: rtl;
-            padding-top: 12px;
-        }
-        .content-bigg{
-            font-size: 24px;
-        }
-        .content-bigg-bold{
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-    </style>
 </head>
 
 <body>
@@ -70,27 +55,30 @@
     <div class="container">
 
         <blockquote>
-            <p class="lead" style="font-size: 26px; ">Multiple Recursive Generator (MRG)</p>
+            <p class="lead" style="font-size: 26px; "> Multiple Recursive Generator (MRG) </p>
             <small> <a href="http://autstat01.persianblog.ir/">Pseudorandom number generator algorithms</a></small>
         </blockquote>
-
-
-        <hr>
-
-        <h2 class="text-right" style="font-family: BBaran;  direction: rtl;">
+        <h2 class="text-right page-header">
             مولد چندگانه بازگشتی برای تولید اعداد تصادفی!
         </h2>
-       </br>
-
         <p class="text-right content content-bigg" >
             رابطه بازگشتی برای تولید اعداد در این روش به شکل زیر است:
         </p>
         </br>
         <p>
             \begin{align}
-            \ x_{n} = \big( a_1x_{n-1} + \dotsm +  a_kx_{n-k} \big) (mod \ m) \\
+            \ x_{n} = \big( a_1x_{n-1} + \dotsm +  a_kx_{n-k} \big) \ \ (mod \ m) \\
             \end{align}
         </p>
+
+
+        <p class="text-right content content-bigg" >
+            در این رابطه $m$ و $k$ اعداد صحیح مثبت هستند. ضرایب $a_1,\dotsm ,a_k$ در بازه ی $[-(m-1), \dotsm , m-1]$.
+        </p>
+
+
+
+        </br>
 
     </div>
 
