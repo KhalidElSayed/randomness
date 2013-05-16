@@ -1,0 +1,42 @@
+h3{
+    font-family: BBaran;
+    direction: rtl;
+    padding-top: 25px;
+}
+.page-header{
+    font-family: BBaran;
+    direction: rtl;
+    padding-bottom: 20px;
+    padding-top: 40px;
+}
+.page-top-header{
+    font-family: BBaran;
+    font-size: 26px;
+    direction: rtl;
+}
+
+.content{
+    line-height: normal;
+    font-family: BCompset;
+    font-size: 20px;
+    direction: rtl;
+    padding-top: 12px;
+}
+.content-bigg{
+    font-size: 24px;
+}
+.content-small{
+    font-size: 16px;
+}
+.content-bigg-bold{
+    font-size: 24px;
+    font-weight: bold;
+}
+.date-stamp
+{
+    font-family: BDavat;
+    font-size: 24px;
+    direction: rtl;
+    padding-top: 80px;
+}
+
