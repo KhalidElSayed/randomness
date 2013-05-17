@@ -1,7 +1,12 @@
 h3{
+     font-family: BBaran;
+     direction: rtl;
+     padding-top: 25px;
+ }
+h2{
     font-family: BBaran;
     direction: rtl;
-    padding-top: 25px;
+    padding-top: 35px;
 }
 .page-header{
     font-family: BBaran;
