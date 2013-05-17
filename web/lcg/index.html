@@ -90,6 +90,22 @@
             stroke: #000;
             shape-rendering: crispEdges;
         }
+        #secret
+        {
+          background-color: #000000;
+          -webkit-user-select: none;
+          -khtml-user-select: none;
+          -moz-user-select: none;
+          -o-user-select: none;
+          user-select: none;
+        }
+        #secret > p {
+            color: black;
+        }
+        #secret:hover{
+            background-color: transparent;
+        }
+
 
     </style>
 </head>
@@ -272,40 +288,50 @@
 <br/>
 <br/>
 
-<h2 class="text-right">
+<h2 class="text-right" id="special">
     چگونه می‌توان LCG را شکست ؟ (چگونه می‌توان مقادیر خروجی آن را پیش‌بینی کرد ؟)
 </h2>
 <br/><br/>
 
-<p class="text-right content content-bigg">
-<strong>روش کار برای پیدا کردن پیمانه همنشهتی:</strong>
-<br/>
-<br/>
-    تعریف میکنیم
+<p  class="text-center content content-bigg" style="color:red;">
+    اگر تمایل دارید خودتان در مورد این مسئله فکر کنید؛ می‌توانید این بخش را نخوانید
 </p>
-<p>
-    \begin{align}
-    \ t_{n} = s_{n+1} – s_{n} \\
-    \end{align}
-    \begin{align}
-    \ U_n = | \  t_{n+2}t_{n} - t_{n+1}^2 \ | \\
-    \end{align}
+<p  class="text-center content" style="color:red;">
+    در غیر این صورت نشانگر ماوس را  وارد ناحیه سیاه شده نمایید
 </p>
-<br/>
-<br/>
-<p class="text-right content content-bigg">
-    به احتمال بالا مقدار پیمانه برابر خواهد بود با
-</p>
-<p>
-    \begin{align}
-    \ gcd(u_1,u_2, \dotsm ,u_{k}) \\
-    \end{align}
-</p>
-<br/>
-<br/>
-<p class="text-right content content-bigg">
-    در این رابطه $k$ دلخواه است. با بزرگ اختیار شدن $k$، احتمال عدم موفقیت به صورت توانی کاهش خواهد یافت.
-</p>
+<br/><br/>
+<div  id="secret" style="padding-bottom: 15px; height: 600px; width: 980px;">
+    <p class="text-right content content-bigg">
+        <strong>روش کار برای پیدا کردن پیمانه همنشهتی:</strong>
+        <br/>
+        <br/>
+        تعریف میکنیم
+    </p>
+    <p >
+        \begin{align}
+        \ t_{n} = s_{n+1} – s_{n} \\
+        \end{align}
+        \begin{align}
+        \ U_n = | \  t_{n+2}t_{n} - t_{n+1}^2 \ | \\
+        \end{align}
+    </p>
+    <br/>
+    <br/>
+    <p class="text-right content content-bigg">
+        به احتمال بالا مقدار پیمانه برابر خواهد بود با
+    </p>
+    <p>
+        \begin{align}
+        \ gcd(u_1,u_2, \dotsm ,u_{k}) \\
+        \end{align}
+    </p>
+    <br/>
+    <br/>
+    <p class="text-right content content-bigg">
+        در این رابطه $k$ دلخواه است. با بزرگ اختیار شدن $k$، احتمال عدم موفقیت به صورت توانی کاهش خواهد یافت.
+    </p>
+</div>
+
 
 <br/>
 <br/>
@@ -462,6 +488,7 @@ function lcg(m,seed,a,c){
     <li> <a href="http://en.wikipedia.org/wiki/Lehmer_RNG"> Lehmer random number generator </a> </li>
     <li> <a href="http://en.wikipedia.org/wiki/Inversive_congruential_generator"> Wikipedia - Inversive congruential generator </a> </li>
     <li> <a href="http://en.wikipedia.org/wiki/Combined_Linear_Congruential_Generator"> Wikipedia - Combined Linear Congruential Generator </a> </li>
+    <li> <a href="http://security.stackexchange.com/questions/4268/cracking-a-linear-congruential-generator"> Security.Stackexchange.com - Cracking a linear congruential generator </a> </li>
 </ol>
 
 <br/><br/><br/><br/>
