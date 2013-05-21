@@ -78,24 +78,23 @@
             \ x_{n+1} = x_{n}^2 \ \ (mod \ M) \\
             \end{align}
         </p>
-        <p></p></br>
+        <p></p><br/>
 
         <p class="text-right content content-bigg">
             در این الگوریتم  $M=pq$ ضرب دو عدد اول بزرگ $p$ و $q$ است. بهتر است که هسته الگوریتم، $x_{0}$ نسبت به $M$ هم‌اول باشد و همچنین عدد 1 و یا صفر نباشد.
 
             هر دو عدد $p$ , $q$ باید با عدد ۳ به پیمانه ۴ متجانس باشند.
         </p>
-        </br>
+        <br/>
         <h2 class="text-right">
             امنیت
         </h2>
         <p class="text-right content content-bigg">
             این روش برای تولید اعداد تصادفی برای مصارف شبیه سازی مناسب نمی‌باشد و تنها برای مصارف رمزنگاری مناسب است. این روش با تمامی روش‌هایی که مطرح شد؛ از نظر امنیت متفاوت است.
-            </br>
-            </br>
+            <br/><br/>
             از آنجایی که پیچیدگی محاسباتی الگوریتم‌های تجزیه و شکستن آنها به عوامل اول، بالاست این الگوریتم از لحاظ امنیتی دارای رتبه بالایی است.برای پیش‌بینی بیت‌های عددی که با استفاده از این الگوریتم به دست می‌آید باید محاسباتی با پیچیدگی معادل تجزیه عدد $M$ به عوامل اول را انجام داد.
-            </br>
-            </br>
+            <br/>
+            <br/>
 
             مشکل اصلی پیش‌بینی خروجی بلام بلام شاب به دلیل مسئله <a href="http://en.wikipedia.org/wiki/Quadratic_residuosity_problem"> <strong> quadratic residuosity</strong> </a>  می‌باشد
         </p>
@@ -103,22 +102,160 @@
 
 
 
-        </br>
-        </br>
-        <h2 class="text-right">
-            منابع
+        <br/>
+        <h2>
+            بررسی یک نمونه
         </h2>
         </br>
         </br>
+        <p class="text-right content content-bigg">
+            اعداد p و q را به ترتیب 113 و 839 و عدد 613 به عنوان هسته؛ خروجی الگوریتم به صورت زیر است
+        </p>
+
+
+        </br></br>
+        <p class="text-left" style="font-family: BBaran; font-size: 18px; line-height: normal; ">
+            91348, 18999, 31752, 11866, 13561, 69948, 17855, 59891, 3843, 73564, 78536, 44297, 3730, 71078, 6668, 92548, 78310, 54919, 1470, 75146, 26782, 60569, 46896, 91644, 49834, 52998, 35822, 2939, 10284, 50851, 58083, 22601, 79892, 40003, 87463, 83960, 1922, 91418, 13674, 18872, 57292, 60117, 10849, 45314, 28590, 56953, 12318, 41924, 89610, 83621, 76163, 36274, 71530, 91531, 18985, 68818, 23053, 47574, 52772, 23166, 55936, 15482, 20228, 79779, 10510, 9945, 19324, 67010, 90966, 58196, 78762, 41020, 5764, 41246, 15708, 53450, 83169, 58648, 84751, 58874, 3956, 6781, 566, 35935, 52885, 16725, 44975, 43280, 56501, 21697, 43054, 75259, 52094, 29268, 34579, 1357, 40116, 39438, 47009, 84525, 9719, 31189, 33901, 27347, 20793, 28929, 25652, 64524, 86785, 73338, 61134, 74016, 40568, 7911, 11301, 7572, 71756, 50173, 14465, 91983, 11188, 26104, 40907, 39099, 63733, 78988, 45088, 76050, 91079, 56162, 36161, 39777, 70513, 24861, 22488, 9606, 28025, 19437, 85881, 35596, 74468, 31980, 37291, 84412, 70852, 70061, 6103, 82265, 16951, 71191, 60682, 1244, 30624, 93339, 69270, 55823, 90853, 85768, 74694, 86107, 34014, 22375, 59665, 4182, 44636, 3391, 27234, 15595, 24070, 94130, 79101, 85429, 60795, 75937, 76615, 72434, 64976, 30059, 32771, 59552, 90062, 45766, 50512, 16160, 47122, 8137, 35483, 6329, 47687, 9267, 76954, 83282, 1018, 88254, 89045, 18194, 50399, 84864, 74355, 90627, 27912, 50625, 67801, 68592, 65089, 32319, 29042, 34692, 54806, 22262, 40455, 48591, 11753, 94017, 55258, 92322, 12770, 4860, 12657, 70626, 45992, 25087, 28703, 84186, 80118, 80796, 57631, 53337, 56727, 13335, 59100, 25313, 42263, 92096, 49382, 51077, 55710, 2148, 63168, 54015, 29607, 83734, 25878, 49043, 57066, 2713, 60230, 52659, 55145, 36500, 22036, 78649, 77293, 39551, 60908, 81361, 92774, 56388, 64185, 65654, 47461, 27008, 81813, 87576, 48704, 8476, 73677, 30737, 11414, 14578, 55597, 33788, 57857, 81700, 3165, 62490, 89384, 18759, 71304, 45427, 43167, 53111, 80457, 1696, 32206, 37856, 68931, 40342, 20002, 89271, 24635, 23618, 60343, 25200, 22714, 80909, 32545, 88028, 68253, 35257, 41472, 32997, 38421, 28251, 33675, 19098, 11075, 70174, 19889, 37517, 20567, 67462, 6216, 52207, 59213, 26895, 58422, 78084, 72886, 48365, 114, 12996, 44749, 54354, 76389, 3278, 32093, 72208, 84299, 62716, 38647, 1131, 46670, 87689, 38986, 57179, 18646, 16047, 10397, 17629, 4295, 54467, 48252, 80005, 227, 51529, 72999, 36952, 39890, 66219, 37404, 87124, 58535, 21245, 68705, 31302, 79666, 6555, 20454, 77632, 36048, 33562, 5877, 29381, 25426, 87350, 49947, 46218, 7007, 82830, 5538, 46783, 29494, 41811, 13448, 51755, 92661, 54580, 45653, 54128, 19663, 10623, 27799, 12544, 67123, 78875, 30285, 18307, 3504, 47913, 93678, 42150, 34127, 42941, 28138, 13787, 88141, 65880, 4747, 64750, 7346, 18533, 81135, 58987, 49269, 90740, 44071, 36839, 44523, 72773, 85316, 12431, 89158, 56049, 60456, 23279, 89836, 61021, 17516, 14804, 59439
+        </p>
+        </br></br>
+
+
+
+
+
+
+        <br/>
+        <br/>
+        <h2 class="text-right">
+            نمونه برنامه تولید کننده اعداد تصادفی
+        </h2>
+        <br/><br/>
+        <h3 class="text-left" style="direction: ltr">C#</h3>
+        <p class="text-left"> <span class="label label-success"> Blum Blum Shub Class (C#) </span></p>
+
+        <pre class="prettyprint linenums csharpcode"><span style="color: #008000; font-weight: bold">using</span> <span style="color: #0e84b5; font-weight: bold">System.Collections.Generic</span>;
+<span style="color: #008000; font-weight: bold">using</span> <span style="color: #0e84b5; font-weight: bold">System.Numerics</span>;
+
+<span style="color: #008000; font-weight: bold">namespace</span> <span style="color: #0e84b5; font-weight: bold">Randomness</span>
+{
+    <span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #B00060; font-weight: bold">BlumBlumShub</span>
+    {
+        <span style="color: #008000; font-weight: bold">private</span> <span style="color: #008000; font-weight: bold">readonly</span> <span style="color: #303090; font-weight: bold">int</span> _p;       <span style="color: #808080">// p</span>
+        <span style="color: #008000; font-weight: bold">private</span> <span style="color: #008000; font-weight: bold">readonly</span> <span style="color: #303090; font-weight: bold">int</span> _q;      <span style="color: #808080">// q</span>
+                                     <span style="color: #808080">// Modulus = p * q</span>
+        <span style="color: #008000; font-weight: bold">private</span> <span style="color: #008000; font-weight: bold">readonly</span> <span style="color: #303090; font-weight: bold">int</span> _seed; <span style="color: #808080">// Seed or Start Value</span>
+
+        <span style="color: #008000; font-weight: bold">private</span> <span style="color: #303090; font-weight: bold">int</span> _currentValue;
+
+        <span style="color: #008000; font-weight: bold">public</span> <span style="color: #0060B0; font-weight: bold">BlumBlumShub</span>(<span style="color: #303090; font-weight: bold">int</span> p, <span style="color: #303090; font-weight: bold">int</span> q, <span style="color: #303090; font-weight: bold">int</span> seed)
+        {
+            _seed = seed;
+            _p = p;
+            _q = q;
+            _currentValue = _seed;
+        }
+
+        <span style="color: #008000; font-weight: bold">public</span> <span style="color: #303090; font-weight: bold">int</span> <span style="color: #0060B0; font-weight: bold">Generate</span>()
+        {
+            _currentValue = (<span style="color: #303090; font-weight: bold">int</span>) ((((BigInteger)_currentValue) * ((BigInteger)_currentValue)) % (_p * _q));
+            <span style="color: #008000; font-weight: bold">return</span> _currentValue;
+        }
+
+
+        <span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">static</span> List&lt;<span style="color: #303090; font-weight: bold">int</span>&gt; GenerateFullCycle(<span style="color: #303090; font-weight: bold">int</span> p, <span style="color: #303090; font-weight: bold">int</span> q, <span style="color: #303090; font-weight: bold">int</span> seed)
+        {
+            <span style="color: #303090; font-weight: bold">var</span> randomNumbers = <span style="color: #008000; font-weight: bold">new</span> List&lt;<span style="color: #303090; font-weight: bold">int</span>&gt;();
+            <span style="color: #303090; font-weight: bold">var</span> bbs = <span style="color: #008000; font-weight: bold">new</span> BlumBlumShub(p, q, seed);
+
+            <span style="color: #303090; font-weight: bold">int</span> rvalue = bbs.Generate();
+            <span style="color: #008000; font-weight: bold">while</span> (randomNumbers.Contains(rvalue) == <span style="color: #008000; font-weight: bold">false</span>)
+            {
+                randomNumbers.Add(rvalue);
+                rvalue = bbs.Generate();
+            }
+
+            <span style="color: #008000; font-weight: bold">return</span> randomNumbers;
+        }
+    }
+}</pre>
+
+        <a href="../../src/csharp/blum_blum_shub/BlumBlumShub.cs" class="btn btn-primary">Download Source Code</a>
+
+        <br/>
+        <br/>
+        <br/>
+
+
+        <p class="text-left"> <span class="label label-info"> Sample Application </span></p>
+        <pre class="prettyprint linenums csharpcode"><span style="color: #008000; font-weight: bold">using</span> <span style="color: #0e84b5; font-weight: bold">System</span>;
+<span style="color: #008000; font-weight: bold">using</span> <span style="color: #0e84b5; font-weight: bold">System.Collections.Generic</span>;
+
+<span style="color: #008000; font-weight: bold">namespace</span> <span style="color: #0e84b5; font-weight: bold">Randomness.Test</span>
+{
+    <span style="color: #008000; font-weight: bold">internal</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #B00060; font-weight: bold">Program</span>
+    {
+        <span style="color: #008000; font-weight: bold">private</span> <span style="color: #008000; font-weight: bold">static</span> <span style="color: #008000; font-weight: bold">void</span> <span style="color: #0060B0; font-weight: bold">Main</span>(<span style="color: #303090; font-weight: bold">string</span>[] args)
+        {
+            List&lt;<span style="color: #303090; font-weight: bold">int</span>&gt; data = BlumBlumShub.GenerateFullCycle(<span style="color: #6000E0; font-weight: bold">11</span>, <span style="color: #6000E0; font-weight: bold">19</span>, <span style="color: #6000E0; font-weight: bold">3</span>);
+
+            <span style="color: #008000; font-weight: bold">foreach</span> (<span style="color: #303090; font-weight: bold">int</span> t <span style="color: #008000; font-weight: bold">in</span> data)
+            {
+                Console.Write(<span style="color: #008000; font-weight: bold">value</span>: <span style="color: #303090; font-weight: bold">string</span>.Format(<span style="background-color: #fff0f0">&quot;{0} \t Least significant bit : {1} \n&quot;</span>, t, t &amp; <span style="color: #6000E0; font-weight: bold">1</span>));
+            }
+
+            Console.ReadLine();
+        }
+    }
+}</pre>
+
+        <a href="../../src/csharp/blum_blum_shub/TestApp.cs" class="btn btn-primary">Download Source Code</a>
+        <br/>
+        <br/>
+        <br/>
+        <p class="text-left"> <span class="label label-important"> Output </span></p>
+        <pre class="prettyprint">9        Least significant bit : 1
+81       Least significant bit : 1
+82       Least significant bit : 0
+36       Least significant bit : 0
+42       Least significant bit : 0
+92       Least significant bit : 0
+104      Least significant bit : 0
+157      Least significant bit : 1
+196      Least significant bit : 0
+169      Least significant bit : 1
+137      Least significant bit : 1
+168      Least significant bit : 0</pre>
+
+        <h3 class="text-left" style="direction: ltr">Sage</h3>
+
+        <p class="text-left"> <span class="label label-info"> Blum Blum Shub Sample</span></p>
+
+        <pre class="prettyprint linenums csharpcode"><span style="color: #008000; font-weight: bold">from</span> <span style="color: #0e84b5; font-weight: bold">sage.crypto.stream</span> <span style="color: #008000; font-weight: bold">import</span> blum_blum_shub
+blum_blum_shub(length<span style="color: #303030">=</span><span style="color: #0000D0; font-weight: bold">6</span>, seed<span style="color: #303030">=</span><span style="color: #0000D0; font-weight: bold">3</span>, p<span style="color: #303030">=</span><span style="color: #0000D0; font-weight: bold">11</span>, q<span style="color: #303030">=</span><span style="color: #0000D0; font-weight: bold">19</span>)
+<span style="color: #808080"># Output : 110000</span></pre>
+        <a href="../../src/sage/blum_blum_shub/bbs-sample.py" class="btn btn-primary">Download Source Code</a>
+
+
+
+
+        <br/>
+        <br/>
+        <br/>
+        <h2 class="text-right">
+            منابع
+        </h2>
+        <br/>
+        <br/>
         <ol>
             <li> <a href="http://en.wikipedia.org/wiki/Blum_Blum_Shub"> Wikipedia - Blum Blum Shub </a> </li>
             <li> <a href="http://www.cs.indiana.edu/~kapadia/project2/node11.html"> Blum Blum Shub Generator </a> </li>
+            <li> <a href="http://www.sagemath.org/doc/reference/cryptography/sage/crypto/stream.html"> Stream Cryptosystems </a> </li>
         </ol>
 
-        </br>
-        </br>
-        </br>
-        </br>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
         <p class="muted text-center date-stamp">
             نوشته شده در اردی‌بهشت 1392 توسط محمدرضا تأثیری
         </p>
