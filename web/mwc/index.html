@@ -185,8 +185,30 @@
                 ادامه دارد ...
             </p>
 
+            <br />
+            <br />
+            <h2 class="text-right">نمونه برنامه
+            </h2>
+            <br />
+            <br />
+            <h3 class="text-left" style="direction: ltr">C\C++</h3>
+             <br />
+            <p class="text-left"><span class="label label-success"> Multiply with carry </span></p>
 
-
+            <pre class="linenums prettyprint"><span style="color: #008000; font-weight: bold">static</span> <span style="color: #303090; font-weight: bold">unsigned</span> <span style="color: #303090; font-weight: bold">long</span> Q[<span style="color: #0000D0; font-weight: bold">4096</span>],c<span style="color: #303030">=</span><span style="color: #0000D0; font-weight: bold">362436</span>;
+<span style="color: #303090; font-weight: bold">unsigned</span> <span style="color: #303090; font-weight: bold">long</span> CMWC4096(<span style="color: #303090; font-weight: bold">void</span>)
+{
+	<span style="color: #303090; font-weight: bold">unsigned</span> <span style="color: #303090; font-weight: bold">long</span> <span style="color: #303090; font-weight: bold">long</span> t, a<span style="color: #303030">=</span><span style="color: #0000D0; font-weight: bold">18782LL</span>;
+	<span style="color: #008000; font-weight: bold">static</span> <span style="color: #303090; font-weight: bold">unsigned</span> <span style="color: #303090; font-weight: bold">long</span> i<span style="color: #303030">=</span><span style="color: #0000D0; font-weight: bold">4095</span>;
+	<span style="color: #303090; font-weight: bold">unsigned</span> <span style="color: #303090; font-weight: bold">long</span> x,r<span style="color: #303030">=</span><span style="color: #005080; font-weight: bold">0xfffffffe</span>;
+	i<span style="color: #303030">=</span>(i<span style="color: #303030">+</span><span style="color: #0000D0; font-weight: bold">1</span>)<span style="color: #303030">&amp;</span><span style="color: #0000D0; font-weight: bold">4095</span>;
+	t<span style="color: #303030">=</span>a<span style="color: #303030">*</span>Q[i]<span style="color: #303030">+</span>c;
+	c<span style="color: #303030">=</span>(t<span style="color: #303030">&gt;&gt;</span><span style="color: #0000D0; font-weight: bold">32</span>); x<span style="color: #303030">=</span>t<span style="color: #303030">+</span>c; <span style="color: #008000; font-weight: bold">if</span>(x<span style="color: #303030">&lt;</span>c){x<span style="color: #303030">++</span>;c<span style="color: #303030">++</span>;}
+	<span style="color: #008000; font-weight: bold">return</span>(Q[i]<span style="color: #303030">=</span>r<span style="color: #303030">-</span>x);   
+}
+</pre>
+    
+            <a href="../../src/cpp/multiply_with_carry/MWC.c" class="btn btn-primary">Download Source Code</a>
 
             <br />
             <br />
