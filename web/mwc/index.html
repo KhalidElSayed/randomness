@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Multiply with carry</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Probability Course">
+    <meta name="author" content="taesiri">
+    <!-- Le styles -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/prettify.css" rel="stylesheet">
+    <link href="../css/fonts.css" rel="stylesheet">
+    <link href="../css/font-styles.css" rel="stylesheet">
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="../js/html5shiv.js"></script>
+    <![endif]-->
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="../ico/favicon.png">
+    <!--MathJax.js-->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        extensions: ["tex2jax.js"],
+        jax: ["input/TeX", "output/HTML-CSS"],
+        tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] },
+        displayAlign: "center",
+        });
+        if (MathJax.Hub.Browser.isFirefox) {
+        // handle firefox HERE!
+        }
+        if (MathJax.Hub.Browser.isChrome) {
+
+            var $ = document; // shortcut
+            var cssId = 'customCSS';  // you could encode the css path itself to generate id..
+            if (!$.getElementById(cssId))
+            {
+                 var head  = $.getElementsByTagName('head')[0];
+                 var link  = $.createElement('link');
+                 link.id   = cssId;
+                 link.rel  = 'stylesheet';
+                 link.type = 'text/css';
+                 link.href = '../css/chromecss.css';
+                 link.media = 'all';
+                 head.appendChild(link);
+            }
+        }
+    </script>
+    <script type="text/javascript"
+        src="http://cdn.mathjax.org/mathjax/2.2-latest/MathJax.js">
+    </script>
+    <link href="../js/nv3/src/nv.d3.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div id="wrap">
+        <!-- Begin page content -->
+        <div class="container">
+
+            <blockquote class="pull-right">
+                <p class="lead text-right page-top-header">تولید اعداد شبه‌تصادفی به روش Multiply with carry</p>
+                <small><a href="http://autstat01.persianblog.ir/">Pseudorandom number generator algorithms</a></small>
+            </blockquote>
+
+
+            <hr>
+
+            <h2 class="text-right page-header">مولدهای  Add-with-Carry, Subtract-with-Borrow, Multiply-with-Carry
+            </h2>
+
+
+            <p class="text-right content content-bigg">
+                Marsaglia و Zaman در سال 1991 دو مولد برای ساخت اعداد شبه‌تصادفی معرفی کردند؛ که به این روش‌ها <strong>add with carry</strong> (به اختصار AWC) و <strong>subtract with borrow</strong> (به اختصار SWB) گفته می‌شود.
+
+            <br />
+
+                Add-with-carry به فرم زیر است
+            </p>
+
+            <br />
+
+            <p>
+                \begin{align}
+            \ x_i = \big( x_{i-s} + x_{i-r} + c_i \big) \  mod \ m \\
+            \end{align}
+            </p>
+
+            <br />
+
+            <p class="text-right content content-bigg">
+                که در این عبارت $c_1 = 0$ و اگر $ x_{i-s} + x_{i-r} + c_i < m$ آنگاه $c_i =1$ در غیر این صورت $c_i = 0$
+
+            </p>
+            <p class="text-right content content-bigg ">
+                مقدار <span>$c$</span> را <strong>Carry</strong> گويند.
+            </p>
+
+            <br />
+
+
+            <h2 class="text-right page-header">طول دنباله
+            </h2>
+            <p class="text-right content content-bigg ">
+                Marsaglia و Zaman مقادیر متفاوتی را برای s ، r و m بررسی کردند. برای بعضی از مقادیر (که آنها پیش‌نهاد کردند)، طول دنباله تولید شده  به <span>$10^{43}$</span> نیز می‌رسد
+            
+            <br />
+                <br />
+
+                این روش در ابتدا یک روش غیر خطی به نظر می‌رسید؛ اما در سال 1992، Tezuka و L’Ecuyer نشان دادند که اعداد بدست آمده از این روش اساساً با اعداد بدست آمده از یک مولد همنهشتی خطی با پیمانه اول بسیار بزرگ، یکسان‌اند. (در حقیقت، مولدهای AWC و SWB را می‌توان به عنوان پیاده‌سازی بهینه چنین مولد همنهشتی خطی‌ بزرگی دانست.)
+                            
+            </p>
+            <br />
+            <br />
+            <h2>مولد Multiply with carry
+            </h2>
+            <p class="text-right content content-bigg">
+                Marsaglia هم‌چنین روش multiply-with-carry را برای تولید اعداد تصادفی معرفی کرد که حالت تعمیم یافته AWC است. الگوریتم MWC به شکل زیر است:
+            </p>
+            <br />
+            <p class="text-right content content-bigg">
+                یک MWC نیاز به یک <strong>پیمانه همنهشتی</strong> b، یک <strong>افزاینده</strong> a،  و r عدد تصادفی اولیه به عنوان<strong> هسته </strong>دارد.           
+            </p>
+            <p>
+                \begin{align}
+                \ x_0,x_1,\dotsm ,x_{r-1} \\ \\
+                \end{align}
+            </p>
+            <p class="text-right content content-bigg">
+                و همچنین مقدار اولیه $c_{r-1} < a$
+            </p>
+            <br />
+            <p>
+                \begin{align}
+            \ x_n = \big( ax_{n-r} + c_{n-1} \big) \ mod \ b \\
+            \end{align}
+            <br />
+                \begin{align}
+            \ c_n = \lfloor \frac{ax_{n-r} + c_{n-1}}{b} \rfloor \ , \ n \geq r
+            \end{align}
+            </p>
+            <br />
+            <p class="text-right content content-bigg">
+                خروجی الگوریتم دنباله‌ی زیر است
+            </p>
+            <p>
+                \begin{align}
+            \ x_{r},x_{r+1},x_{r+2},\dotsm  \\ \\
+            \end{align}
+            </p>
+            <p></p>
+            <br />
+
+            <br />
+            <h2 class="text-right">مقایسه با مولد همنشتی خطی
+            </h2>
+
+            <p class="text-right content content-bigg">
+                <a href="../lcg/">مولدهای همنهشتی خطی</a> به شکل زیر هستند
+            </p>
+
+            <br />
+
+            <p>
+                \begin{align}
+            \ X_{n+1} = \bigg( aX_{n} + c \bigg) \ mod \ 2^{32} \\
+            \end{align}
+            </p>
+
+            <br />
+            <p class="text-right content content-bigg">
+                زیرا بیشتر پردازنده های حسابی قابلیت این را دارند که افزاینده (a) و مقدار x در هر مرحله (مقدار جاری) را در ثبات 32 بیتی قرار دهند.
+            </p>
+
+            <p class="text-right content content-bigg">
+                ادامه دارد ...
+            </p>
+
+
+
+
+            <br />
+            <br />
+            <br />
+            <h2 class="text-right">منابع
+            </h2>
+            <br />
+            <br />
+            <ol>
+                <li><a href="http://en.wikipedia.org/wiki/Complementary-multiply-with-carry">Wikipedia - Multiply-with-carry </a></li>
+                <li><a href="http://www.jstatsoft.org/v08/i14/paper">The Journal of Modern Applied Statistical Methods, Random Number Generators </a></li>
+                <li><a href="http://www.amazon.com/gp/search?index=books&linkCode=qs&keywords=0387001786">Random Number Generation and Monte Carlo Methods (Statistics and Computing)  </a></li>
+            </ol>
+
+            <br />
+            <br />
+            <br />
+            <br />
+            <p class="muted text-center date-stamp">
+                نوشته شده در خرداد ماه 1392 توسط محمدرضا تأثیری
+            </p>
+
+        </div>
+        <div id="push"></div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+
+            <div class="media">
+                <a class="pull-left" href="#">
+                    <img class="media-object" src="../img/aut_s_2.png" data-src="holder.js/64x64">
+                </a>
+                <div class="media-body">
+                    <ul class="footer-links">
+                        <li class="active"><a href="../index.html">Home</a></li>
+                        <li class="muted">·</li>
+                        <li><a href="http://taesiri.com">taesiri</a></li>
+                        <li class="muted">·</li>
+                        <li><a href="http://aut.ac.ir" target="_blank">Amirkabir University</a></li>
+                        <li class="muted">·</li>
+                        <li><a href="http://math-cs.aut.ac.ir" target="_blank">Mathematics Department</a></li>
+                        <li class="muted">·</li>
+                        <li><a href="https://github.com/taesiri/randomness" target="_blank">Github</a></li>
+                    </ul>
+                    <p class="muted text-left" style="font-size: 90%;">Made with<a href="http://twitter.github.io/bootstrap/index.html" target="_blank"> Bootstrap </a>by <a href="http://taesiri.com" target="_blank">MohammadReza Taesiri </a>. Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>, documentations under <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">CC BY 3.0</a>.</p>
+                    </br>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Le javascript
+================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap-transition.js"></script>
+    <script src="../js/bootstrap-alert.js"></script>
+    <script src="../js/bootstrap-modal.js"></script>
+    <script src="../js/bootstrap-dropdown.js"></script>
+    <script src="../js/bootstrap-scrollspy.js"></script>
+    <script src="../js/bootstrap-tab.js"></script>
+    <script src="../js/bootstrap-tooltip.js"></script>
+    <script src="../js/bootstrap-popover.js"></script>
+    <script src="../js/bootstrap-button.js"></script>
+    <script src="../js/bootstrap-collapse.js"></script>
+    <script src="../js/bootstrap-carousel.js"></script>
+    <script src="../js/bootstrap-typeahead.js"></script>
+    <script src="../js/prettify.js"></script>
+    <script src="../js/d3.v2.js"></script>
+    <script src="../lib/d3.v2.js"></script>
+    <script src="../lib/fisheye.js"></script>
+    <script src="../js/nv3/nv.d3.js"></script>
+    <script src="../js/nv3/src/tooltip.js"></script>
+    <script src="../js/nv3/src/utils.js"></script>
+    <script src="../js/nv3/src/models/legend.js"></script>
+    <script src="../js/nv3/src/models/axis.js"></script>
+    <script src="../js/nv3/src/models/distribution.js"></script>
+    <script src="../js/nv3/src/models/scatter.js"></script>
+    <script src="../js/nv3/src/models/scatterPlusLineChart.js"></script>
+
+    <script>
+        !function ($) {
+            $(function () {
+                window.prettyPrint && prettyPrint()
+            })
+        }(window.jQuery)
+    </script>
+
+
+</body>
+</html>
