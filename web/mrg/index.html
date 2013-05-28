@@ -44,110 +44,162 @@
         }
     </script>
     <script type="text/javascript"
-            src="http://cdn.mathjax.org/mathjax/2.2-latest/MathJax.js">
+        src="http://cdn.mathjax.org/mathjax/2.2-latest/MathJax.js">
     </script>
     <link href="../js/nv3/src/nv.d3.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-<div id="wrap">
-    <!-- Begin page content -->
-    <div class="container">
+    <div id="wrap">
+        <!-- Begin page content -->
+        <div class="container">
 
-        <blockquote>
-            <p class="lead" style="font-size: 26px; "> Multiple Recursive Generator (MRG) </p>
-            <small> <a href="http://autstat01.persianblog.ir/">Pseudorandom number generator algorithms</a></small>
-        </blockquote>
-        <h2 class="text-right page-header">
-            مولد چندگانه بازگشتی برای تولید اعداد تصادفی!
-        </h2>
-        <p class="text-right content content-bigg" >
-            رابطه بازگشتی برای تولید اعداد در این روش به شکل زیر است:
-        </p>
-        </br>
-        <p>
-            \begin{align}
-            \ x_{n} = \big( a_1x_{n-1} + \dotsm +  a_kx_{n-k} \big) \ \ (mod \ m) \\
+            <blockquote class="pull-right">
+                <p class="lead text-right page-top-header">تولید اعداد شبه‌تصادفی به روش مولد چندگانه بازگشتی!</p>
+                <small><a href="http://autstat01.persianblog.ir/">Pseudorandom number generator algorithms</a></small>
+            </blockquote>
+            <hr>
+
+            <h2 class="text-right page-header">مولد چندگانه بازگشتی برای تولید اعداد تصادفی!
+            </h2>
+            <p class="text-right content content-bigg">
+                این روش یک توسعه ساده از مولد همنهشتی ضربی است. در این روش از چند جمله‌ی قبل برای تولید جمله‌ی بعد استفاده نماییم. صورت الگوریتم در این روش به صورت زیر است :
+            </p>
+
+
+            <br />
+            <p>
+                \begin{align}
+            \ x_{i} = \big( a_1x_{i-1} + \dotsm +  a_kx_{i-k} \big) \ \ (mod \ m) \\
             \end{align}
-        </p>
+            </p>
+            <br />
+
+            <p class="text-right content content-bigg">
+                در زمانی که $K>1$ آنگاه این مولد را  "همنهشتی ضربی چند بازگشتی"  می‌نامند. تعداد جملات قبلی‌ایی که استفاده می‌شود را با $K$ نمایش می دهند و آن را درجه (Order) می‌نامند.  (بدیهی است که اگر $K=1$ آنگاه این مولد همان مولد همنشتی ضربی است)
+            </p>
+            <br />
+            <h2 class="text-right page-header">طول دنباله</h2>
+            <p class="text-right content content-bigg">
+                در این روش، طول دنباله می‌تواند خیلی بیشتر از یک مولد همنهشتی ضربی ساده باشد. Knuth در سال 1998 نشان داد؛ که برای پیمانه‌های اول (عدد اول) حداکثر طول دنباله $M^K-1$ است.
+            </p>
+            <p class="text-right content content-bigg">
+                برای مطالعه بیشتر می‌توانید به بخش 3.2.2 Knuth  مراجعه نمایید.
+            </p>
+
+            <br />
+            <h2 class="text-right page-header">بهینه ‌سازی</h2>
+            <p class="text-right content content-bigg">
+                برای بهینه‌سازی محاسباتی روش‌هایی برای انتخاب $a_j$ ها وجود دارد. Deng و Lin در سال 2000 روشی تحت عنوان "مولد چندگانه بازگشتی سریع" معرفی کردند. در این روش فقط $a_1=1$ و  تمامی $a_j$ ها به جز $a_k$ برابر صفر هستند. برای مشخص کردن مقدار $a_k$ (برای هر پیمانه)؛ آنها از معیار Knuth تحت محدودیت $a_1=1$ استفاده کردند تا طول دنباله را بیشینه کنند. برای $m=2^{32}-1$ و $k=2,3,4$ آنها تعدادی $a_k$ با این چنین ضابطه‌ایی معرفی کردند. 
+            </p>
+             <br />
+            <p class="text-right content content-bigg">
+                در سال 1993 L’Ecuyer و Blouin و Couture با مطالعه بر روی خواص آماری مولد چندگانه بازگشتی، پیش‌نهادهایی برای اتخاذ ضرایب برای چند پیمانه خاص دادند. (یکی از پیمانه‌ها $2^{32}-1$ بود). ارزیابی آنها از کیفیت مولدها بر پایه نسبت Beyer بود.
+
+            </p>
+             <br />
+            <p class="text-right content content-bigg">
+                مولد پیش‌نهادی آنها به صورت زیر بود
+            </p>
+            <br />
+            <p>
+                \begin{align}
+            \ x_{i} = \big( 107374182x_{i-1} +  104480x_{i-5} \big) \ \ (mod \ 2^{32}-1) \\
+            \end{align}
+            </p>
+
+            <br />
+            <br />
+            <br />
+            <h2 class="text-right">منابع
+            </h2>
+            <br />
+            <br />
+            <ol>
+                <li><a href="http://random.mat.sbg.ac.at/results/karl/server/node7.html">Multiple Recursive Generator: MRG </a></li>
+                <li><a href="http://www.amazon.com/gp/search?index=books&linkCode=qs&keywords=0387001786">Random Number Generation and Monte Carlo Methods (Statistics and Computing) </a></li>
+                <li><a href="http://www.amazon.com/Statistical-Computing-Chapman-Hall-CRC/dp/1420066501">Statistical computing in C++ and R </a></li>
+            </ol>
+
+            <br />
+            <br />
+            <br />
+            <br />
+            <p class="muted text-center date-stamp">
+                نوشته شده در خرداد ماه 1392 توسط محمدرضا تأثیری
+            </p>
 
 
-        <p class="text-right content content-bigg" >
-            در این رابطه $m$ و $k$ اعداد صحیح مثبت هستند. ضرایب $a_1,\dotsm ,a_k$ در بازه ی $[-(m-1), \dotsm , m-1]$.
-        </p>
 
 
-
-        </br>
-
-    </div>
-
-    <div id="push"></div>
-</div>
-
-<footer class="footer">
-    <div class="container">
-
-        <div class="media">
-            <a class="pull-left" href="#">
-                <img class="media-object" src="../img/aut_s_2.png" data-src="holder.js/64x64">
-            </a>
-            <div class="media-body">
-                <ul class="footer-links">
-                    <li class="active"><a href="../index.html">Home</a></li>
-                    <li class="muted">·</li>
-                    <li><a href="http://taesiri.com" >taesiri</a></li>
-                    <li class="muted">·</li>
-                    <li><a href="http://aut.ac.ir" target="_blank">Amirkabir University</a></li>
-                    <li class="muted">·</li>
-                    <li><a href="http://math-cs.aut.ac.ir" target="_blank">Mathematics Department</a></li>
-                    <li class="muted">·</li>
-                    <li><a href="https://github.com/taesiri/randomness" target="_blank">Github</a></li>
-                </ul>
-                <p class="muted text-left" style="font-size: 90%;">Made with<a href="http://twitter.github.io/bootstrap/index.html" target="_blank"> Bootstrap </a> by <a href="http://taesiri.com" target="_blank"> MohammadReza Taesiri </a>. Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>, documentations under <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">CC BY 3.0</a>.</p>
-                </br>
-            </div>
         </div>
 
+        <div id="push"></div>
     </div>
-</footer>
 
-<!-- Le javascript
+    <footer class="footer">
+        <div class="container">
+
+            <div class="media">
+                <a class="pull-left" href="#">
+                    <img class="media-object" src="../img/aut_s_2.png" data-src="holder.js/64x64">
+                </a>
+                <div class="media-body">
+                    <ul class="footer-links">
+                        <li class="active"><a href="../index.html">Home</a></li>
+                        <li class="muted">·</li>
+                        <li><a href="http://taesiri.com">taesiri</a></li>
+                        <li class="muted">·</li>
+                        <li><a href="http://aut.ac.ir" target="_blank">Amirkabir University</a></li>
+                        <li class="muted">·</li>
+                        <li><a href="http://math-cs.aut.ac.ir" target="_blank">Mathematics Department</a></li>
+                        <li class="muted">·</li>
+                        <li><a href="https://github.com/taesiri/randomness" target="_blank">Github</a></li>
+                    </ul>
+                    <p class="muted text-left" style="font-size: 90%;">Made with<a href="http://twitter.github.io/bootstrap/index.html" target="_blank"> Bootstrap </a>by <a href="http://taesiri.com" target="_blank">MohammadReza Taesiri </a>. Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>, documentations under <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">CC BY 3.0</a>.</p>
+                    </br>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Le javascript
 ================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="../js/jquery.js"></script>
-<script src="../js/bootstrap-transition.js"></script>
-<script src="../js/bootstrap-alert.js"></script>
-<script src="../js/bootstrap-modal.js"></script>
-<script src="../js/bootstrap-dropdown.js"></script>
-<script src="../js/bootstrap-scrollspy.js"></script>
-<script src="../js/bootstrap-tab.js"></script>
-<script src="../js/bootstrap-tooltip.js"></script>
-<script src="../js/bootstrap-popover.js"></script>
-<script src="../js/bootstrap-button.js"></script>
-<script src="../js/bootstrap-collapse.js"></script>
-<script src="../js/bootstrap-carousel.js"></script>
-<script src="../js/bootstrap-typeahead.js"></script>
-<script src="../js/prettify.js"></script>
-<script src="../js/d3.v2.js"></script>
-<script src="../lib/d3.v2.js"></script>
-<script src="../lib/fisheye.js"></script>
-<script src="../js/nv3/nv.d3.js"></script>
-<script src="../js/nv3/src/tooltip.js"></script>
-<script src="../js/nv3/src/utils.js"></script>
-<script src="../js/nv3/src/models/legend.js"></script>
-<script src="../js/nv3/src/models/axis.js"></script>
-<script src="../js/nv3/src/models/distribution.js"></script>
-<script src="../js/nv3/src/models/scatter.js"></script>
-<script src="../js/nv3/src/models/scatterPlusLineChart.js"></script>
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap-transition.js"></script>
+    <script src="../js/bootstrap-alert.js"></script>
+    <script src="../js/bootstrap-modal.js"></script>
+    <script src="../js/bootstrap-dropdown.js"></script>
+    <script src="../js/bootstrap-scrollspy.js"></script>
+    <script src="../js/bootstrap-tab.js"></script>
+    <script src="../js/bootstrap-tooltip.js"></script>
+    <script src="../js/bootstrap-popover.js"></script>
+    <script src="../js/bootstrap-button.js"></script>
+    <script src="../js/bootstrap-collapse.js"></script>
+    <script src="../js/bootstrap-carousel.js"></script>
+    <script src="../js/bootstrap-typeahead.js"></script>
+    <script src="../js/prettify.js"></script>
+    <script src="../js/d3.v2.js"></script>
+    <script src="../lib/d3.v2.js"></script>
+    <script src="../lib/fisheye.js"></script>
+    <script src="../js/nv3/nv.d3.js"></script>
+    <script src="../js/nv3/src/tooltip.js"></script>
+    <script src="../js/nv3/src/utils.js"></script>
+    <script src="../js/nv3/src/models/legend.js"></script>
+    <script src="../js/nv3/src/models/axis.js"></script>
+    <script src="../js/nv3/src/models/distribution.js"></script>
+    <script src="../js/nv3/src/models/scatter.js"></script>
+    <script src="../js/nv3/src/models/scatterPlusLineChart.js"></script>
 
-<script>
-    !function ($) {
-        $(function(){
-            window.prettyPrint && prettyPrint()
-        })
-    }(window.jQuery)
-</script>
+    <script>
+        !function ($) {
+            $(function () {
+                window.prettyPrint && prettyPrint()
+            })
+        }(window.jQuery)
+    </script>
 
 
 </body>
