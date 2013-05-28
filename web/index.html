@@ -43,7 +43,7 @@
         }
     </script>
     <script type="text/javascript"
-            src="http://cdn.mathjax.org/mathjax/2.2-latest/MathJax.js">
+        src="http://cdn.mathjax.org/mathjax/2.2-latest/MathJax.js">
     </script>
     <link href="js/nv3/src/nv.d3.css" rel="stylesheet" type="text/css">
     <style>
@@ -54,15 +54,14 @@
             left: 0;
             width: 100%;
             height: 10px;
-
             -webkit-box-shadow: 0px 0px 10px rgba(0,0,0,.8);
             -moz-box-shadow: 0px 0px 10px rgba(0,0,0,.8);
             box-shadow: 0px 0px 10px rgba(0,0,0,.8);
-
             z-index: 100;
         }
+
         body {
-            overflow-y:scroll;
+            overflow-y: scroll;
         }
 
         svg {
@@ -74,7 +73,7 @@
             margin: 0;
         }
 
-        .waystyle{
+        .waystyle {
             font-family: BDavat;
             font-size: 22px;
             direction: rtl;
@@ -82,216 +81,211 @@
             padding-right: 25px;
             padding-top: 15px;
         }
-        .waystyle-active{
+
+        .waystyle-active {
             font-weight: bold;
         }
-
     </style>
 </head>
 
 <body>
 
-<div id="wrap">
-    <!-- Begin page content -->
-    <div class="container">
+    <div id="wrap">
+        <!-- Begin page content -->
+        <div class="container">
 
-        <blockquote class="pull-right">
-            <p class="lead text-right" style="font-family: BBaran; font-size: 26px; direction: rtl;">اعداد تصادفی و شبه تصادفی</p>
-            <small> <a href="http://autstat01.persianblog.ir/">Random and Pseudorandom</a></small>
-        </blockquote>
-        <hr>
-        <div id="contentpush"></div>
-
-
-        <div class="span10">
-            <blockquote class="pull-right" >
-                <h2 class="text-right" style="font-family: BLotus;  direction: rtl;">
-                    روش­های خطی برای تولید اعداد تصادفی
-                </h2>
-                </br>
-                <p class="text-right waystyle waystyle-active">
-                    <a href="lcg/">
-                        مولد همنهشتی خطی – LCG
-                    </a>
-                </p>
-                <p class="text-right waystyle waystyle-active" >
-                    <a href="mrg/">
-                    مولد چندگانه بازگشتی - MRG
-                    </a>
-                </p>
-                <p class="text-right muted waystyle">
-                    <!--<a href="lcg/">-->
-                    تلفیقی LCG  و MRG
-                    <!--</a>-->
-                </p>
-                <p class="text-right muted waystyle">
-                    <!--<a href="lcg/">-->
-                    ماتریکس LCG  و MRG
-                    <!--</a>-->
-                </p>
-                <p class="text-right muted waystyle waystyle-active">
-                    <a href="mwc/">
-                    مولد MWC : Multiply-with-Carry
-                    </a>
-                </p>
-            </blockquote>
-        </div>
-        <div class="span10" style="padding-top: 50px;">
             <blockquote class="pull-right">
-                <h2 class="text-right" style="font-family: BLotus;  direction: rtl;">
-                    روش­های غیرخطی برای تولید اعداد تصادفی
-                </h2>
-                </br>
-                <p class="text-right muted waystyle" >
+                <p class="lead text-right" style="font-family: BBaran; font-size: 26px; direction: rtl;">اعداد تصادفی و شبه تصادفی</p>
+                <small><a href="http://autstat01.persianblog.ir/">Random and Pseudorandom</a></small>
+            </blockquote>
+
+            <hr>
+            <div id="contentpush"></div>
+
+
+            <div class="span10">
+                <blockquote class="pull-right">
+                    <h2 class="text-right" style="font-family: BLotus; direction: rtl;">روش­های خطی برای تولید اعداد تصادفی
+                    </h2>
+                    </br>
+                <p class="text-right waystyle waystyle-active">
+                    <a href="lcg/">مولد همنهشتی خطی – LCG
+                    </a>
+                </p>
+                    <p class="text-right waystyle waystyle-active">
+                        <a href="mrg/">مولد چندگانه بازگشتی - MRG
+                        </a>
+                    </p>
+                    <p class="text-right waystyle waystyle-active">
+                        <a href="lfg/">مولد فيبوناچي عقب مانده
+                        </a>
+                    </p>
+                    <p class="text-right muted waystyle">
+                        <!--<a href="lcg/">-->
+                        تلفیقی LCG  و MRG
+                    <!--</a>-->
+                    </p>
+                    <p class="text-right muted waystyle">
+                        <!--<a href="lcg/">-->
+                        ماتریکس LCG  و MRG
+                    <!--</a>-->
+                    </p>
+                    <p class="text-right muted waystyle waystyle-active">
+                        <a href="mwc/">مولد MWC : Multiply-with-Carry
+                        </a>
+                    </p>
+                </blockquote>
+            </div>
+            <div class="span10" style="padding-top: 50px;">
+                <blockquote class="pull-right">
+                    <h2 class="text-right" style="font-family: BLotus; direction: rtl;">روش­های غیرخطی برای تولید اعداد تصادفی
+                    </h2>
+                    </br>
+                <p class="text-right muted waystyle">
                     <!--<a href="lcg/">-->
                     مولد همنهشتی معکوس
                     <!--</a>-->
                 </p>
-                <p class="text-right muted waystyle">
-                    <!--<a href="lcg/">-->
-                    مولد معکوس
+                    <p class="text-right muted waystyle">
+                        <!--<a href="lcg/">-->
+                        مولد معکوس
                     <!--</a>-->
-                </p>
-                <p class="text-right muted waystyle" >
-                    <!--<a href="lcg/">-->
-                    مولد همنهشتی درجه 2
+                    </p>
+                    <p class="text-right muted waystyle">
+                        <!--<a href="lcg/">-->
+                        مولد همنهشتی درجه 2
                     <!--</a>-->
-                </p>
-                <p class="text-right waystyle waystyle-active">
-                    <a href="bbs/">
-                    مولد مولد بلوم، بلوم؛ شاپ! - Blum, Blum & Shub
-                    </a>
-                </p>
-            </blockquote>
-        </div>
-        <div class="span10" style="padding-top: 50px;">
-            <blockquote class="pull-right" >
-                <h2 class="text-right" style="font-family: BLotus;  direction: rtl;">
-                    روش­های دیجیتال برای تولید اعداد تصادفی
-                </h2>
-                </br>
+                    </p>
+                    <p class="text-right waystyle waystyle-active">
+                        <a href="bbs/">مولد مولد بلوم، بلوم؛ شاپ! - Blum, Blum & Shub
+                        </a>
+                    </p>
+                </blockquote>
+            </div>
+            <div class="span10" style="padding-top: 50px;">
+                <blockquote class="pull-right">
+                    <h2 class="text-right" style="font-family: BLotus; direction: rtl;">روش­های دیجیتال برای تولید اعداد تصادفی
+                    </h2>
+                    </br>
                 <p class="text-right muted waystyle">
                     <!--<a href="lcg/">-->
                     مولد بازخورد خطی ثبات تغییر مکان - Linear Feedback Shift Register
                     <!--</a>-->
                 </p>
-                <p class="text-right muted waystyle">
-                    <!--<a href="lcg/">-->
-                    Generalized Feedback Shift Register
+                    <p class="text-right muted waystyle">
+                        <!--<a href="lcg/">-->
+                        Generalized Feedback Shift Register
                     <!--</a>-->
-                </p>
-                <p class="text-right muted waystyle">
-                    <!--<a href="lcg/">-->
-                    Equidistribution Properties
+                    </p>
+                    <p class="text-right muted waystyle">
+                        <!--<a href="lcg/">-->
+                        Equidistribution Properties
                     <!--</a>-->
-                </p>
-            </blockquote>
-        </div>
+                    </p>
+                </blockquote>
+            </div>
 
 
-        <div class="span10" style="padding-top: 50px;">
-            <blockquote class="pull-right" >
-                <h2 class="text-right" style="font-family: BLotus;  direction: rtl;">
-                    روش‌های موازی در تولید اعداد تصادفی
-                </h2>
-                </br>
+            <div class="span10" style="padding-top: 50px;">
+                <blockquote class="pull-right">
+                    <h2 class="text-right" style="font-family: BLotus; direction: rtl;">روش‌های موازی در تولید اعداد تصادفی
+                    </h2>
+                    </br>
                 <p class="text-right muted waystyle ">
                     <!--<a href="middle_square/">-->
                     مولد همنهشتی خطی موازی – Parallel LCG
                     <!--</a>-->
                     <!--</p>-->
                 </p>
-            </blockquote>
-        </div>
+                </blockquote>
+            </div>
 
-        <div class="span10" style="padding-top: 50px;">
-            <blockquote class="pull-right" >
-                <h2 class="text-right" style="font-family: BLotus;  direction: rtl;">
-                    سایر روش­های
-                </h2>
-                </br>
-                <p class="text-right waystyle" >
-                    <a href="middle_square/">
-                        روش میان ضربی
+            <div class="span10" style="padding-top: 50px;">
+                <blockquote class="pull-right">
+                    <h2 class="text-right" style="font-family: BLotus; direction: rtl;">سایر روش­های
+                    </h2>
+                    </br>
+                <p class="text-right waystyle">
+                    <a href="middle_square/">روش میان ضربی
                     </a>
                 </p>
-                <p class="text-right muted waystyle">
-                    <!--<a href="lcg/">-->
-                    روش میان مربعی
+                    <p class="text-right muted waystyle">
+                        <!--<a href="lcg/">-->
+                        روش میان مربعی
                     <!--</a>-->
-                </p>
-            </blockquote>
-        </div>
-
-        </br>
-        </br>
-    </div>
-
-
-    <div id="push"></div>
-</div>
-
-<footer class="footer">
-    <div class="container">
-
-        <div class="media">
-            <a class="pull-left" href="#">
-                <img class="media-object" src="img/aut_s_2.png" data-src="holder.js/64x64">
-            </a>
-            <div class="media-body">
-                <ul class="footer-links">
-                    <li class="active"><a href="index.html">Home</a></li>
-                    <li class="muted">·</li>
-                    <li><a href="http://taesiri.com" >taesiri</a></li>
-                    <li class="muted">·</li>
-                    <li><a href="http://aut.ac.ir" target="_blank">Amirkabir University</a></li>
-                    <li class="muted">·</li>
-                    <li><a href="http://math-cs.aut.ac.ir" target="_blank">Mathematics Department</a></li>
-                    <li class="muted">·</li>
-                    <li><a href="https://github.com/taesiri/randomness" target="_blank">Github</a></li>
-                </ul>
-                <p class="muted text-left" style="font-size: 90%;">Made with<a href="http://twitter.github.io/bootstrap/index.html" target="_blank"> Bootstrap </a> by <a href="http://taesiri.com" target="_blank"> MohammadReza Taesiri </a>. Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>, documentations under <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">CC BY 3.0</a>.</p>
-                </br>
+                    </p>
+                </blockquote>
             </div>
+
+            </br>
+        </br>
         </div>
 
-    </div>
-</footer>
 
-<!-- Le javascript
+        <div id="push"></div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+
+            <div class="media">
+                <a class="pull-left" href="#">
+                    <img class="media-object" src="img/aut_s_2.png" data-src="holder.js/64x64">
+                </a>
+                <div class="media-body">
+                    <ul class="footer-links">
+                        <li class="active"><a href="index.html">Home</a></li>
+                        <li class="muted">·</li>
+                        <li><a href="http://taesiri.com">taesiri</a></li>
+                        <li class="muted">·</li>
+                        <li><a href="http://aut.ac.ir" target="_blank">Amirkabir University</a></li>
+                        <li class="muted">·</li>
+                        <li><a href="http://math-cs.aut.ac.ir" target="_blank">Mathematics Department</a></li>
+                        <li class="muted">·</li>
+                        <li><a href="https://github.com/taesiri/randomness" target="_blank">Github</a></li>
+                    </ul>
+                    <p class="muted text-left" style="font-size: 90%;">Made with<a href="http://twitter.github.io/bootstrap/index.html" target="_blank"> Bootstrap </a>by <a href="http://taesiri.com" target="_blank">MohammadReza Taesiri </a>. Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>, documentations under <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">CC BY 3.0</a>.</p>
+                    </br>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Le javascript
 ================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap-transition.js"></script>
-<script src="js/bootstrap-alert.js"></script>
-<script src="js/bootstrap-modal.js"></script>
-<script src="js/bootstrap-dropdown.js"></script>
-<script src="js/bootstrap-scrollspy.js"></script>
-<script src="js/bootstrap-tab.js"></script>
-<script src="js/bootstrap-tooltip.js"></script>
-<script src="js/bootstrap-popover.js"></script>
-<script src="js/bootstrap-button.js"></script>
-<script src="js/bootstrap-collapse.js"></script>
-<script src="js/bootstrap-carousel.js"></script>
-<script src="js/bootstrap-typeahead.js"></script>
-<script src="js/prettify.js"></script>
-<script src="js/d3.v2.js"></script>
-<script src="lib/d3.v2.js"></script>
-<script src="lib/fisheye.js"></script>
-<script src="js/nv3/nv.d3.js"></script>
-<script src="js/nv3/src/tooltip.js"></script>
-<script src="js/nv3/src/utils.js"></script>
-<script src="js/nv3/src/models/legend.js"></script>
-<script src="js/nv3/src/models/axis.js"></script>
-<script src="js/nv3/src/models/distribution.js"></script>
-<script src="js/nv3/src/models/scatter.js"></script>
-<script src="js/nv3/src/models/scatterPlusLineChart.js"></script>
-<script>
-    !function ($) {
-        $(function(){
-            window.prettyPrint && prettyPrint()
-        })
-    }(window.jQuery)
-</script>
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap-transition.js"></script>
+    <script src="js/bootstrap-alert.js"></script>
+    <script src="js/bootstrap-modal.js"></script>
+    <script src="js/bootstrap-dropdown.js"></script>
+    <script src="js/bootstrap-scrollspy.js"></script>
+    <script src="js/bootstrap-tab.js"></script>
+    <script src="js/bootstrap-tooltip.js"></script>
+    <script src="js/bootstrap-popover.js"></script>
+    <script src="js/bootstrap-button.js"></script>
+    <script src="js/bootstrap-collapse.js"></script>
+    <script src="js/bootstrap-carousel.js"></script>
+    <script src="js/bootstrap-typeahead.js"></script>
+    <script src="js/prettify.js"></script>
+    <script src="js/d3.v2.js"></script>
+    <script src="lib/d3.v2.js"></script>
+    <script src="lib/fisheye.js"></script>
+    <script src="js/nv3/nv.d3.js"></script>
+    <script src="js/nv3/src/tooltip.js"></script>
+    <script src="js/nv3/src/utils.js"></script>
+    <script src="js/nv3/src/models/legend.js"></script>
+    <script src="js/nv3/src/models/axis.js"></script>
+    <script src="js/nv3/src/models/distribution.js"></script>
+    <script src="js/nv3/src/models/scatter.js"></script>
+    <script src="js/nv3/src/models/scatterPlusLineChart.js"></script>
+    <script>
+        !function ($) {
+            $(function () {
+                window.prettyPrint && prettyPrint()
+            })
+        }(window.jQuery)
+    </script>
 </body>
 </html>
