@@ -79,11 +79,39 @@
             </h2>
 
             <p class="text-right content content-bigg">
-                يک دنباله فيبوناچي ساده به صورت $x_{i+2}=x_{i+1}+x_{i}$ ميباشد. اگر باقیمانده اعداد بدست آمده را نسبت به $m$ در نظر بگیریم، خروجی بدست آمده شاید تصادفی به نظر رسد؛ اما در حقیقت خصوصیات رضایت بخشی از این اعداد را ندارد.
+                در ریاضیات اعداد فيبوناچي، سری فیبوناچی و یا دنباله فيبوناچي به اعداد دنباله زیر گفته می‌شوند:
+            </p>
+            <br />
+            <p>
+                \begin{align}
+                \ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, \dotsm \\
+                \end{align}
+            </p>
+            <br />
+            <p class="text-right content content-bigg">
+                که به صورت زیر نيز تعریف می‌شود
+            </p>
+            <br />
+            <p>
+                \[
+                f(x) =
+                \begin{cases}
+                \ 0 & \text{if } x = 0\\
+                \ 1 & \text{if } x = 1 \\
+                \ F(x-1)+F(x-2) & \text{if } x > 1 
+                 \end{cases}
+                \]
+            </p>
+            <br />
+            <br />
+
+
+            <p class="text-right content content-bigg">
+                رابطه بازگشتی دنباله فیبوناچی $x_{i+2}=x_{i+1}+x_{i}$ مي‌باشد. اگر باقی‌مانده اعداد بدست آمده را در تقسیم بر $m$محاسبه کنيم، خروجی بدست آمده شاید تصادفی به نظر رسد؛ اما در حقیقت خصوصیات رضایت‌بخشی از این اعداد را ندارد.
             </p>
 
             <p class="text-right content content-bigg">
-                ما به دو روش می‌توانیم دنباله بازگشتی فیبوناچی را تعمیم دهیم؛ اول به جای جمع دو جمله‌ی متوالي قبل؛ جملات با فاصله‌ی بیشتری را با هم جمع کنیم؛ در این صورت مولد همنهشتی فیبوناچی عقب‌مانده (عقب‌افتاده) به فرم زیر است:
+                ما به دو روش می‌توانیم دنباله بازگشتی فیبوناچی را تعمیم دهیم؛ اول به جای جمع دو جمله‌ی قبل متوالي؛ جملات با فاصله‌ی بیشتری را با هم جمع کنیم؛ در این صورت مولد همنهشتی فیبوناچی عقب‌مانده (عقب‌افتاده) به فرم زیر است:
             </p>
 
 
@@ -103,7 +131,7 @@
 
 
             <p class="text-right content content-bigg">
-                روش دیگر برای تعمیم دنباله بازگشتی فیبوناچی استفاده از یک اپراتور (عملگر) به جای همنهشتی به پیمانه m است. در این حالت ابتدا با $x_1,x_2,\dotsm,x_k$ (اعداد تصادفی اولیه) شروع می کنیم و
+                روش دیگر برای تعمیم دنباله بازگشتی فیبوناچی استفاده از یک اپراتور (عملگر) به جای همنهشتی به پیمانه m است. در این حالت ابتدا با $x_1,x_2,\dotsm,x_k$ (اعداد تصادفی اولیه) شروع می‌کنیم و
             </p>
             <br />
             <p>
@@ -128,13 +156,31 @@
 
             <br />
             <br />
+            <h2 class="text-right page-header">پياده‌سازي نرم افزاري
+            </h2>
+            <p class="text-right content content-bigg">
+                کتابخانه قدرتمند <a href="http://www.boost.org/" target="_blank">Boost</a> دارای پیاده‌سازی الگوریتم فیبوناچی عقب‌مانده است. برای اطلاعات بیشتر می‌توانید به  <a href="http://www.boost.org/doc/libs/1_33_1/libs/random/" target="_blank">این لینک</a> رجوع کنید.
+
+            </p>
+            <br />
+            <p class="text-right content content-bigg">
+                در جدیدترین نسخه زبان برنامه‌نویسی سی پلاس پلاس (موسوم به <a href="http://en.wikipedia.org/wiki/C%2B%2B11" target="_blank">C++11</a>) مولدی برای تولید اعداد تصادفی به نام <a href="http://en.wikipedia.org/wiki/Subtract_with_carry" target="_blank">Subtract with carry</a> وجود دارد که نوعی از فیبوناچی عقب‌مانده است.
+            </p>
+            <br />
+
+            <br />
+            <br />
             <br />
             <h2 class="text-right">منابع
             </h2>
             <br />
             <br />
             <ol>
+                <li><a href="http://en.wikipedia.org/wiki/Fibonacci_number">Wikipedia - Fibonacci number </a></li>
                 <li><a href="http://en.wikipedia.org/wiki/Lagged_Fibonacci_generator">Wikipedia - Lagged Fibonacci generator </a></li>
+                <li><a href="http://www.phy.ornl.gov/csep/rn/node20.html">Lagged Fibonacci Generators </a></li>
+                <li><a href="http://cs.adelaide.edu.au/~paulc/teaching/montecarlo/node109.html">Lagged Fibonacci Generators</a></li>
+                <li><a href="http://docs.oracle.com/cd/E19061-01/hpc.cluster5/817-0086-10/prog-rng.html">Parallel Random Number Generation Routines </a></li>
                 <li><a href="http://www.cse.iitb.ac.in/graphics/~anand/website/include/papers/random/aluru_papers/jpdc.pdf">Lagged Fibonacci Random Number Generators</a></li>
                 <li><a href="http://www.amazon.com/gp/search?index=books&linkCode=qs&keywords=0387001786">Random Number Generation and Monte Carlo Methods (Statistics and Computing)  </a></li>
             </ol>
