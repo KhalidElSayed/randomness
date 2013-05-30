@@ -44,96 +44,139 @@
         }
     </script>
     <script type="text/javascript"
-            src="http://cdn.mathjax.org/mathjax/2.2-latest/MathJax.js">
+        src="http://cdn.mathjax.org/mathjax/2.2-latest/MathJax.js">
     </script>
     <link href="../js/nv3/src/nv.d3.css" rel="stylesheet" type="text/css">
+    <style>
+        body {
+            overflow-y: scroll;
+        }
+
+        svg {
+            overflow: hidden;
+        }
+
+        div {
+            border: 0;
+            margin: 0;
+        }
+
+        #chart_1 {
+            margin: 0;
+        }
+
+            #chart_1 svg {
+                height: 500px;
+            }
+
+        .bars rect {
+            fill: lightblue;
+        }
+
+        .axis text {
+            font: 10px sans-serif;
+        }
+
+        .axis path, .axis line {
+            fill: none;
+            stroke: #000;
+            shape-rendering: crispEdges;
+        }
+    </style>
 </head>
 
 <body>
-<div id="wrap">
-    <!-- Begin page content -->
-    <div class="container">
+    <div id="wrap">
+        <!-- Begin page content -->
+        <div class="container">
 
-        <blockquote class="pull-right">
-            <p class="lead text-right page-top-header" >تولید اعداد شبه‌تصادفی به روش بلام بلام شاب</p>
-            <small> <a href="http://autstat01.persianblog.ir/">Pseudorandom number generator algorithms</a></small>
-        </blockquote>
+            <blockquote class="pull-right">
+                <p class="lead text-right page-top-header">تولید اعداد شبه‌تصادفی به روش بلام بلام شاب</p>
+                <small><a href="http://autstat01.persianblog.ir/">Pseudorandom number generator algorithms</a></small>
+            </blockquote>
 
 
-        <hr>
+            <hr>
 
-        <h2 class="text-right page-header" >
-            تولید اعداد شبه‌تصادفی به روش بلام بلام شاب
-        </h2>
+            <h2 class="text-right page-header">تولید اعداد شبه‌تصادفی به روش بلام بلام شاب
+            </h2>
 
-         <p class="text-right content content-bigg">
-             <strong>بلام بلام شاب</strong> یک روش برای تولید اعداد شبه‌تصادفی است که در سال 1986 توسط Lenore Blum و Manuel Blum و Michael Shub ارائه شد.
-         </p>
-        <p class="text-right content content-bigg">
-            الگوریتم بلام بلام شاب به صورت زیر میباشد :
-        </p>
+            <p class="text-right content content-bigg">
+                <strong>بلام بلام شاب</strong> یک روش برای تولید اعداد شبه‌تصادفی است که در سال 1986 توسط Lenore Blum و Manuel Blum و Michael Shub ارائه شد.
+            </p>
+            <p class="text-right content content-bigg">
+                الگوریتم بلام بلام شاب به صورت زیر میباشد :
+            </p>
 
-        <p>
-            \begin{align}
+            <p>
+                \begin{align}
             \ x_{n+1} = x_{n}^2 \ \ (mod \ M) \\
             \end{align}
-        </p>
-        <p></p><br/>
+            </p>
+            <p></p>
+            <br />
 
-        <p class="text-right content content-bigg">
-            در این الگوریتم  $M=pq$ ضرب دو عدد اول بزرگ $p$ و $q$ است. بهتر است که هسته الگوریتم، $x_{0}$ نسبت به $M$ هم‌اول باشد و همچنین عدد 1 و یا صفر نباشد.
+            <p class="text-right content content-bigg">
+                در این الگوریتم  $M=pq$ ضرب دو عدد اول بزرگ $p$ و $q$ است. بهتر است که هسته الگوریتم، $x_{0}$ نسبت به $M$ هم‌اول باشد و همچنین عدد 1 و یا صفر نباشد.
 
             هر دو عدد $p$ , $q$ باید با عدد ۳ به پیمانه ۴ متجانس باشند.
-        </p>
-        <br/>
-        <h2 class="text-right">
-            امنیت
-        </h2>
-        <p class="text-right content content-bigg">
-            این روش برای تولید اعداد تصادفی برای مصارف شبیه سازی مناسب نمی‌باشد و تنها برای مصارف رمزنگاری مناسب است. این روش با تمامی روش‌هایی که مطرح شد؛ از نظر امنیت متفاوت است.
-            <br/><br/>
-            از آنجایی که پیچیدگی محاسباتی الگوریتم‌های تجزیه و شکستن آنها به عوامل اول، بالاست این الگوریتم از لحاظ امنیتی دارای رتبه بالایی است.برای پیش‌بینی بیت‌های عددی که با استفاده از این الگوریتم به دست می‌آید باید محاسباتی با پیچیدگی معادل تجزیه عدد $M$ به عوامل اول را انجام داد.
-            <br/>
-            <br/>
+            </p>
+            <br />
+            <h2 class="text-right">امنیت
+            </h2>
+            <p class="text-right content content-bigg">
+                این روش برای تولید اعداد تصادفی برای مصارف شبیه سازی مناسب نمی‌باشد و تنها برای مصارف رمزنگاری مناسب است. این روش با تمامی روش‌هایی که مطرح شد؛ از نظر امنیت متفاوت است.
+            <br />
+                <br />
+                از آنجایی که پیچیدگی محاسباتی الگوریتم‌های تجزیه و شکستن آنها به عوامل اول، بالاست این الگوریتم از لحاظ امنیتی دارای رتبه بالایی است.برای پیش‌بینی بیت‌های عددی که با استفاده از این الگوریتم به دست می‌آید باید محاسباتی با پیچیدگی معادل تجزیه عدد $M$ به عوامل اول را انجام داد.
+            <br />
+                <br />
 
-            مشکل اصلی پیش‌بینی خروجی بلام بلام شاب به دلیل مسئله <a href="http://en.wikipedia.org/wiki/Quadratic_residuosity_problem"> <strong> quadratic residuosity</strong> </a>  می‌باشد
-        </p>
-
-
-
-
-        <br/>
-        <h2>
-            بررسی یک نمونه
-        </h2>
-        </br>
-        </br>
-        <p class="text-right content content-bigg">
-            اعداد p و q را به ترتیب 113 و 839 و عدد 613 به عنوان هسته؛ خروجی الگوریتم به صورت زیر است
-        </p>
-
-
-        </br></br>
-        <p class="text-left" style="font-family: BBaran; font-size: 18px; line-height: normal; ">
-            91348, 18999, 31752, 11866, 13561, 69948, 17855, 59891, 3843, 73564, 78536, 44297, 3730, 71078, 6668, 92548, 78310, 54919, 1470, 75146, 26782, 60569, 46896, 91644, 49834, 52998, 35822, 2939, 10284, 50851, 58083, 22601, 79892, 40003, 87463, 83960, 1922, 91418, 13674, 18872, 57292, 60117, 10849, 45314, 28590, 56953, 12318, 41924, 89610, 83621, 76163, 36274, 71530, 91531, 18985, 68818, 23053, 47574, 52772, 23166, 55936, 15482, 20228, 79779, 10510, 9945, 19324, 67010, 90966, 58196, 78762, 41020, 5764, 41246, 15708, 53450, 83169, 58648, 84751, 58874, 3956, 6781, 566, 35935, 52885, 16725, 44975, 43280, 56501, 21697, 43054, 75259, 52094, 29268, 34579, 1357, 40116, 39438, 47009, 84525, 9719, 31189, 33901, 27347, 20793, 28929, 25652, 64524, 86785, 73338, 61134, 74016, 40568, 7911, 11301, 7572, 71756, 50173, 14465, 91983, 11188, 26104, 40907, 39099, 63733, 78988, 45088, 76050, 91079, 56162, 36161, 39777, 70513, 24861, 22488, 9606, 28025, 19437, 85881, 35596, 74468, 31980, 37291, 84412, 70852, 70061, 6103, 82265, 16951, 71191, 60682, 1244, 30624, 93339, 69270, 55823, 90853, 85768, 74694, 86107, 34014, 22375, 59665, 4182, 44636, 3391, 27234, 15595, 24070, 94130, 79101, 85429, 60795, 75937, 76615, 72434, 64976, 30059, 32771, 59552, 90062, 45766, 50512, 16160, 47122, 8137, 35483, 6329, 47687, 9267, 76954, 83282, 1018, 88254, 89045, 18194, 50399, 84864, 74355, 90627, 27912, 50625, 67801, 68592, 65089, 32319, 29042, 34692, 54806, 22262, 40455, 48591, 11753, 94017, 55258, 92322, 12770, 4860, 12657, 70626, 45992, 25087, 28703, 84186, 80118, 80796, 57631, 53337, 56727, 13335, 59100, 25313, 42263, 92096, 49382, 51077, 55710, 2148, 63168, 54015, 29607, 83734, 25878, 49043, 57066, 2713, 60230, 52659, 55145, 36500, 22036, 78649, 77293, 39551, 60908, 81361, 92774, 56388, 64185, 65654, 47461, 27008, 81813, 87576, 48704, 8476, 73677, 30737, 11414, 14578, 55597, 33788, 57857, 81700, 3165, 62490, 89384, 18759, 71304, 45427, 43167, 53111, 80457, 1696, 32206, 37856, 68931, 40342, 20002, 89271, 24635, 23618, 60343, 25200, 22714, 80909, 32545, 88028, 68253, 35257, 41472, 32997, 38421, 28251, 33675, 19098, 11075, 70174, 19889, 37517, 20567, 67462, 6216, 52207, 59213, 26895, 58422, 78084, 72886, 48365, 114, 12996, 44749, 54354, 76389, 3278, 32093, 72208, 84299, 62716, 38647, 1131, 46670, 87689, 38986, 57179, 18646, 16047, 10397, 17629, 4295, 54467, 48252, 80005, 227, 51529, 72999, 36952, 39890, 66219, 37404, 87124, 58535, 21245, 68705, 31302, 79666, 6555, 20454, 77632, 36048, 33562, 5877, 29381, 25426, 87350, 49947, 46218, 7007, 82830, 5538, 46783, 29494, 41811, 13448, 51755, 92661, 54580, 45653, 54128, 19663, 10623, 27799, 12544, 67123, 78875, 30285, 18307, 3504, 47913, 93678, 42150, 34127, 42941, 28138, 13787, 88141, 65880, 4747, 64750, 7346, 18533, 81135, 58987, 49269, 90740, 44071, 36839, 44523, 72773, 85316, 12431, 89158, 56049, 60456, 23279, 89836, 61021, 17516, 14804, 59439
-        </p>
-        </br></br>
+                مشکل اصلی پیش‌بینی خروجی بلام بلام شاب به دلیل مسئله <a href="http://en.wikipedia.org/wiki/Quadratic_residuosity_problem"><strong>quadratic residuosity</strong> </a>می‌باشد
+            </p>
 
 
 
 
+            <br />
+            <h2>بررسی یک نمونه
+            </h2>
+            <br />
+            <br />
+            <p class="text-right content content-bigg">
+                اعداد p و q را به ترتیب 113 و 839 و عدد 613 به عنوان هسته؛ خروجی الگوریتم به صورت زیر است
+            </p>
 
 
-        <br/>
-        <br/>
-        <h2 class="text-right">
-            نمونه برنامه تولید کننده اعداد تصادفی
-        </h2>
-        <br/><br/>
-        <h3 class="text-left" style="direction: ltr">C#</h3>
-        <p class="text-left"> <span class="label label-success"> Blum Blum Shub Class (C#) </span></p>
+            <br />
+            <br />
+            <p class="text-left" style="font-family: BBaran; font-size: 18px; line-height: normal;">
+                91348, 18999, 31752, 11866, 13561, 69948, 17855, 59891, 3843, 73564, 78536, 44297, 3730, 71078, 6668, 92548, 78310, 54919, 1470, 75146, 26782, 60569, 46896, 91644, 49834, 52998, 35822, 2939, 10284, 50851, 58083, 22601, 79892, 40003, 87463, 83960, 1922, 91418, 13674, 18872, 57292, 60117, 10849, 45314, 28590, 56953, 12318, 41924, 89610, 83621, 76163, 36274, 71530, 91531, 18985, 68818, 23053, 47574, 52772, 23166, 55936, 15482, 20228, 79779, 10510, 9945, 19324, 67010, 90966, 58196, 78762, 41020, 5764, 41246, 15708, 53450, 83169, 58648, 84751, 58874, 3956, 6781, 566, 35935, 52885, 16725, 44975, 43280, 56501, 21697, 43054, 75259, 52094, 29268, 34579, 1357, 40116, 39438, 47009, 84525, 9719, 31189, 33901, 27347, 20793, 28929, 25652, 64524, 86785, 73338, 61134, 74016, 40568, 7911, 11301, 7572, 71756, 50173, 14465, 91983, 11188, 26104, 40907, 39099, 63733, 78988, 45088, 76050, 91079, 56162, 36161, 39777, 70513, 24861, 22488, 9606, 28025, 19437, 85881, 35596, 74468, 31980, 37291, 84412, 70852, 70061, 6103, 82265, 16951, 71191, 60682, 1244, 30624, 93339, 69270, 55823, 90853, 85768, 74694, 86107, 34014, 22375, 59665, 4182, 44636, 3391, 27234, 15595, 24070, 94130, 79101, 85429, 60795, 75937, 76615, 72434, 64976, 30059, 32771, 59552, 90062, 45766, 50512, 16160, 47122, 8137, 35483, 6329, 47687, 9267, 76954, 83282, 1018, 88254, 89045, 18194, 50399, 84864, 74355, 90627, 27912, 50625, 67801, 68592, 65089, 32319, 29042, 34692, 54806, 22262, 40455, 48591, 11753, 94017, 55258, 92322, 12770, 4860, 12657, 70626, 45992, 25087, 28703, 84186, 80118, 80796, 57631, 53337, 56727, 13335, 59100, 25313, 42263, 92096, 49382, 51077, 55710, 2148, 63168, 54015, 29607, 83734, 25878, 49043, 57066, 2713, 60230, 52659, 55145, 36500, 22036, 78649, 77293, 39551, 60908, 81361, 92774, 56388, 64185, 65654, 47461, 27008, 81813, 87576, 48704, 8476, 73677, 30737, 11414, 14578, 55597, 33788, 57857, 81700, 3165, 62490, 89384, 18759, 71304, 45427, 43167, 53111, 80457, 1696, 32206, 37856, 68931, 40342, 20002, 89271, 24635, 23618, 60343, 25200, 22714, 80909, 32545, 88028, 68253, 35257, 41472, 32997, 38421, 28251, 33675, 19098, 11075, 70174, 19889, 37517, 20567, 67462, 6216, 52207, 59213, 26895, 58422, 78084, 72886, 48365, 114, 12996, 44749, 54354, 76389, 3278, 32093, 72208, 84299, 62716, 38647, 1131, 46670, 87689, 38986, 57179, 18646, 16047, 10397, 17629, 4295, 54467, 48252, 80005, 227, 51529, 72999, 36952, 39890, 66219, 37404, 87124, 58535, 21245, 68705, 31302, 79666, 6555, 20454, 77632, 36048, 33562, 5877, 29381, 25426, 87350, 49947, 46218, 7007, 82830, 5538, 46783, 29494, 41811, 13448, 51755, 92661, 54580, 45653, 54128, 19663, 10623, 27799, 12544, 67123, 78875, 30285, 18307, 3504, 47913, 93678, 42150, 34127, 42941, 28138, 13787, 88141, 65880, 4747, 64750, 7346, 18533, 81135, 58987, 49269, 90740, 44071, 36839, 44523, 72773, 85316, 12431, 89158, 56049, 60456, 23279, 89836, 61021, 17516, 14804, 59439
+            </p>
+            <br />
+            <br />
 
-        <pre class="prettyprint linenums csharpcode"><span style="color: #008000; font-weight: bold">using</span> <span style="color: #0e84b5; font-weight: bold">System.Collections.Generic</span>;
+
+
+            <br />
+            <br />
+            <div id="chart" style="height: 300px; width: 980px;">
+            </div>
+            <p class="text-center" style="padding-top: 18px;">Histogram (Ratio) </p>
+            <br />
+            <br />
+
+
+            <br />
+            <br />
+            <h2 class="text-right">نمونه برنامه تولید کننده اعداد تصادفی
+            </h2>
+            <br />
+            <br />
+            <h3 class="text-left" style="direction: ltr">C#</h3>
+            <p class="text-left"><span class="label label-success">Blum Blum Shub Class (C#) </span></p>
+
+            <pre class="prettyprint linenums csharpcode"><span style="color: #008000; font-weight: bold">using</span> <span style="color: #0e84b5; font-weight: bold">System.Collections.Generic</span>;
 <span style="color: #008000; font-weight: bold">using</span> <span style="color: #0e84b5; font-weight: bold">System.Numerics</span>;
 
 <span style="color: #008000; font-weight: bold">namespace</span> <span style="color: #0e84b5; font-weight: bold">Randomness</span>
@@ -179,15 +222,15 @@
     }
 }</pre>
 
-        <a href="../../src/csharp/blum_blum_shub/BlumBlumShub.cs" class="btn btn-primary">Download Source Code</a>
+            <a href="../../src/csharp/blum_blum_shub/BlumBlumShub.cs" class="btn btn-primary">Download Source Code</a>
 
-        <br/>
-        <br/>
-        <br/>
+            <br />
+            <br />
+            <br />
 
 
-        <p class="text-left"> <span class="label label-info"> Sample Application </span></p>
-        <pre class="prettyprint linenums csharpcode"><span style="color: #008000; font-weight: bold">using</span> <span style="color: #0e84b5; font-weight: bold">System</span>;
+            <p class="text-left"><span class="label label-info">Sample Application </span></p>
+            <pre class="prettyprint linenums csharpcode"><span style="color: #008000; font-weight: bold">using</span> <span style="color: #0e84b5; font-weight: bold">System</span>;
 <span style="color: #008000; font-weight: bold">using</span> <span style="color: #0e84b5; font-weight: bold">System.Collections.Generic</span>;
 
 <span style="color: #008000; font-weight: bold">namespace</span> <span style="color: #0e84b5; font-weight: bold">Randomness.Test</span>
@@ -208,12 +251,12 @@
     }
 }</pre>
 
-        <a href="../../src/csharp/blum_blum_shub/TestApp.cs" class="btn btn-primary">Download Source Code</a>
-        <br/>
-        <br/>
-        <br/>
-        <p class="text-left"> <span class="label label-important"> Output </span></p>
-        <pre class="prettyprint">9        Least significant bit : 1
+            <a href="../../src/csharp/blum_blum_shub/TestApp.cs" class="btn btn-primary">Download Source Code</a>
+            <br />
+            <br />
+            <br />
+            <p class="text-left"><span class="label label-important">Output </span></p>
+            <pre class="prettyprint">9        Least significant bit : 1
 81       Least significant bit : 1
 82       Least significant bit : 0
 36       Least significant bit : 0
@@ -226,107 +269,218 @@
 137      Least significant bit : 1
 168      Least significant bit : 0</pre>
 
-        <h3 class="text-left" style="direction: ltr">Sage</h3>
+            <h3 class="text-left" style="direction: ltr">Sage</h3>
 
-        <p class="text-left"> <span class="label label-info"> Blum Blum Shub Sample</span></p>
+            <p class="text-left"><span class="label label-info">Blum Blum Shub Sample</span></p>
 
-        <pre class="prettyprint linenums csharpcode"><span style="color: #008000; font-weight: bold">from</span> <span style="color: #0e84b5; font-weight: bold">sage.crypto.stream</span> <span style="color: #008000; font-weight: bold">import</span> blum_blum_shub
+            <pre class="prettyprint linenums csharpcode"><span style="color: #008000; font-weight: bold">from</span> <span style="color: #0e84b5; font-weight: bold">sage.crypto.stream</span> <span style="color: #008000; font-weight: bold">import</span> blum_blum_shub
 blum_blum_shub(length<span style="color: #303030">=</span><span style="color: #0000D0; font-weight: bold">6</span>, seed<span style="color: #303030">=</span><span style="color: #0000D0; font-weight: bold">3</span>, p<span style="color: #303030">=</span><span style="color: #0000D0; font-weight: bold">11</span>, q<span style="color: #303030">=</span><span style="color: #0000D0; font-weight: bold">19</span>)
 <span style="color: #808080"># Output : 110000</span></pre>
-        <a href="../../src/sage/blum_blum_shub/bbs-sample.py" class="btn btn-primary">Download Source Code</a>
+            <a href="../../src/sage/blum_blum_shub/bbs-sample.py" class="btn btn-primary">Download Source Code</a>
 
 
 
 
-        <br/>
-        <br/>
-        <br/>
-        <h2 class="text-right">
-            منابع
-        </h2>
-        <br/>
-        <br/>
-        <ol>
-            <li> <a href="http://en.wikipedia.org/wiki/Blum_Blum_Shub"> Wikipedia - Blum Blum Shub </a> </li>
-            <li> <a href="http://www.cs.indiana.edu/~kapadia/project2/node11.html"> Blum Blum Shub Generator </a> </li>
-            <li> <a href="http://www.sagemath.org/doc/reference/cryptography/sage/crypto/stream.html"> Stream Cryptosystems </a> </li>
-        </ol>
+            <br />
+            <br />
+            <br />
+            <h2 class="text-right">منابع
+            </h2>
+            <br />
+            <br />
+            <ol>
+                <li><a href="http://en.wikipedia.org/wiki/Blum_Blum_Shub">Wikipedia - Blum Blum Shub </a></li>
+                <li><a href="http://www.cs.indiana.edu/~kapadia/project2/node11.html">Blum Blum Shub Generator </a></li>
+                <li><a href="http://www.sagemath.org/doc/reference/cryptography/sage/crypto/stream.html">Stream Cryptosystems </a></li>
+            </ol>
 
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <p class="muted text-center date-stamp">
-            نوشته شده در اردی‌بهشت 1392 توسط محمدرضا تأثیری
-        </p>
+            <br />
+            <br />
+            <br />
+            <br />
+            <p class="muted text-center date-stamp">
+                نوشته شده در اردی‌بهشت 1392 توسط محمدرضا تأثیری
+            </p>
 
-    </div>
-    <div id="push"></div>
-</div>
-
-<footer class="footer">
-    <div class="container">
-
-        <div class="media">
-            <a class="pull-left" href="#">
-                <img class="media-object" src="../img/aut_s_2.png" data-src="holder.js/64x64">
-            </a>
-            <div class="media-body">
-                <ul class="footer-links">
-                    <li class="active"><a href="../index.html">Home</a></li>
-                    <li class="muted">·</li>
-                    <li><a href="http://taesiri.com" >taesiri</a></li>
-                    <li class="muted">·</li>
-                    <li><a href="http://aut.ac.ir" target="_blank">Amirkabir University</a></li>
-                    <li class="muted">·</li>
-                    <li><a href="http://math-cs.aut.ac.ir" target="_blank">Mathematics Department</a></li>
-                    <li class="muted">·</li>
-                    <li><a href="https://github.com/taesiri/randomness" target="_blank">Github</a></li>
-                </ul>
-                <p class="muted text-left" style="font-size: 90%;">Made with<a href="http://twitter.github.io/bootstrap/index.html" target="_blank"> Bootstrap </a> by <a href="http://taesiri.com" target="_blank"> MohammadReza Taesiri </a>. Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>, documentations under <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">CC BY 3.0</a>.</p>
-                </br>
-            </div>
         </div>
-
+        <div id="push"></div>
     </div>
-</footer>
 
-<!-- Le javascript
+    <footer class="footer">
+        <div class="container">
+
+            <div class="media">
+                <a class="pull-left" href="#">
+                    <img class="media-object" src="../img/aut_s_2.png" data-src="holder.js/64x64">
+                </a>
+                <div class="media-body">
+                    <ul class="footer-links">
+                        <li class="active"><a href="../index.html">Home</a></li>
+                        <li class="muted">·</li>
+                        <li><a href="http://taesiri.com">taesiri</a></li>
+                        <li class="muted">·</li>
+                        <li><a href="http://aut.ac.ir" target="_blank">Amirkabir University</a></li>
+                        <li class="muted">·</li>
+                        <li><a href="http://math-cs.aut.ac.ir" target="_blank">Mathematics Department</a></li>
+                        <li class="muted">·</li>
+                        <li><a href="https://github.com/taesiri/randomness" target="_blank">Github</a></li>
+                    </ul>
+                    <p class="muted text-left" style="font-size: 90%;">Made with<a href="http://twitter.github.io/bootstrap/index.html" target="_blank"> Bootstrap </a>by <a href="http://taesiri.com" target="_blank">MohammadReza Taesiri </a>. Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>, documentations under <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">CC BY 3.0</a>.</p>
+                    <br />
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Le javascript
 ================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="../js/jquery.js"></script>
-<script src="../js/bootstrap-transition.js"></script>
-<script src="../js/bootstrap-alert.js"></script>
-<script src="../js/bootstrap-modal.js"></script>
-<script src="../js/bootstrap-dropdown.js"></script>
-<script src="../js/bootstrap-scrollspy.js"></script>
-<script src="../js/bootstrap-tab.js"></script>
-<script src="../js/bootstrap-tooltip.js"></script>
-<script src="../js/bootstrap-popover.js"></script>
-<script src="../js/bootstrap-button.js"></script>
-<script src="../js/bootstrap-collapse.js"></script>
-<script src="../js/bootstrap-carousel.js"></script>
-<script src="../js/bootstrap-typeahead.js"></script>
-<script src="../js/prettify.js"></script>
-<script src="../js/d3.v2.js"></script>
-<script src="../lib/d3.v2.js"></script>
-<script src="../lib/fisheye.js"></script>
-<script src="../js/nv3/nv.d3.js"></script>
-<script src="../js/nv3/src/tooltip.js"></script>
-<script src="../js/nv3/src/utils.js"></script>
-<script src="../js/nv3/src/models/legend.js"></script>
-<script src="../js/nv3/src/models/axis.js"></script>
-<script src="../js/nv3/src/models/distribution.js"></script>
-<script src="../js/nv3/src/models/scatter.js"></script>
-<script src="../js/nv3/src/models/scatterPlusLineChart.js"></script>
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap-transition.js"></script>
+    <script src="../js/bootstrap-alert.js"></script>
+    <script src="../js/bootstrap-modal.js"></script>
+    <script src="../js/bootstrap-dropdown.js"></script>
+    <script src="../js/bootstrap-scrollspy.js"></script>
+    <script src="../js/bootstrap-tab.js"></script>
+    <script src="../js/bootstrap-tooltip.js"></script>
+    <script src="../js/bootstrap-popover.js"></script>
+    <script src="../js/bootstrap-button.js"></script>
+    <script src="../js/bootstrap-collapse.js"></script>
+    <script src="../js/bootstrap-carousel.js"></script>
+    <script src="../js/bootstrap-typeahead.js"></script>
+    <script src="../js/prettify.js"></script>
+    <script src="../js/d3.v2.js"></script>
+    <script src="../lib/d3.v2.js"></script>
+    <script src="../lib/fisheye.js"></script>
+    <script src="../js/nv3/nv.d3.js"></script>
+    <script src="../js/nv3/src/tooltip.js"></script>
+    <script src="../js/nv3/src/utils.js"></script>
+    <script src="../js/nv3/src/models/legend.js"></script>
+    <script src="../js/nv3/src/models/axis.js"></script>
+    <script src="../js/nv3/src/models/distribution.js"></script>
+    <script src="../js/nv3/src/models/scatter.js"></script>
+    <script src="../js/nv3/src/models/scatterPlusLineChart.js"></script>
 
-<script>
-    !function ($) {
-        $(function(){
-            window.prettyPrint && prettyPrint()
-        })
-    }(window.jQuery)
-</script>
+    <script>
+        !function ($) {
+            $(function () {
+                window.prettyPrint && prettyPrint()
+            })
+        }(window.jQuery)
+    </script>
+
+
+    <!--Generate Live Histogram-->
+    <script>
+        Array.prototype.contains = function (needle) {
+            for (i in this) {
+                if (this[i] == needle) return true;
+            }
+            return false;
+        }
+
+
+        function histogramChart() {
+            var margin = { top: 0, right: 0, bottom: 10, left: 0 },
+                    width = 960,
+                    height = 250;
+
+            var histogram = d3.layout.histogram(),
+                    x = d3.scale.ordinal(),
+                    y = d3.scale.linear(),
+                    xAxis = d3.svg.axis().scale(x).orient("bottom").tickSize(6, 0);
+
+            function chart(selection) {
+                selection.each(function (data) {
+
+                    // Compute the histogram.
+                    data = histogram(data);
+
+                    // Update the x-scale.
+                    x.domain(data.map(function (d) { return d.x; }))
+                            .rangeRoundBands([0, width - margin.left - margin.right], .1);
+
+                    // Update the y-scale.
+                    y.domain([0, d3.max(data, function (d) { return d.y; })])
+                            .range([height - margin.top - margin.bottom, 0]);
+
+                    // Select the svg element, if it exists.
+                    var svg = d3.select(this).selectAll("svg").data([data]);
+
+                    // Otherwise, create the skeletal chart.
+                    var gEnter = svg.enter().append("svg").append("g");
+                    gEnter.append("g").attr("class", "bars");
+                    gEnter.append("g").attr("class", "x axis");
+
+                    // Update the outer dimensions.
+                    svg.attr("width", width)
+                            .attr("height", height);
+
+                    // Update the inner dimensions.
+                    var g = svg.select("g")
+                            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+                    // Update the bars.
+                    var bar = svg.select(".bars").selectAll(".bar").data(data);
+                    bar.enter().append("rect");
+                    bar.exit().remove();
+                    bar.attr("width", x.rangeBand())
+                            .attr("x", function (d) { return x(d.x); })
+                            .attr("y", function (d) { return y(d.y); })
+                            .attr("height", function (d) { return y.range()[0] - y(d.y); })
+                            .order();
+                    // Update the x-axis.
+                    g.select(".x.axis")
+                            .attr("transform", "translate(0," + y.range()[0] + ")")
+                            .call(xAxis);
+                });
+            }
+
+            chart.margin = function (_) {
+                if (!arguments.length) return margin;
+                margin = _;
+                return chart;
+            };
+
+            chart.width = function (_) {
+                if (!arguments.length) return width;
+                width = _;
+                return chart;
+            };
+
+            chart.height = function (_) {
+                if (!arguments.length) return height;
+                height = _;
+                return chart;
+            };
+
+            // Expose the histogram's value, range and bins method.
+            d3.rebind(chart, histogram, "value", "range", "bins");
+
+            // Expose the x-axis' tickFormat method.
+            d3.rebind(chart, xAxis, "tickFormat");
+
+            return chart;
+        }
+
+
+        d3.select("#chart")
+                .datum(bbs())
+                .call(histogramChart()
+                        .bins(d3.scale.linear().ticks(20))
+                        .tickFormat(d3.format(".02f")));
+
+        function bbs() {
+
+            // Pre-calculated Data
+
+            var data = [0.963515352241923, 0.200396595188119, 0.334911979073275, 0.125159534633519, 0.143037961331969, 0.737793622833757, 0.188329975634711, 0.631714957756284, 0.0405349815941861, 0.775934266457118, 0.82837765143924, 0.467233432130539, 0.039343086480956, 0.749712573966057, 0.070332359424937, 0.976172645479764, 0.82599386121278, 0.579271572774162, 0.0155051842163553, 0.792620798042339, 0.282489689579883, 0.638866328435664, 0.49464701973483, 0.966637484573924, 0.525636292678811, 0.559009355849252, 0.377841298638286, 0.0309998206883458, 0.108473003048298, 0.536363348697881, 0.612644635944603, 0.238389570390372, 0.842680392798, 0.421941417827798, 0.922537365384413, 0.885588616874281, 0.0202727646692755, 0.964253694347464, 0.144229856445199, 0.199057031653781, 0.604301370151993, 0.634098747982744, 0.114432478614448, 0.477960488149609, 0.301560011391564, 0.600725684812303, 0.129927115086439, 0.442203634752708, 0.945183372535783, 0.882012931534591, 0.803347854061409, 0.382608879091206, 0.754480154418978, 0.965445589460694, 0.200248926767011, 0.725874671701457, 0.243157150843292, 0.50179839041421, 0.556625565622792, 0.244349045956522, 0.589998628793233, 0.16330017825688, 0.213359773012541, 0.84148849768477, 0.110856793274758, 0.104897317708608, 0.203824612106701, 0.706804349889776, 0.959486113894544, 0.613836531057833, 0.8307614416657, 0.432668473846868, 0.0607971985190967, 0.435052264073328, 0.16568396848334, 0.563776936302172, 0.877245351081671, 0.618604111510753, 0.893931882666892, 0.620987901737214, 0.0417268767074161, 0.071524254538167, 0.00597002331051505, 0.379033193751516, 0.557817460736022, 0.17641102450241, 0.474384802809919, 0.456506376111469, 0.595958104359383, 0.228854409484532, 0.454122585885008, 0.793812693155569, 0.549474194943411, 0.308711382070944, 0.364730452392756, 0.0143132891031253, 0.423133312941028, 0.415981942261647, 0.49583891484806, 0.891548092440432, 0.102513527482148, 0.328973598995855, 0.357579081713376, 0.288449165146034, 0.219319248578691, 0.305135696731254, 0.270570738447583, 0.680582657398715, 0.915385994705032, 0.773550476230658, 0.644825804001814, 0.780701846910038, 0.427900893393948, 0.0834432056704674, 0.119200059067368, 0.0798675203307773, 0.756863944645438, 0.529211978018501, 0.152573122237809, 0.970213169913614, 0.118008163954138, 0.275338318900503, 0.431476578733638, 0.412406256921957, 0.672239391606105, 0.83314523189216, 0.475576697923149, 0.802155958948179, 0.960678009007774, 0.592382419019693, 0.381416983977976, 0.419557627601337, 0.743753098399907, 0.262227472654973, 0.237197675277142, 0.101321632368918, 0.295600535825414, 0.205016507219931, 0.905850833799192, 0.375457508411826, 0.785469427362958, 0.337316864788465, 0.393335935110277, 0.890356197327202, 0.747328783739597, 0.738985517946987, 0.0643728838587868, 0.867710190175831, 0.17879481472887, 0.750904469079287, 0.640058223548894, 0.0131213939898953, 0.323014123429705, 0.984515911272374, 0.730642252154377, 0.588806733680003, 0.958294218781314, 0.904658938685962, 0.787853217589419, 0.908234624025652, 0.358770976826606, 0.236005780163912, 0.629331167529824, 0.0441106669338762, 0.470809117470229, 0.0357674011412659, 0.287257270032803, 0.16449207337011, 0.253884206862362, 0.992859177064985, 0.83433712700539, 0.901083253346272, 0.641250118662124, 0.800964063834949, 0.808115434514329, 0.764015315324818, 0.685350237851635, 0.317054647863554, 0.345660130581075, 0.628139272416594, 0.949950952988703, 0.482728068602529, 0.532787663358191, 0.17045154893626, 0.49703080996129, 0.0858269958969274, 0.374265613298596, 0.0667566740852469, 0.50299028552744, 0.0977459470292278, 0.811691119854019, 0.878437246194901, 0.0107376037634352, 0.930880631177023, 0.939223896969633, 0.191905660974401, 0.531595768244961, 0.895123777780122, 0.784277532249728, 0.955910428554854, 0.294408640712184, 0.533979558471421, 0.715147615682386, 0.723490881474997, 0.686542132964865, 0.340892550128155, 0.306327591844484, 0.365922347505986, 0.578079677660932, 0.234813885050682, 0.426708998280718, 0.51252544643328, 0.123967639520289, 0.991667281951755, 0.582847258113852, 0.973788855253304, 0.134694695539359, 0.0512620376132564, 0.133502800426129, 0.744944993513137, 0.485111858828989, 0.264611262881433, 0.302751906504794, 0.887972407100742, 0.84506418302446, 0.85221555370384, 0.607877055491683, 0.562585041188942, 0.598341894585843, 0.140654171105509, 0.623371691963674, 0.266995053107893, 0.445779320092398, 0.971405065026844, 0.52086871222589, 0.538747138924341, 0.587614838566773, 0.0226565548957355, 0.666279916039955, 0.569736411868322, 0.312287067410634, 0.883204826647821, 0.272954528674043, 0.5172930268862, 0.601917579925533, 0.0286160304618857, 0.635290643095974, 0.555433670509561, 0.581655363000622, 0.384992669317666, 0.232430094824222, 0.82956954655247, 0.815266805193709, 0.417173837374877, 0.642442013775354, 0.858175029269991, 0.978556435706224, 0.594766209246153, 0.677006972059025, 0.692501608531016, 0.50060649530098, 0.284873479806343, 0.862942609722911, 0.923729260497643, 0.51371734154651, 0.0894026812366175, 0.777126161570348, 0.324206018542935, 0.120391954180598, 0.153765017351039, 0.586422943453543, 0.356387186600146, 0.610260845718143, 0.861750714609681, 0.0333836109148059, 0.659128545360575, 0.942799582309323, 0.197865136540551, 0.752096364192517, 0.479152383262839, 0.455314480998239, 0.560201250962482, 0.84863986836415, 0.0178889744428154, 0.339700655014925, 0.399295410676427, 0.727066566814687, 0.425517103167488, 0.210975982786081, 0.941607687196093, 0.259843682428513, 0.249116626409442, 0.636482538209204, 0.265803157994663, 0.239581465503602, 0.85340744881707, 0.343276340354615, 0.928496840950563, 0.719915196135306, 0.371881823072136, 0.437436054299788, 0.348043920807535, 0.405254886242577, 0.297984326051874, 0.355195291486916, 0.201440821880241, 0.116816268840908, 0.740177413060217, 0.209784087672851, 0.395719725336737, 0.216935458352231, 0.711571930342696, 0.0655647789720168, 0.550666090056641, 0.624563587076904, 0.283681584693113, 0.616220321284293, 0.82361007098632, 0.768782895777738, 0.51014165620682, 0.0012024428575949, 0.137078485765819, 0.472001012583459, 0.573312097208012, 0.805731644287869, 0.0345755060280359, 0.338508759901695, 0.761631525098358, 0.889164302213972, 0.661512335587035, 0.407638676469037, 0.0119294988766652, 0.49226322950837, 0.924921155610873, 0.411214361808727, 0.603109475038763, 0.196673241427321, 0.16925965382303, 0.109664898161528, 0.18594618540825, 0.0453025620471062, 0.574503992321242, 0.50894976109359, 0.84387228791123, 0.00239433797082494, 0.543514719377261, 0.769974790890968, 0.389760249770587, 0.420749522714568, 0.698461084097166, 0.394527830223507, 0.918961680044722, 0.617412216397523, 0.224086829031612, 0.724682776588227, 0.330165494109085, 0.84029660257154, 0.0691404643117069, 0.215743563239001, 0.818842490533399, 0.380225088864746, 0.354003396373686, 0.0619890936323267, 0.309903277184174, 0.268186948221123, 0.921345470271183, 0.526828187792041, 0.48749564905545, 0.0739080447646271, 0.873669665741981, 0.0584134082926366, 0.4934551246216, 0.311095172297404, 0.441011739639478, 0.141846066218739, 0.545898509603721, 0.977364540592994, 0.575695887434472, 0.481536173489299, 0.570928306981552, 0.207400297446391, 0.112048688387988, 0.293216745598954, 0.132310905312899, 0.707996245003006, 0.83195333677893, 0.319438438090014, 0.193097556087631, 0.036959296254496, 0.5053740757539, 0.988091596612064, 0.444587424979168, 0.359962871939836, 0.452930690771778, 0.296792430938644, 0.145421751558429, 0.929688736063793, 0.694885398757476, 0.0500701425000264, 0.682966447625175, 0.0774837301043172, 0.195481346314091, 0.85579123904353, 0.622179796850444, 0.51967681711266, 0.957102323668084, 0.464849641904079, 0.388568354657357, 0.469617222356999, 0.767591000664508, 0.899891358233042, 0.131119010199669, 0.940415792082863, 0.591190523906463, 0.637674433322434, 0.245540941069752, 0.947567162762243, 0.643633908888584, 0.18475429029502, 0.1561488075775, 0.626947377303364];
+            return data;
+        }
+
+
+    </script>
 
 
 </body>
