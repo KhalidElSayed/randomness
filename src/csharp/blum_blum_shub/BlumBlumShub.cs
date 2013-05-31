@@ -13,14 +13,14 @@
  *
  * See Also     : https://github.com/taesiri/randomness
  *
- * Functions    : int GenerateNumber(),float GetRandom()
+ * Functions    : int Generate(), static List<int> GenerateFullCycle(int, int, int)
  *
  *
  * Engineering
  * Status       : BETA
  *
  * Dependencies : System.Numerics
- * Author       : MohammadReza Taesiri
+ * Author       : Mohammad Reza Taesiri
  */
 
 
