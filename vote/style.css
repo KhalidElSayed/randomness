@@ -4,7 +4,7 @@
 }
 
 body {
-    background: url(images/page-bg.jpg) top center no-repeat #233743;
+    background: url(images/page-bg.jpg) top center no-repeat #292929;
     font-family: Georgia, serif;
     font-size: 62.5%;
 }
@@ -32,7 +32,7 @@ fieldset {
 }
 
 legend {
-    border: 1px solid white;
+    border: 0px solid transparent;
     color: #e3f1fa;
     font-size: 2.0em;
     font-style: italic;
@@ -50,5 +50,17 @@ ul {
     padding: 10px;
     white-space: nowrap;
 }
+.vote-items {
+    padding-top: 7px;
+}
+.persian-text {
+    font-family: BCompset;
+    font-size: 15px;
+}
+.persian-legend {
+    font-size: 18px;
+    font-family: BDavat;
+}
 
 span.total-votes { font-size: 2.6em; }
+

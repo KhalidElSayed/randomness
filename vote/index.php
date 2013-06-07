@@ -66,73 +66,70 @@ $totalRows_rs_vote = mysql_num_rows($rs_vote);
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Poll</title>
 <link href="style.css" rel="stylesheet" type="text/css" />
+<link href="../web/css/fonts.css" rel="stylesheet">
+<link href="../web/css/font-styles.css" rel="stylesheet">
+<link href="../web/css/bootstrap.css" rel="stylesheet">
 </head>
 
 <body>
 
-<fieldset>
+<fieldset dir="rtl">
 
-	<legend>Choose a Number !</legend>
+	<legend class="persian-legend">یک عدد به تصادف از اعداد زیر انتخاب نمایید</legend>
 	
 	<form action="<?php echo $editFormAction; ?>" id="form1" name="form1" method="POST">
     
-    <label>
+    <label dir="rtl" class="persian-text">
     	<input type="radio" name="Poll" value="One" id="Poll_0" />
-     	1
+     	یک
      </label>
      
-    <label>
+    <label dir="rtl" class="persian-text vote-items">
     	<input type="radio" name="Poll" value="Two" id="Poll_1" />
-      	2
+      	دو
     </label>
     
-    <label>
+    <label dir="rtl" class="persian-text vote-items">
     	<input type="radio" name="Poll" value="Three" id="Poll_2" />
-		3
-	</label>
-	
-    <label>
+		سه
+	 </label>
+    <label  dir="rtl" class="persian-text vote-items">
     	<input type="radio" name="Poll" value="Four" id="Poll_3" />
-		4
+        چهار
 	</label>
 
-    <label>
+    <label  dir="rtl" class="persian-text vote-items">
     	<input type="radio" name="Poll" value="Five" id="Poll_4" />
-		5
+		پنج
 	</label>
 
-	<label>
+	<label  dir="rtl" class="persian-text vote-items">
     	<input type="radio" name="Poll" value="Six" id="Poll_5" />
-		6
+		شش
+	</label>
+	<label  dir="rtl" class="persian-text vote-items">
+    	<input type="radio" name="Poll" value="Seven" id="Poll_6" />
+		هفت
+	</label>
+    <label  dir="rtl" class="persian-text vote-items">
+    	<input type="radio" name="Poll" value="Eight" id="Poll_7" />
+		هشت
+	</label>
+	<label  dir="rtl" class="persian-text vote-items">
+    	<input type="radio" name="Poll" value="Nine" id="Poll_8" />
+		نه
 	</label>
     
-	<label>
-    	<input type="radio" name="Poll" value="Seven" id="Poll_6" />
-		7
-	</label>
-
-    <label>
-    	<input type="radio" name="Poll" value="Eight" id="Poll_7" />
-		8
-	</label>
-
-	<label>
-    	<input type="radio" name="Poll" value="Nine" id="Poll_8" />
-		9
-	</label>
-
-    <input type="submit" name="submit" id="submit" value="Vote" />
+    <input type="submit" name="submit" id="submit" value="ثبت نظر"/>
+    <btn herf="results.php">مشاهده نتایج</btn>
     
 	<input type="hidden" name="id" value="form1" />
 	
 	<input type="hidden" name="MM_insert" value="form1" />
 </form>
-
 </fieldset>
-
 </body>
 </html>
-
 
 <?php
 mysql_free_result($rs_vote);
