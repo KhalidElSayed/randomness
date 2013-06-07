@@ -14,7 +14,9 @@ h6 {
     margin-bottom: 15px;
 }
 
-a { color: white; }
+a {
+    color: white;
+}
 
 label, li {
     color: #e3f1fa;
@@ -50,17 +52,36 @@ ul {
     padding: 10px;
     white-space: nowrap;
 }
+
 .vote-items {
     padding-top: 7px;
 }
+
 .persian-text {
     font-family: BCompset;
-    font-size: 15px;
+    font-size: 17px;
 }
+
 .persian-legend {
-    font-size: 18px;
-    font-family: BDavat;
+    width: auto;
+    font-size: 24px;
+    font-family: BLotus;
 }
 
-span.total-votes { font-size: 2.6em; }
+.persian-btn {
+    font-family: BDavat;
+    font-size: 18px;
+}
 
+
+span.total-votes {
+    direction: rtl;
+    font-family: BDavat;
+    font-size: 2.6em;
+}
+
+.vote_stat{
+    color: #ffffff;
+    font-family: BDavat;
+    font-size: 22px;
+}

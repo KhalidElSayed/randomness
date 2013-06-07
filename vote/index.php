@@ -65,10 +65,12 @@ $totalRows_rs_vote = mysql_num_rows($rs_vote);
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Poll</title>
-<link href="style.css" rel="stylesheet" type="text/css" />
+
 <link href="../web/css/fonts.css" rel="stylesheet">
 <link href="../web/css/font-styles.css" rel="stylesheet">
 <link href="../web/css/bootstrap.css" rel="stylesheet">
+
+<link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -78,10 +80,11 @@ $totalRows_rs_vote = mysql_num_rows($rs_vote);
 	<legend class="persian-legend">یک عدد به تصادف از اعداد زیر انتخاب نمایید</legend>
 	
 	<form action="<?php echo $editFormAction; ?>" id="form1" name="form1" method="POST">
-    
+
+
     <label dir="rtl" class="persian-text">
     	<input type="radio" name="Poll" value="One" id="Poll_0" />
-     	یک
+        یک
      </label>
      
     <label dir="rtl" class="persian-text vote-items">
@@ -119,9 +122,12 @@ $totalRows_rs_vote = mysql_num_rows($rs_vote);
     	<input type="radio" name="Poll" value="Nine" id="Poll_8" />
 		نه
 	</label>
-    
-    <input type="submit" name="submit" id="submit" value="ثبت نظر"/>
-    <btn herf="results.php">مشاهده نتایج</btn>
+
+    <br/>
+    <br/>
+
+    <input class="btn btn-primary persian-btn" type="submit" name="submit" id="submit" value="ثبت نظر" />
+    <a class="btn btn-info persian-btn" style="margin-right: 10px;" href="results.php">مشاهده نتایج</a>
     
 	<input type="hidden" name="id" value="form1" />
 	

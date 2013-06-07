@@ -79,83 +79,113 @@ $percentQuestion9 = ($num_rowsQuestion9 / $totalRows_rs_vote)*100;
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Results</title>
-	<link href="style.css" rel="stylesheet" type="text/css" />
+	<title>نتایج</title>
+<link href="../web/css/fonts.css" rel="stylesheet">
+<link href="../web/css/font-styles.css" rel="stylesheet">
+<link href="../web/css/bootstrap.css" rel="stylesheet">
+
+<link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-	<fieldset>
+	<fieldset dir="rtl">
 	
-		<legend>Results</legend>
+		<legend class="persian-legend">نتایج</legend>
 		
 		<ul>
-			<li>
-				<span class="total-votes"><?php echo $num_rowsQuestion1 ?></span> One
-				<br />
-				<div class="results-bar" style="width: <?php echo round($percentQuestion1,2); ?>%;">
-					 <?php echo round($percentQuestion1,2); ?>%
-				</div>
-			</li>
-			
-			<li>
-				<span class="total-votes"><?php echo $num_rowsQuestion2 ?></span> Two
-				<div class="results-bar" style="width: <?php echo round($percentQuestion2,2); ?>%;">
-					 <?php echo round($percentQuestion2,2); ?>%
-				</div>
-			</li>
-		
-			<li>
-				<span class="total-votes"><?php echo $num_rowsQuestion3 ?></span> Three
-				<div class="results-bar" style="width: <?php echo round($percentQuestion3,2); ?>%;">
-					 <?php echo round($percentQuestion3,2); ?>%
-				</div>
-			</li>
-		
-			<li>
-				<span class="total-votes"><?php echo $num_rowsQuestion4 ?></span> Four
-				<div class="results-bar" style="width: <?php echo round($percentQuestion4,2); ?>%;">
-					 <?php echo round($percentQuestion4,2); ?>%
-				</div>
-			</li>
-		
-			<li>
-				<span class="total-votes"><?php echo $num_rowsQuestion5 ?></span> Five
-				<div class="results-bar" style="width: <?php echo round($percentQuestion5,2); ?>%;">
-					 <?php echo round($percentQuestion5,2); ?>%
-				</div>
-			</li>
+		    <li>
+		         <span class="total-votes"><?php echo $num_rowsQuestion1 ?></span> یک
+		         <br />
+		         <div class="progress progress-success progress-striped active">
+                    <div class="bar"  style="width: <?php echo round($percentQuestion1,2); ?>%;">
+                        <?php echo round($percentQuestion1,2); ?>%
+                    </div>
+                 </div>
+		    </li>
+   		    <li>
+   		         <span class="total-votes"><?php echo $num_rowsQuestion2 ?></span> دو
+   		         <br />
+   		         <div class="progress progress-success progress-striped active">
+                       <div class="bar"  style="width: <?php echo round($percentQuestion2,2); ?>%;">
+                           <?php echo round($percentQuestion2,2); ?>%
+                       </div>
+                    </div>
+   		    </li>
 
-			<li>
-				<span class="total-votes"><?php echo $num_rowsQuestion6 ?></span> Six
-				<div class="results-bar" style="width: <?php echo round($percentQuestion6,2); ?>%;">
-					 <?php echo round($percentQuestion6,2); ?>%
-				</div>
-			</li>
+   		    <li>
+   		         <span class="total-votes"><?php echo $num_rowsQuestion3 ?></span> سه
+   		         <br />
+   		         <div class="progress progress-success progress-striped active">
+                       <div class="bar"  style="width: <?php echo round($percentQuestion3,2); ?>%;">
+                           <?php echo round($percentQuestion3,2); ?>%
+                       </div>
+                    </div>
+   		    </li>
 
-			<li>
-				<span class="total-votes"><?php echo $num_rowsQuestion7 ?></span> Seven
-				<div class="results-bar" style="width: <?php echo round($percentQuestion7,2); ?>%;">
-					 <?php echo round($percentQuestion7,2); ?>%
-				</div>
-			</li>
-			<li>
-				<span class="total-votes"><?php echo $num_rowsQuestion8 ?></span> Eight
-				<div class="results-bar" style="width: <?php echo round($percentQuestion8,2); ?>%;">
-					 <?php echo round($percentQuestion8,2); ?>%
-				</div>
-			</li>
+   		    <li>
+   		         <span class="total-votes"><?php echo $num_rowsQuestion4 ?></span> چهار
+   		         <br />
+   		         <div class="progress progress-success progress-striped active">
+                       <div class="bar"  style="width: <?php echo round($percentQuestion4,2); ?>%;">
+                           <?php echo round($percentQuestion4,2); ?>%
+                       </div>
+                    </div>
+   		    </li>
 
-			<li>
-				<span class="total-votes"><?php echo $num_rowsQuestion9 ?></span> Nine
-				<div class="results-bar" style="width: <?php echo round($percentQuestion9,2); ?>%;">
-					 <?php echo round($percentQuestion9,2); ?>%
-				</div>
-			</li>
+   		    <li>
+   		         <span class="total-votes"><?php echo $num_rowsQuestion5 ?></span> پنج
+   		         <br />
+   		         <div class="progress progress-success progress-striped active">
+                       <div class="bar"  style="width: <?php echo round($percentQuestion5,2); ?>%;">
+                           <?php echo round($percentQuestion5,2); ?>%
+                       </div>
+                    </div>
+   		    </li>
+   		    <li>
+   		         <span class="total-votes"><?php echo $num_rowsQuestion6 ?></span> شش
+   		         <br />
+   		         <div class="progress progress-success progress-striped active">
+                       <div class="bar"  style="width: <?php echo round($percentQuestion6,2); ?>%;">
+                           <?php echo round($percentQuestion6,2); ?>%
+                       </div>
+                    </div>
+   		    </li>
+
+   		    <li>
+   		         <span class="total-votes"><?php echo $num_rowsQuestion7 ?></span> هفت
+   		         <br />
+   		         <div class="progress progress-success progress-striped active">
+                       <div class="bar"  style="width: <?php echo round($percentQuestion7,2); ?>%;">
+                           <?php echo round($percentQuestion7,2); ?>%
+                       </div>
+                    </div>
+   		    </li>
+
+   		    <li>
+   		         <span class="total-votes"><?php echo $num_rowsQuestion8 ?></span> هشت
+   		         <br />
+   		         <div class="progress progress-success progress-striped active">
+                       <div class="bar"  style="width: <?php echo round($percentQuestion8,2); ?>%;">
+                           <?php echo round($percentQuestion8,2); ?>%
+                       </div>
+                    </div>
+   		    </li>
+
+   		    <li>
+   		         <span class="total-votes"><?php echo $num_rowsQuestion9 ?></span> نه
+   		         <br />
+   		         <div class="progress progress-success progress-striped active">
+                       <div class="bar"  style="width: <?php echo round($percentQuestion9,2); ?>%;">
+                           <?php echo round($percentQuestion9,2); ?>%
+                       </div>
+                    </div>
+   		    </li>
+
 		</ul>
 	
-		<h6>Total votes: <?php echo $totalRows_rs_vote ?></h6>
+		<h2 dir="rtl" class="vote_stat">کل آراء : <?php echo $totalRows_rs_vote ?></h6>
 		
-		<a href="index.php">Back to Voting</a>
+		<a href="index.php">بازگشت</a>
 	
 	</fieldset>
 	
