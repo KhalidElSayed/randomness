@@ -133,9 +133,61 @@
                 </p>
                 
                  <br />
-                <h2 class="text-right">بررسی سه نمونه
+                <h2 class="text-right">بررسی يک نمونه
                 </h2>
+                
+                <p class="text-right content content-bigg">
+                    برای درک بهتر با یک مثال این موضوع را بررسی می کنیم
+
+                </p>
+                <p class="text-right content content-bigg">
+                    می‌خواهیم در یک شبیه‌سازی خدمت‌دهی کارکنان یک بانک به مشتریان را بررسی کنیم. در این شبیه‌سازی قصد داریم "کافی بودن تعداد خدمت‌دهندها" را مورد مطالعه قرار دهیم. زمان ورود مشتری ها به صورت تصادفی تولید می‌شوند. (به این صورت که پس از ورود هر یک از مشتریان، زمان ورود مشتری بعدی مشخص می شود و زمان اولین ورود مشخص است.) 
+
+                </p>
+                <p class="text-right content content-bigg">
+                    هر مشتری در فاصله <span id="chromeMath">$5 \pm 5$</span> دقیقه پس از مشتری قبل وارد می شود. سه خدمت دهنده در بانک وجود دارند و با آهنگ <span id="chromeMath">$4 \pm 6$</span> به مشتریان سرویس می‌دهند. شروع کار بانک 8 صبح و زمان پایان کار ساعت 14 است.
+
+                </p>
+                <p class="text-right content content-bigg">
+                    برای این که "کافی بودن تعداد خدمت‌دهندها" متوسط زمان انتظار در صف را محاسبه خواهیم کرد. از سه مولد همنهشتی خطی آمیخته برای تولید زمان‌های ورود استفاده می کنیم. و نتایج را به هم مقایسه می‌کنیم.
+
+                </p>
+                       
                 <br />
+                <p>
+                    \begin{align}
+                    \  1. \ LCG(255, 11, 13, 97) : m = 255,\ seed = 11  ,\ a = 13 ,\ c = 97 \Rightarrow Period \ 12 \\
+                    \end{align}
+                    \begin{align}
+                    \  2. \ LCG(255, 16, 7, 32) : m = 255,\ seed = 16 ,\ a = 7 ,\ c = 32 \Rightarrow Period \ 48 \\
+                    \end{align}
+                    \begin{align}
+                    \  3. \ LCG(255, 3, 11, 7) : m = 255,\ seed =  3,\ a = 11 ,\ c = 7 \Rightarrow Period \ 80 \\
+                    \end{align}
+                </p>
+          
+                <br />
+                
+                <p class="text-right content content-bigg">
+                    اعداد به‌دست‌آمده در بازه <span id="chromeMath">$[0,1)$</span> هستند. به وسیله یک تبدیل خطی ساده اعداد را به بازه‌های دلخواه می بریم.                
+                </p>
+                 <br />
+                <p>
+                    \begin{align}
+                    \ a \in [0,1) \Rightarrow 6a \in [0,6) \Rightarrow 6a+2 \in [2,8) \\
+                    \end{align}
+                      \begin{align}
+                    \ b \in [0,1) \Rightarrow 10b \in [0,10) \\
+                    \end{align}
+                </p>
+
+                
+                <br />
+                <br />
+                <br />
+                <br />
+                
+                                  
 
                 <div class="goodChart" id="chart3" style="height: 300px; width: 980px;">
                 </div>
@@ -175,6 +227,12 @@
 
 
                 <br />
+                <br />
+                <br />
+                
+                <p class="text-right content content-bigg" style="color:  red;">
+                    ادامه دارد ... 
+                                    </p>
                 <br />
                 <br />
 
