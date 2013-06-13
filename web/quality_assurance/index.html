@@ -1,0 +1,484 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Quality of Random Number Generators</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Probability Course">
+        <meta name="author" content="taesiri">
+        <!-- Le styles -->
+        <link href="../css/bootstrap.css" rel="stylesheet">
+        <link href="../css/bootstrap-responsive.css" rel="stylesheet">
+        <link href="../css/style.css" rel="stylesheet">
+        <link href="../css/prettify.css" rel="stylesheet">
+        <link href="../css/fonts.css" rel="stylesheet">
+        <link href="../css/font-styles.css" rel="stylesheet">
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+            <script src="../js/html5shiv.js"> </script>
+        <![endif]-->
+        <!-- Fav and touch icons -->
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="../ico/apple-touch-icon-57-precomposed.png">
+        <link rel="shortcut icon" href="../ico/favicon.png">
+        <!--MathJax.js-->
+        <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        extensions: ["tex2jax.js"],
+        jax: ["input/TeX", "output/HTML-CSS"],
+        tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] },
+        displayAlign: "center",
+        });
+        if (MathJax.Hub.Browser.isFirefox) {
+        // handle firefox HERE!
+        }
+        if (MathJax.Hub.Browser.isChrome) {
+
+            var $ = document; // shortcut
+            var cssId = 'customCSS';  // you could encode the css path itself to generate id..
+            if (!$.getElementById(cssId))
+            {
+                 var head  = $.getElementsByTagName('head')[0];
+                 var link  = $.createElement('link');
+                 link.id   = cssId;
+                 link.rel  = 'stylesheet';
+                 link.type = 'text/css';
+                 link.href = '../css/chromecss.css';
+                 link.media = 'all';
+                 head.appendChild(link);
+            }
+        }
+    </script>
+        <script type="text/javascript"
+                src="http://cdn.mathjax.org/mathjax/2.2-latest/MathJax.js"> </script>
+        <link href="../js/nv3/src/nv.d3.css" rel="stylesheet" type="text/css">
+        
+        <style>
+            body { overflow-y: scroll; }
+
+            svg { overflow: hidden; }
+
+            div {
+                border: 0;
+                margin: 0;
+            }
+
+            #scatterPlotChart { margin: 0; }
+
+            #scatterPlotChart svg { height: 500px; }
+
+            .bars rect { fill : blue; }
+
+            .axis text { font: 10px sans-serif; }
+
+            .axis path, .axis line {
+                fill: none;
+                shape-rendering: crispEdges;
+                stroke: #000;
+            }
+
+            .badChart .bars rect {
+                fill : blue;  
+            }
+           .normalChart .bars rect {
+                fill : orange;  
+            }
+            .goodChart .bars rect {
+                fill : green;  
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div id="wrap">
+            <!-- Begin page content -->
+            <div class="container">
+
+                <blockquote class="pull-right">
+                    <p class="lead text-right page-top-header">
+                        کیفیت اعداد تولید شده (با ديد کاربری در شبیه‌سازی)
+                    </p>
+                    <small><a href="http://autstat01.persianblog.ir/">Pseudorandom number generator algorithms</a></small>
+                </blockquote>
+
+
+                <hr>
+
+                <h2 class="text-right page-header">
+                    کيفيت اعداد
+
+                </h2>
+
+                <p class="text-right content content-bigg">
+                    بسیاری از موارد کاربردی شبیه‌سازی مونت کارلو، نیاز به اعداد تصادفی با درجه‌ی حداقل <strong id="chromeMath">$10^{15}$</strong> و بالاتر دارند (در اینجا منظور از درجه؛ تعداد اعداد دنباله تولیدی است). این شبیه‌سازی‌ها ممکن است از نظر محاسباتی چند ماه طول بکشند (زمان پردازشی) و هم‌چنین به طور هم‌زمان بر روی چندین ایستگاه کاری اجرا شوند. این‌گونه کار تحقیقاتی که به شدت به اعداد تصادفی وابسته‌اند؛ نیاز به مولدهای اعداد تصادفی باکیفیت را تأیید می‌کنند.
+                </p>
+                <p class="text-right content content-bigg">
+                    اولین خصوصیت مورد توجه برای هر مولد، طول دنباله است. هرچه تعداد و پیچیدگی شبیه‌سازی مونت کارلو افزایش می‌یابد؛ احتیاج برای بالا بودن طول دنباله، بیشتر می‌شود.
+
+                    Park و Miller در سال 1988 با بررسی تعدادی از مسائل شبیه سازی، "حداقل استاندارد" را برای مولد هم‌نهشتی خطی پیش‌نهاد کردند. هر مولد باید به اندازه یک مولد هم‌نهشتی خطی به پیمانه <strong id="chromeMath">$m = 2^{31} -1$</strong>  و <strong id="chromeMath">$a = 16807$</strong> خوب عمل کند. (از نظر طول دنباله تولیدی). در این حالت طول دنباله <strong id="chromeMath">$2^{31}-1$</strong> خواهد بود. 
+                </p>
+                <p class="text-right content content-bigg">
+                    جالب است بدانید در سال 2000 Deng و Lin با استدلال‌هایی نشان دادند که برای بیش‌تر کارهای جدی، دنباله‌هایی با این طول، <strong id="chromeMath">$2^{31} -1$</strong>، نیز کافی نیست. 
+                </p>
+                <p class="text-right content content-bigg">
+                    گذشته از مشکلات شبیه سازی بزرگ، ما باید نگران  عدم توانایی یک مولد با طول دنباله کوچک در رصد کردن تمام نقاط در یک فضای نمونه باشیم. به طور مثال در یک مسئله ساده؛ تولید یک نمونه تصادفی از یک جامعه به نسبت کوچک؛ اگر از مولد نامناسب استفاده نماییم، نقاطی در فضای نمونه وجود دارند که شانس انتخاب شدنشان صفر مطلق است.
+                </p>
+                
+                 <br />
+                <h2 class="text-right">بررسی سه نمونه
+                </h2>
+                <br />
+
+                <div class="goodChart" id="chart3" style="height: 300px; width: 980px;">
+                </div>
+                <p class="text-center content content-bigg" style="padding-top: 18px;">نمونه خوب</p>
+
+                <br />
+
+                <div class="normalChart" id="chart2" style="height: 300px; width: 980px;">
+                </div>
+                <p class="text-center content content-bigg" style="padding-top: 18px;">نمونه معمولي</p>
+
+                <br />
+
+                <div class="badChart" id="chart1" style="height: 300px; width: 980px;">
+                </div>
+                <p class="text-center content content-bigg" style="padding-top: 18px;">نمونه بد</p>
+
+                <br/>
+                <br/>
+               
+     
+
+                <br />
+                <br />
+                <div id="offsetDiv">
+                    <div id="scatterPlotChart">
+                        <svg></svg>
+                    </div>
+                </div>
+
+                <br />
+                <br />
+                <br />
+                 <p class="text-right content content-bigg">
+                    البته در اين‌جا خوب و بد نسبي است و اين سه نمونه در عمل هيچ کاربردي ندارند. 
+                </p>
+
+
+                <br />
+                <br />
+                <br />
+
+                <br />
+                <br />
+                <br />
+                <h2 class="text-right">منابع
+                </h2>
+                <br />
+                <br />
+                <ol>
+                    <li><a href="http://www.amazon.com/gp/search?index=books&linkCode=qs&keywords=0387001786">Random Number Generation and Monte Carlo Methods (Statistics and Computing)  </a></li>
+                </ol>
+
+                <br />
+                <br />
+                <br />
+                <br />
+                <p class="muted text-center date-stamp">
+                    نوشته شده در خرداد ماه 1392 توسط محمدرضا تأثیری
+                </p>
+
+            </div>
+            <div id="push"></div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+
+                <div class="media">
+                    <a class="pull-left" href="#">
+                        <img class="media-object" src="../img/aut_s_2.png" data-src="holder.js/64x64">
+                    </a>
+                    <div class="media-body">
+                        <ul class="footer-links">
+                            <li class="active"><a href="../index.html">Home</a></li>
+                            <li class="muted">·</li>
+                            <li><a href="http://taesiri.com">taesiri</a></li>
+                            <li class="muted">·</li>
+                            <li><a href="http://aut.ac.ir" target="_blank">Amirkabir University</a></li>
+                            <li class="muted">·</li>
+                            <li><a href="http://math-cs.aut.ac.ir" target="_blank">Mathematics Department</a></li>
+                            <li class="muted">·</li>
+                            <li><a href="https://github.com/taesiri/randomness" target="_blank">Github</a></li>
+                        </ul>
+                        <p class="muted text-left" style="font-size: 90%;">Made with<a href="http://twitter.github.io/bootstrap/index.html" target="_blank"> Bootstrap </a>by <a href="http://taesiri.com" target="_blank">MohammadReza Taesiri </a>. Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>, documentations under <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">CC BY 3.0</a>.</p>
+                        <br />
+                    </div>
+                </div>
+
+            </div>
+        </footer>
+
+        <!-- Le javascript
+            ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="../js/jquery.js"> </script>
+        <script src="../js/bootstrap-transition.js"> </script>
+        <script src="../js/bootstrap-alert.js"> </script>
+        <script src="../js/bootstrap-modal.js"> </script>
+        <script src="../js/bootstrap-dropdown.js"> </script>
+        <script src="../js/bootstrap-scrollspy.js"> </script>
+        <script src="../js/bootstrap-tab.js"> </script>
+        <script src="../js/bootstrap-tooltip.js"> </script>
+        <script src="../js/bootstrap-popover.js"> </script>
+        <script src="../js/bootstrap-button.js"> </script>
+        <script src="../js/bootstrap-collapse.js"> </script>
+        <script src="../js/bootstrap-carousel.js"> </script>
+        <script src="../js/bootstrap-typeahead.js"> </script>
+        <script src="../js/prettify.js"> </script>
+        <script src="../js/d3.v2.js"> </script>
+        <script src="../lib/d3.v2.js"> </script>
+        <script src="../lib/fisheye.js"> </script>
+        <script src="../js/nv3/nv.d3.js"> </script>
+        <script src="../js/nv3/src/tooltip.js"> </script>
+        <script src="../js/nv3/src/utils.js"> </script>
+        <script src="../js/nv3/src/models/legend.js"> </script>
+        <script src="../js/nv3/src/models/axis.js"> </script>
+        <script src="../js/nv3/src/models/distribution.js"> </script>
+        <script src="../js/nv3/src/models/scatter.js"> </script>
+        <script src="../js/nv3/src/models/scatterPlusLineChart.js"> </script>
+
+        <script>
+            !function($) {
+                $(function() {
+                    window.prettyPrint && prettyPrint();
+                });
+            }(window.jQuery)
+        </script>
+
+        <script>
+            function histogramChart() {
+                var margin = { top: 0, right: 0, bottom: 10, left: 0 },
+                    width = 960,
+                    height = 250;
+
+                var histogram = d3.layout.histogram(),
+                    x = d3.scale.ordinal(),
+                    y = d3.scale.linear(),
+                    xAxis = d3.svg.axis().scale(x).orient("bottom").tickSize(6, 0);
+
+                function chart(selection) {
+                    selection.each(function(data) {
+
+                        // Compute the histogram.
+                        data = histogram(data);
+
+                        // Update the x-scale.
+                        x.domain(data.map(function(d) { return d.x; }))
+                            .rangeRoundBands([0, width - margin.left - margin.right], .1);
+
+                        // Update the y-scale.
+                        y.domain([0, d3.max(data, function(d) { return d.y; })])
+                            .range([height - margin.top - margin.bottom, 0]);
+
+                        // Select the svg element, if it exists.
+                        var svg = d3.select(this).selectAll("svg").data([data]);
+
+                        // Otherwise, create the skeletal chart.
+                        var gEnter = svg.enter().append("svg").append("g");
+                        gEnter.append("g").attr("class", "bars");
+                        gEnter.append("g").attr("class", "x axis");
+
+                        // Update the outer dimensions.
+                        svg.attr("width", width)
+                            .attr("height", height);
+
+                        // Update the inner dimensions.
+                        var g = svg.select("g")
+                            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+                        // Update the bars.
+                        var bar = svg.select(".bars").selectAll(".bar").data(data);
+                        bar.enter().append("rect");
+                        bar.exit().remove();
+                        bar.attr("width", x.rangeBand())
+                            .attr("x", function(d) { return x(d.x); })
+                            .attr("y", function(d) { return y(d.y); })
+                            .attr("height", function(d) { return y.range()[0] - y(d.y); })
+                            .order();
+                        // Update the x-axis.
+                        g.select(".x.axis")
+                            .attr("transform", "translate(0," + y.range()[0] + ")")
+                            .call(xAxis);
+                    });
+                }
+
+                chart.margin = function(_) {
+                    if (!arguments.length) return margin;
+                    margin = _;
+                    return chart;
+                };
+
+                chart.width = function(_) {
+                    if (!arguments.length) return width;
+                    width = _;
+                    return chart;
+                };
+
+                chart.height = function(_) {
+                    if (!arguments.length) return height;
+                    height = _;
+                    return chart;
+                };
+
+                // Expose the histogram's value, range and bins method.
+                d3.rebind(chart, histogram, "value", "range", "bins");
+
+                // Expose the x-axis' tickFormat method.
+                d3.rebind(chart, xAxis, "tickFormat");
+
+                return chart;
+            }
+        </script>
+        <script>
+            Array.prototype.contains = function(needle) {
+                for (i in this) {
+                    if (this[i] == needle) return true;
+                }
+                return false;
+            };
+            d3.select("#chart1")
+                .datum(lcg(255, 11, 13, 97))
+                .call(histogramChart()
+                    .bins(d3.scale.linear().ticks(20))
+                    .tickFormat(d3.format(".02f")));
+
+            d3.select("#chart2")
+                .datum(lcg(255, 16, 7, 32))
+                .call(histogramChart()
+                    .bins(d3.scale.linear().ticks(20))
+                    .tickFormat(d3.format(".02f")));
+            
+            d3.select("#chart3")
+               .datum(lcg(255, 3, 11, 7))
+               .call(histogramChart()
+                   .bins(d3.scale.linear().ticks(20))
+                   .tickFormat(d3.format(".02f")));
+
+
+            function lcg(m, seed, a, c) {
+                var data = Array();
+
+                var _number = ((a * seed) + c) % m;
+
+
+                while (!data.contains(_number)) {
+                    data.push(_number);
+                    _number = (a * _number + c) % m;
+                }
+
+                var distribution = [];
+                for (var i = 0; i < data.length; i++) {
+                    distribution.push(data[i] / m);
+                }
+                return distribution;
+            }
+
+            //Format A
+            var chart;
+            nv.addGraph(function() {
+                chart = nv.models.scatterPlusLineChart()
+                    .showDistX(true)
+                    .showDistY(true)
+                    //.height(500)
+                    .color(d3.scale.category10().range());
+
+                chart.xAxis.tickFormat(d3.format('.02f'));
+                chart.yAxis.tickFormat(d3.format('.02f'));
+                d3.select('#scatterPlotChart svg')
+                    .datum(randomData(4, 40))
+                    .transition().duration(500)
+                    .call(chart);
+
+                nv.utils.windowResize(chart.update);
+
+                chart.dispatch.on('stateChange', function(e) { nv.log('New State:', JSON.stringify(e)); });
+
+                return chart;
+            });
+
+
+            function randomData(groups, points) { //# groups,# points per group
+                var m = 256 - 1;
+                var lcgBadData = lcg(m, 11, 13, 97);
+                var lcgNormalData = lcg(m, 16, 7, 32);
+                var lcgGoodData = lcg(m, 3, 11, 7);
+                
+                var data = [],
+                    shapes = ['circle', 'cross', 'triangle-up', 'triangle-down', 'diamond', 'square'];
+
+                data.push({
+                    key: "نمونه بد",
+                    values: [],
+                    slope: 0,
+                    intercept: 0
+                });
+
+                data.push({
+                    key: "نمونه معمولي",
+                    values: [],
+                    slope: 0,
+                    intercept: 0
+                });
+                
+                data.push({
+                    key: "نمونه خوب",
+                    values: [],
+                    slope: 0,
+                    intercept: 0
+                });
+
+                for (var j = 0; j < lcgBadData.length; j++) {
+                    data[0].values.push({
+                        x: j + 1,
+                        y: lcgBadData[j] * m,
+                        size: 45,
+                        shape: shapes[j % 6]
+                    });
+                }
+
+                for (var j = 0; j < lcgNormalData.length; j++) {
+                    data[1].values.push({
+                        x: j + 1,
+                        y: (lcgNormalData[j] * m) + 10,
+                        size: 45,
+                        shape: shapes[j % 6]
+                    });
+                }
+ 
+                for (var j = 0; j < lcgGoodData.length; j++) {
+                    data[2].values.push({
+                        x: j + 1,
+                        y: (lcgGoodData[j] * m) + 10,
+                        size: 45,
+                        shape: shapes[j % 6]
+                    });
+                }
+
+                return data;
+            }
+
+        </script>
+
+
+    </body>
+</html>
