@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Google Trends</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Probability Course">
+    <meta name="author" content="taesiri">
+    <!-- Le styles -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/prettify.css" rel="stylesheet">
+    <link href="../css/fonts.css" rel="stylesheet">
+    <link href="../css/font-styles.css" rel="stylesheet">
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+            <script src="../js/html5shiv.js"> </script>
+        <![endif]-->
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="../ico/favicon.png">
+    <link href="../js/nv3/src/nv.d3.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div id="wrap">
+        <!-- Begin page content -->
+        <div class="container">
+
+            <blockquote class="pull-right">
+                <p class="lead text-right page-top-header">
+                    گوگل ترندز و انتخابات 
+
+                </p>
+                <small><a href="http://autstat01.persianblog.ir/">Pseudorandom number generator algorithms</a></small>
+            </blockquote>
+
+
+            <hr>
+
+            <h2 class="text-right page-header">گوگل ترندز و انتخابات 
+            </h2>
+            <br />
+
+            <p class="text-right content content-bigg" style="color: red;">
+                توجه کنید مطالبی که در این پست می‌خوانید هیچ‌گونه ارزش علمی ندارد و در این پست فقط سعی بر این است که سرویس Google Trends معرفی شود.
+            </p>
+            <br />
+            <p class="text-right content content-bigg">
+                گوگل سرویس جالبی به نام Google Trends  دارد. اگر به ساده‌ترین صورت بخواهم کارایی این سرویس را توضیح دهم می‌گوییم : "<strong>خوب گوگل، چه خبر؟</strong>"!
+            </p>
+            <br />
+            <p class="text-right content content-bigg">
+                این سرویس به شما این امکان را می‌دهد تا مشاهده کنید در بازه های زمانی مختلف افراد چه چیزهایی را در گوگل جست‌وجو می‌کنند و بیشتر دنبال چه چیزی هستند. در حقیقت روشی است برای پیدا کردن این که چه موضوعی داغ‌تر! است.
+            </p>
+            <br />
+            <p class="text-right content content-bigg">
+                یکی از اتفاقات بزرگی که اخیراً در کشور ما رخ داد، انتخابات 24 خرداد بود. یکی از کارهای تحقیقاتی جالبی که می‌توانستیم انجام دهیم این بود که بررسی کنیم در دنیا مجازی مردم بیشتر به دنبال کدام نام‌زد هستند! به وسیله‌ی این سرویس نام چند نامزد را جست‌وجو کردم و نتایج سی روزه اخیر به صورت زیر است:
+            </p>
+            <br />
+            <p class="text-center">
+                 <script type="text/javascript" src="//www.google.com/trends/embed.js?hl=en-US&q=%D8%AD%D8%B3%D9%86+%D8%B1%D9%88%D8%AD%D8%A7%D9%86%DB%8C,+%D9%82%D8%A7%D9%84%DB%8C%D8%A8%D8%A7%D9%81,+%D8%B3%D8%B9%DB%8C%D8%AF+%D8%AC%D9%84%DB%8C%D9%84%DB%8C,+%D9%85%D8%AD%D8%B3%D9%86+%D8%B1%D8%B6%D8%A7%DB%8C%DB%8C,+%D8%B9%D9%84%DB%8C+%D8%A7%DA%A9%D8%A8%D8%B1+%D9%88%D9%84%D8%A7%DB%8C%D8%AA%DB%8C&geo=IR&date=today+1-m&cmpt=q&content=1&cid=TIMESERIES_GRAPH_0&export=5&w=1000&h=500"></script>
+                <br />
+                <script type="text/javascript" src="//www.google.com/trends/embed.js?hl=en-US&q=%D8%AD%D8%B3%D9%86+%D8%B1%D9%88%D8%AD%D8%A7%D9%86%DB%8C,+%D9%82%D8%A7%D9%84%DB%8C%D8%A8%D8%A7%D9%81,+%D8%B3%D8%B9%DB%8C%D8%AF+%D8%AC%D9%84%DB%8C%D9%84%DB%8C,+%D9%85%D8%AD%D8%B3%D9%86+%D8%B1%D8%B6%D8%A7%DB%8C%DB%8C,+%D8%B9%D9%84%DB%8C+%D8%A7%DA%A9%D8%A8%D8%B1+%D9%88%D9%84%D8%A7%DB%8C%D8%AA%DB%8C&geo=IR&date=today+1-m&cmpt=q&content=1&cid=GEO_MAP_0_1&export=5&w=500&h=530"></script>
+                <br />
+                <script type="text/javascript" src="//www.google.com/trends/embed.js?hl=en-US&q=%D8%AD%D8%B3%D9%86+%D8%B1%D9%88%D8%AD%D8%A7%D9%86%DB%8C,+%D9%82%D8%A7%D9%84%DB%8C%D8%A8%D8%A7%D9%81,+%D8%B3%D8%B9%DB%8C%D8%AF+%D8%AC%D9%84%DB%8C%D9%84%DB%8C,+%D9%85%D8%AD%D8%B3%D9%86+%D8%B1%D8%B6%D8%A7%DB%8C%DB%8C,+%D8%B9%D9%84%DB%8C+%D8%A7%DA%A9%D8%A8%D8%B1+%D9%88%D9%84%D8%A7%DB%8C%D8%AA%DB%8C&geo=IR&date=today+1-m&cmpt=q&content=1&cid=GEO_MAP_1_1&export=5&w=500&h=530"></script>
+                <br />
+                <script type="text/javascript" src="//www.google.com/trends/embed.js?hl=en-US&q=%D8%AD%D8%B3%D9%86+%D8%B1%D9%88%D8%AD%D8%A7%D9%86%DB%8C,+%D9%82%D8%A7%D9%84%DB%8C%D8%A8%D8%A7%D9%81,+%D8%B3%D8%B9%DB%8C%D8%AF+%D8%AC%D9%84%DB%8C%D9%84%DB%8C,+%D9%85%D8%AD%D8%B3%D9%86+%D8%B1%D8%B6%D8%A7%DB%8C%DB%8C,+%D8%B9%D9%84%DB%8C+%D8%A7%DA%A9%D8%A8%D8%B1+%D9%88%D9%84%D8%A7%DB%8C%D8%AA%DB%8C&geo=IR&date=today+1-m&cmpt=q&content=1&cid=GEO_MAP_2_1&export=5&w=500&h=530"></script>
+                <br />
+                <script type="text/javascript" src="//www.google.com/trends/embed.js?hl=en-US&q=%D8%AD%D8%B3%D9%86+%D8%B1%D9%88%D8%AD%D8%A7%D9%86%DB%8C,+%D9%82%D8%A7%D9%84%DB%8C%D8%A8%D8%A7%D9%81,+%D8%B3%D8%B9%DB%8C%D8%AF+%D8%AC%D9%84%DB%8C%D9%84%DB%8C,+%D9%85%D8%AD%D8%B3%D9%86+%D8%B1%D8%B6%D8%A7%DB%8C%DB%8C,+%D8%B9%D9%84%DB%8C+%D8%A7%DA%A9%D8%A8%D8%B1+%D9%88%D9%84%D8%A7%DB%8C%D8%AA%DB%8C&geo=IR&date=today+1-m&cmpt=q&content=1&cid=GEO_MAP_3_1&export=5&w=500&h=530"></script>
+                <br />
+                <script type="text/javascript" src="//www.google.com/trends/embed.js?hl=en-US&q=%D8%AD%D8%B3%D9%86+%D8%B1%D9%88%D8%AD%D8%A7%D9%86%DB%8C,+%D9%82%D8%A7%D9%84%DB%8C%D8%A8%D8%A7%D9%81,+%D8%B3%D8%B9%DB%8C%D8%AF+%D8%AC%D9%84%DB%8C%D9%84%DB%8C,+%D9%85%D8%AD%D8%B3%D9%86+%D8%B1%D8%B6%D8%A7%DB%8C%DB%8C,+%D8%B9%D9%84%DB%8C+%D8%A7%DA%A9%D8%A8%D8%B1+%D9%88%D9%84%D8%A7%DB%8C%D8%AA%DB%8C&geo=IR&date=today+1-m&cmpt=q&content=1&cid=GEO_MAP_4_1&export=5&w=500&h=530"></script>
+                 <br />
+            </p>
+            <h2 class="text-right">منابع
+            </h2>
+            <br />
+            <br />
+            <ol>
+                <li><a href="http://www.google.com/trends/">Google Trends</a></li>
+            </ol>
+
+        </div>
+        <div id="push"></div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+
+            <div class="media">
+                <a class="pull-left" href="#">
+                    <img class="media-object" src="../img/aut_s_2.png" data-src="holder.js/64x64">
+                </a>
+                <div class="media-body">
+                    <ul class="footer-links">
+                        <li class="active"><a href="../index.html">Home</a></li>
+                        <li class="muted">·</li>
+                        <li><a href="http://taesiri.com">taesiri</a></li>
+                        <li class="muted">·</li>
+                        <li><a href="http://aut.ac.ir" target="_blank">Amirkabir University</a></li>
+                        <li class="muted">·</li>
+                        <li><a href="http://math-cs.aut.ac.ir" target="_blank">Mathematics Department</a></li>
+                        <li class="muted">·</li>
+                        <li><a href="https://github.com/taesiri/randomness" target="_blank">Github</a></li>
+                    </ul>
+                    <p class="muted text-left" style="font-size: 90%;">Made with<a href="http://twitter.github.io/bootstrap/index.html" target="_blank"> Bootstrap </a>by <a href="http://taesiri.com" target="_blank">MohammadReza Taesiri </a>. Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>, documentations under <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">CC BY 3.0</a>.</p>
+                    <br />
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Le javascript
+            ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery.js"> </script>
+    <script src="../js/bootstrap-transition.js"> </script>
+    <script src="../js/bootstrap-alert.js"> </script>
+    <script src="../js/bootstrap-modal.js"> </script>
+    <script src="../js/bootstrap-dropdown.js"> </script>
+    <script src="../js/bootstrap-scrollspy.js"> </script>
+    <script src="../js/bootstrap-tab.js"> </script>
+    <script src="../js/bootstrap-tooltip.js"> </script>
+    <script src="../js/bootstrap-popover.js"> </script>
+    <script src="../js/bootstrap-button.js"> </script>
+    <script src="../js/bootstrap-collapse.js"> </script>
+    <script src="../js/bootstrap-carousel.js"> </script>
+    <script src="../js/bootstrap-typeahead.js"> </script>
+    <script src="../js/prettify.js"> </script>
+    <script src="../js/d3.v2.js"> </script>
+    <script src="../lib/d3.v2.js"> </script>
+    <script src="../lib/fisheye.js"> </script>
+    <script src="../js/nv3/nv.d3.js"> </script>
+    <script src="../js/nv3/src/tooltip.js"> </script>
+    <script src="../js/nv3/src/utils.js"> </script>
+    <script src="../js/nv3/src/models/legend.js"> </script>
+    <script src="../js/nv3/src/models/axis.js"> </script>
+    <script src="../js/nv3/src/models/distribution.js"> </script>
+    <script src="../js/nv3/src/models/scatter.js"> </script>
+    <script src="../js/nv3/src/models/scatterPlusLineChart.js"> </script>
+</body>
+</html>
