@@ -1,42 +1,357 @@
-﻿<html>
-<head>
-
-    <script type="text/javascript">
-
-        var ittr = 8;
-        var delta = -0.005;
-
-        function draw_frame() {
-            var canvas = document.getElementById("m_canvas");
-            if (canvas.getContext) {
-                var ctx = canvas.getContext("2d");
-                ctx.lineWidth = 0;
-                ctx.fillStyle = "rgb(0,0,0)";
-
-
-                var x = 250;
-                var y = 250;
-                for (var n = 0; n < 200; n++) {
-                    var r = Math.floor(Math.random() * 4);
-                    if (r == 0) { x += 1; y += 0; }
-                    if (r == 1) { x += 0; y += 1; }
-                    if (r == 2) { x -= 1; y += 0; }
-                    if (r == 3) { x -= 0; y -= 1; }
-                    ctx.fillRect(x * 1, y * 1, 1, 1);
-                }
-
-                ctx.fillStyle = "rgb(0,200,200)";
-                ctx.fillRect(250, 250, 3, 3);
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Random Walk</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Probability Course">
+        <meta name="author" content="taesiri">
+        <!-- Le styles -->
+        <link href="../css/bootstrap.css" rel="stylesheet">
+        <link href="../css/bootstrap-responsive.css" rel="stylesheet">
+        <link href="../css/style.css" rel="stylesheet">
+        <link href="../css/prettify.css" rel="stylesheet">
+        <link href="../css/fonts.css" rel="stylesheet">
+        <link href="../css/font-styles.css" rel="stylesheet">
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+            <script src="../js/html5shiv.js"> </script>
+        <![endif]-->
+        <!-- Fav and touch icons -->
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="../ico/apple-touch-icon-57-precomposed.png">
+        <link rel="shortcut icon" href="../ico/favicon.png">
+        <link href="../js/nv3/src/nv.d3.css" rel="stylesheet" type="text/css">
+        <script src="RNG.js"> </script>
+        
+        <!--MathJax.js-->
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+            extensions: ["tex2jax.js"],
+            jax: ["input/TeX", "output/HTML-CSS"],
+            tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true
+            },
+            "HTML-CSS": { availableFonts: ["TeX"] },
+            displayAlign: "center",
+            });
+            if (MathJax.Hub.Browser.isFirefox) {
+            // handle firefox HERE!
             }
-        }
+            if (MathJax.Hub.Browser.isChrome) {
 
-    </script>
+                var $ = document; // shortcut
+                var cssId = 'customCSS';  // you could encode the css path itself to generate id..
+                if (!$.getElementById(cssId))
+                {
+                     var head  = $.getElementsByTagName('head')[0];
+                     var link  = $.createElement('link');
+                     link.id   = cssId;
+                     link.rel  = 'stylesheet';
+                     link.type = 'text/css';
+                     link.href = '../css/chromecss.css';
+                     link.media = 'all';
+                     head.appendChild(link);
+                }
+            }
+        </script>
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.2-latest/MathJax.js"> </script>
+        
 
-</head>
+        <script>
 
-<body onload="setInterval(draw_frame,10);">
-    <canvas id="m_canvas" width="500" height="500">You need a Javascipt</canvas>
+            var rng = new RNG(632517);
 
-</body>
+            function draw_LCG() {
+                var canvas = document.getElementById("canvas_LCG");
+                if (canvas.getContext) {
+                    var ctx = canvas.getContext("2d");
+                    ctx.lineWidth = 0;
+                    ctx.fillStyle = "rgb(132,0,255)";
 
+                    var x = 500;
+                    var y = 250;
+                    for (var n = 0; n < 2000; n++) {
+                        var r = Math.floor(rng.nextRange(0, 4)) % 4;
+                        if (r == 0) {
+                            x += 1;
+                            y += 0;
+                        }
+                        if (r == 1) {
+                            x += 0;
+                            y += 1;
+                        }
+                        if (r == 2) {
+                            x -= 1;
+                            y += 0;
+                        }
+                        if (r == 3) {
+                            x -= 0;
+                            y -= 1;
+                        }
+                        ctx.fillRect(x * 1, y * 1, 1, 1);
+                    }
+
+                    ctx.fillStyle = "rgb(0,200,200)";
+                    ctx.fillRect(500, 500, 3, 3);
+                }
+            }
+
+            function draw_StandardRandom() {
+                var canvas = document.getElementById("canvas_Standard");
+                if (canvas.getContext) {
+                    var ctx = canvas.getContext("2d");
+                    ctx.lineWidth = 0;
+                    ctx.fillStyle = "rgb(26,130,255)";
+
+                    var x = 500;
+                    var y = 250;
+                    for (var n = 0; n < 2000; n++) {
+                        var r = Math.floor(Math.random() * 4);
+                        if (r == 0) {
+                            x += 1;
+                            y += 0;
+                        }
+                        if (r == 1) {
+                            x += 0;
+                            y += 1;
+                        }
+                        if (r == 2) {
+                            x -= 1;
+                            y += 0;
+                        }
+                        if (r == 3) {
+                            x -= 0;
+                            y -= 1;
+                        }
+                        ctx.fillRect(x * 1, y * 1, 1, 1);
+                    }
+
+                    ctx.fillStyle = "rgb(0,200,200)";
+                    ctx.fillRect(500, 500, 3, 3);
+                }
+            }
+
+            function draw() {
+                draw_LCG();
+            }
+
+        </script>
+    </head>
+
+    <body onload=" setInterval(draw, 1000); ">
+        <div id="wrap">
+            <!-- Begin page content -->
+            <div class="container">
+
+                <blockquote class="pull-right">
+                    <p class="lead text-right page-top-header">
+                        قدم‌زن تصادفي
+                    </p>
+                    <small><a href="http://autstat01.persianblog.ir/">Pseudorandom number generator algorithms</a></small>
+                </blockquote>
+
+
+                <hr>
+
+                <h2 class="text-right page-header">ول‌گشت یا قدم‌زدن تصادفی
+                </h2>
+                <br />
+
+                <p class="text-right content content-bigg">
+                    به عنوان پست آخر (البته نه چندان آخر) به فکرم رسید که با یکی از مولدهای اعداد تصادفی یک قدم‌زن تصادفی تحت وب بسازم. البته این کار فقط حکم آتش‌بازی در مراسمها و یا در شب های خاص را دارد! 
+                </p>
+                <br />
+                <h2 class="text-right page-header">ول‌گشت تصادفی چیست ؟
+                </h2>
+                <p class="text-right content content-bigg">
+                    <strong>از دانش‌نامه ویکی‌پدیا :</strong>
+                </p>
+                <p class="text-right content content-bigg">
+                    ول‌گشت یا قدم‌زدن تصادفی (به انگلیسی: random walk)‏، مطالعه‌ی رفتار یک مسیر تشکیل شده از گام‌های تصادفی و پی در پی با استفاده از ابزار ریاضیات است. نتایج کاوش در مورد این موضوع در شاخه‌های مختلف علم همچون علوم کامپیوتر، فیزیک، بوم شناسی، اقتصاد، روانشناسی و موارد دیگر به عنوان مدلی پایه برای فرایندهای تصادفی در طول زمان، استفاده شده‌است. به عنوان مثال، مسیر طی شده توسط یک مولکول هنگام حرکت درون گاز یا مایع، مسیر حرکت یک حیوان علف خوار، نوسانات قیمت سهام و وضعیت مالی یک قمارباز؛ مواردی است که می‌تواند با ولگشت مدل سازی شود. عنوان ولگشت را نخستین بار کارل پیرسون در سال ۱۹۰۵ میلادی به کار برد.
+                </p>
+                
+                <h2 class="text-right page-header">مولد استفاده شده
+                </h2>
+                <br />
+                <p class="text-right content content-bigg">
+                    به عنوان مولد عدد تصادفی از یک مولد هم‌نهشتی خطی با پارامترهای زیر استفاده کردم:
+                </p>
+                <br/>
+                <p>
+                    \begin{align}
+                    \ LCG(2^{31} , 1103515245, 12345) \\
+                    \end{align}
+                </p>
+                <br/>
+                <p class="text-right content content-bigg">
+                    قبلاً دیده‌بودیم که چگونه یک عدد تصادفی در بازه <span id="chromeMath">$[0,4)$</span> تولید بکنیم. به کمک مولد هم‌نهشتی اعداد در بازه <span id="chromeMath">$[0,4)$</span> تولید خواهیم کرد و سپس این عدد را گرد (جزء صحیح) خواهیم کرد. این عدد یا 0 یا 1 یا 2 یا 3 خواهد بود که در این صورت به ترتیب یک قدم به سمت بالا، پایین، چپ و نهایتاً راست خواهیم رفت.
+                </p>
+                <br/>
+                <p class="text-right content content-bigg">
+                    خرجی به صورت زیر است. ( این کد به صورت خودکار هر 1 ثانیه اجرا می‌شود)
+                </p>
+
+                <div class="span5" style="height: 500px; width: 1000px;">
+                    <canvas id="canvas_LCG" width="1000" height="500">You need a Javascipt</canvas>
+                </div>
+                
+                
+                <h2 class="text-left">Source Code
+                </h2>
+                <p class="text-left"><span class="label label-success">Random Walker (JavaScript)</span></p>
+                <pre class="prettyprint linenums"><span style="color: #008000; font-weight: bold">function</span> RNG(seed) {
+    <span style="color: #008000; font-weight: bold">this</span>.m <span style="color: #303030">=</span> <span style="color: #005080; font-weight: bold">0x80000000</span>;
+    <span style="color: #008000; font-weight: bold">this</span>.a <span style="color: #303030">=</span> <span style="color: #0000D0; font-weight: bold">1103515245</span>;
+    <span style="color: #008000; font-weight: bold">this</span>.c <span style="color: #303030">=</span> <span style="color: #0000D0; font-weight: bold">12345</span>;
+    <span style="color: #008000; font-weight: bold">this</span>.state <span style="color: #303030">=</span> seed <span style="color: #303030">?</span> seed <span style="color: #303030">:</span> <span style="color: #007020">Math</span>.floor(<span style="color: #007020">Math</span>.random() <span style="color: #303030">*</span> (<span style="color: #008000; font-weight: bold">this</span>.m <span style="color: #303030">-</span> <span style="color: #0000D0; font-weight: bold">1</span>));
+}
+
+RNG.prototype.nextInt <span style="color: #303030">=</span> <span style="color: #008000; font-weight: bold">function</span> () {
+    <span style="color: #008000; font-weight: bold">this</span>.state <span style="color: #303030">=</span> (<span style="color: #008000; font-weight: bold">this</span>.a <span style="color: #303030">*</span> <span style="color: #008000; font-weight: bold">this</span>.state <span style="color: #303030">+</span> <span style="color: #008000; font-weight: bold">this</span>.c) <span style="color: #303030">%</span> <span style="color: #008000; font-weight: bold">this</span>.m;
+    <span style="color: #008000; font-weight: bold">return</span> <span style="color: #008000; font-weight: bold">this</span>.state;
+};
+RNG.prototype.nextFloat <span style="color: #303030">=</span> <span style="color: #008000; font-weight: bold">function</span> () {
+    <span style="color: #008000; font-weight: bold">return</span> <span style="color: #008000; font-weight: bold">this</span>.nextInt() <span style="color: #303030">/</span> (<span style="color: #008000; font-weight: bold">this</span>.m <span style="color: #303030">-</span> <span style="color: #0000D0; font-weight: bold">1</span>);
+};
+RNG.prototype.nextRange <span style="color: #303030">=</span> <span style="color: #008000; font-weight: bold">function</span> (start, end) {
+    <span style="color: #008000; font-weight: bold">var</span> rangeSize <span style="color: #303030">=</span> end <span style="color: #303030">-</span> start;
+    <span style="color: #008000; font-weight: bold">var</span> randomUnder1 <span style="color: #303030">=</span> <span style="color: #008000; font-weight: bold">this</span>.nextInt() <span style="color: #303030">/</span> <span style="color: #008000; font-weight: bold">this</span>.m;
+    <span style="color: #008000; font-weight: bold">return</span> start <span style="color: #303030">+</span> <span style="color: #007020">Math</span>.floor(randomUnder1 <span style="color: #303030">*</span> rangeSize);
+};
+RNG.prototype.choice <span style="color: #303030">=</span> <span style="color: #008000; font-weight: bold">function</span> (array) {
+    <span style="color: #008000; font-weight: bold">return</span> array[<span style="color: #008000; font-weight: bold">this</span>.nextRange(<span style="color: #0000D0; font-weight: bold">0</span>, array.length)];
+};
+
+<span style="color: #008000; font-weight: bold">var</span> rng <span style="color: #303030">=</span> <span style="color: #008000; font-weight: bold">new</span> RNG(<span style="color: #0000D0; font-weight: bold">632517</span>);
+
+<span style="color: #008000; font-weight: bold">function</span> draw_LCG() {
+                <span style="color: #008000; font-weight: bold">var</span> canvas <span style="color: #303030">=</span> <span style="color: #007020">document</span>.getElementById(<span style="background-color: #fff0f0">&quot;canvas_LCG&quot;</span>);
+                <span style="color: #008000; font-weight: bold">if</span> (canvas.getContext) {
+                    <span style="color: #008000; font-weight: bold">var</span> ctx <span style="color: #303030">=</span> canvas.getContext(<span style="background-color: #fff0f0">&quot;2d&quot;</span>);
+                    ctx.lineWidth <span style="color: #303030">=</span> <span style="color: #0000D0; font-weight: bold">0</span>;
+                    ctx.fillStyle <span style="color: #303030">=</span> <span style="background-color: #fff0f0">&quot;rgb(132,0,255)&quot;</span>;
+
+                    <span style="color: #008000; font-weight: bold">var</span> x <span style="color: #303030">=</span> <span style="color: #0000D0; font-weight: bold">500</span>;
+                    <span style="color: #008000; font-weight: bold">var</span> y <span style="color: #303030">=</span> <span style="color: #0000D0; font-weight: bold">250</span>;
+                    <span style="color: #008000; font-weight: bold">for</span> (<span style="color: #008000; font-weight: bold">var</span> n <span style="color: #303030">=</span> <span style="color: #0000D0; font-weight: bold">0</span>; n <span style="color: #303030">&lt;</span> <span style="color: #0000D0; font-weight: bold">2000</span>; n<span style="color: #303030">++</span>) {
+                        <span style="color: #008000; font-weight: bold">var</span> r <span style="color: #303030">=</span> <span style="color: #007020">Math</span>.floor(rng.nextRange(<span style="color: #0000D0; font-weight: bold">0</span>, <span style="color: #0000D0; font-weight: bold">4</span>)) <span style="color: #303030">%</span> <span style="color: #0000D0; font-weight: bold">4</span>;
+                        <span style="color: #008000; font-weight: bold">if</span> (r <span style="color: #303030">==</span> <span style="color: #0000D0; font-weight: bold">0</span>) {
+                            x <span style="color: #303030">+=</span> <span style="color: #0000D0; font-weight: bold">1</span>;
+                            y <span style="color: #303030">+=</span> <span style="color: #0000D0; font-weight: bold">0</span>;
+                        }
+                        <span style="color: #008000; font-weight: bold">if</span> (r <span style="color: #303030">==</span> <span style="color: #0000D0; font-weight: bold">1</span>) {
+                            x <span style="color: #303030">+=</span> <span style="color: #0000D0; font-weight: bold">0</span>;
+                            y <span style="color: #303030">+=</span> <span style="color: #0000D0; font-weight: bold">1</span>;
+                        }
+                        <span style="color: #008000; font-weight: bold">if</span> (r <span style="color: #303030">==</span> <span style="color: #0000D0; font-weight: bold">2</span>) {
+                            x <span style="color: #303030">-=</span> <span style="color: #0000D0; font-weight: bold">1</span>;
+                            y <span style="color: #303030">+=</span> <span style="color: #0000D0; font-weight: bold">0</span>;
+                        }
+                        <span style="color: #008000; font-weight: bold">if</span> (r <span style="color: #303030">==</span> <span style="color: #0000D0; font-weight: bold">3</span>) {
+                            x <span style="color: #303030">-=</span> <span style="color: #0000D0; font-weight: bold">0</span>;
+                            y <span style="color: #303030">-=</span> <span style="color: #0000D0; font-weight: bold">1</span>;
+                        }
+                        ctx.fillRect(x <span style="color: #303030">*</span> <span style="color: #0000D0; font-weight: bold">1</span>, y <span style="color: #303030">*</span> <span style="color: #0000D0; font-weight: bold">1</span>, <span style="color: #0000D0; font-weight: bold">1</span>, <span style="color: #0000D0; font-weight: bold">1</span>);
+                    }
+
+                    ctx.fillStyle <span style="color: #303030">=</span> <span style="background-color: #fff0f0">&quot;rgb(0,200,200)&quot;</span>;
+                    ctx.fillRect(<span style="color: #0000D0; font-weight: bold">500</span>, <span style="color: #0000D0; font-weight: bold">500</span>, <span style="color: #0000D0; font-weight: bold">3</span>, <span style="color: #0000D0; font-weight: bold">3</span>);
+                }
+            }
+</pre>
+                
+                
+                <br />
+                <br />
+                <br />
+                <h2 class="text-right">منابع
+                </h2>
+                <br />
+                <br />
+                <ol>
+                    <li><a href="http://en.wikipedia.org/wiki/Random_walk">Random walk</a></li>
+                </ol>
+
+                <br />
+                <br />
+                <br />
+                <br />
+                <p class="muted text-center date-stamp">
+                    نوشته شده در خرداد ماه 1392 توسط محمدرضا تأثیری
+                </p>
+
+            </div>
+            <div id="push"></div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+
+                <div class="media">
+                    <a class="pull-left" href="#">
+                        <img class="media-object" src="../img/aut_s_2.png" data-src="holder.js/64x64">
+                    </a>
+                    <div class="media-body">
+                        <ul class="footer-links">
+                            <li class="active"><a href="../index.html">Home</a></li>
+                            <li class="muted">·</li>
+                            <li><a href="http://taesiri.com">taesiri</a></li>
+                            <li class="muted">·</li>
+                            <li><a href="http://aut.ac.ir" target="_blank">Amirkabir University</a></li>
+                            <li class="muted">·</li>
+                            <li><a href="http://math-cs.aut.ac.ir" target="_blank">Mathematics Department</a></li>
+                            <li class="muted">·</li>
+                            <li><a href="https://github.com/taesiri/randomness" target="_blank">Github</a></li>
+                        </ul>
+                        <p class="muted text-left" style="font-size: 90%;">Made with<a href="http://twitter.github.io/bootstrap/index.html" target="_blank"> Bootstrap </a>by <a href="http://taesiri.com" target="_blank">MohammadReza Taesiri </a>. Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>, documentations under <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">CC BY 3.0</a>.</p>
+                        <br />
+                    </div>
+                </div>
+
+            </div>
+        </footer>
+
+        <!-- Le javascript
+            ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="../js/jquery.js"> </script>
+        <script src="../js/bootstrap-transition.js"> </script>
+        <script src="../js/bootstrap-alert.js"> </script>
+        <script src="../js/bootstrap-modal.js"> </script>
+        <script src="../js/bootstrap-dropdown.js"> </script>
+        <script src="../js/bootstrap-scrollspy.js"> </script>
+        <script src="../js/bootstrap-tab.js"> </script>
+        <script src="../js/bootstrap-tooltip.js"> </script>
+        <script src="../js/bootstrap-popover.js"> </script>
+        <script src="../js/bootstrap-button.js"> </script>
+        <script src="../js/bootstrap-collapse.js"> </script>
+        <script src="../js/bootstrap-carousel.js"> </script>
+        <script src="../js/bootstrap-typeahead.js"> </script>
+        <script src="../js/prettify.js"> </script>
+        <script src="../js/d3.v2.js"> </script>
+        <script src="../lib/d3.v2.js"> </script>
+        <script src="../lib/fisheye.js"> </script>
+        <script src="../js/nv3/nv.d3.js"> </script>
+        <script src="../js/nv3/src/tooltip.js"> </script>
+        <script src="../js/nv3/src/utils.js"> </script>
+        <script src="../js/nv3/src/models/legend.js"> </script>
+        <script src="../js/nv3/src/models/axis.js"> </script>
+        <script src="../js/nv3/src/models/distribution.js"> </script>
+        <script src="../js/nv3/src/models/scatter.js"> </script>
+        
+        <script>
+            !function($) {
+                $(function() {
+                    window.prettyPrint && prettyPrint();
+                });
+            }(window.jQuery)
+        </script>
+
+
+    </body>
 </html>
